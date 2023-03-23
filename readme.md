@@ -19,6 +19,6 @@ Desenvolvedores:
 - Daniel Victor D'Emilio Barbosa
 - Julio Cesar Ferreira de Freitas
 - Paulo Arantes Machado
-- Otávio Calderan Bruguel
+- Otavio Calderan Bruguel
 - Pedro Henrique da Silva Bozzano Pereira
 - Vinícius da Silva Chaves
