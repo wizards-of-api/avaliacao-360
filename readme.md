@@ -14,7 +14,7 @@ Scrum Master:
 
 Desenvolvedores:
 
-  Cauan Vinícius Barbaglio
+ 'Cauan Vinicius Barbaglio
   Bruno dos Santos
   Daniel Victor D'Emilio Barbosa
   Julio Cesar Ferreira de Freitas
