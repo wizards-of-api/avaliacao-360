@@ -22,3 +22,20 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Otavio Calderan Bruguel
 - Pedro Henrique da Silva Bozzano Pereira
 - Vinícius da Silva Chaves
+
+# Funcionalidades
+
+## Aluno
+
+- Realizar avaliação
+- Interface do aluno
+- Login
+
+## Administrador
+
+- Registro de grupos, turmas e alunos
+- Requisitar a avaliação
+- Interface do administrador
+- Login
+
+## Dependências
