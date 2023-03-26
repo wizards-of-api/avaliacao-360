@@ -39,3 +39,9 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Login
 
 ## Dependências
+
+Em processo...
+
+## API 
+
+Em processo...
