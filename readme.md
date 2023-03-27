@@ -29,6 +29,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 - Realizar avaliação
 - Interface do aluno
+- Consulta dashboard aluno
 - Login
 
 ## Administrador
@@ -36,6 +37,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Registro de grupos, turmas e alunos
 - Requisitar a avaliação
 - Interface do administrador
+- Consulta dashboard administrador
 - Login
 
 ## Dependências
