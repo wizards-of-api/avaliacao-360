@@ -10,7 +10,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 ## Product Owner:
 
-- Gabriel de Souza Mota
+- Gabriel de Souza Mota (https://www.linkedin.com/in/gabriel-mota-4a0816a0)
 
 ## Scrum Master:
 
