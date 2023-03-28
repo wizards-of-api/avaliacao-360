@@ -18,12 +18,12 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 ## Desenvolvedores:
 
-- Cauan Vinicius Barbaglio (https://www.linkedin.com/in/cauan-vmb-213a2a26b)
 - Bruno dos Santos (https://www.linkedin.com/in/bruno6-santos)
+- Cauan Vinicius Barbaglio (https://www.linkedin.com/in/cauan-vmb-213a2a26b)
 - Daniel Victor D'Emilio Barbosa (https://www.linkedin.com/in/danielvdbarbosa)
 - Julio Cesar Ferreira de Freitas (https://www.linkedin.com/in/julio-freitas-415b73216)
-- Paulo Arantes Machado (https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)
 - Otavio Calderan Bruguel (https://www.linkedin.com/in/otavio-calderan-578b48239)
+- Paulo Arantes Machado (https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)
 - Pedro Henrique da Silva Bozzano Pereira (https://www.linkedin.com/in/pedro-bozzano)
 - Vinícius da Silva Chaves (https://www.linkedin.com/in/vinícius-chaves-197353244/)
 
