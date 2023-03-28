@@ -14,7 +14,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 ## Scrum Master:
 
-- Matheus Marciano Leite
+- Matheus Marciano Leite (https://www.linkedin.com/in/matheus-leite-186738135/)
 
 ## Desenvolvedores:
 
@@ -22,9 +22,9 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Bruno dos Santos (https://www.linkedin.com/in/bruno6-santos)
 - Daniel Victor D'Emilio Barbosa (https://www.linkedin.com/in/danielvdbarbosa)
 - Julio Cesar Ferreira de Freitas (https://www.linkedin.com/in/julio-freitas-415b73216)
-- Paulo Arantes Machado
-- Otavio Calderan Bruguel
-- Pedro Henrique da Silva Bozzano Pereira
+- Paulo Arantes Machado (https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)
+- Otavio Calderan Bruguel (https://www.linkedin.com/in/otavio-calderan-578b48239)
+- Pedro Henrique da Silva Bozzano Pereira (https://www.linkedin.com/in/pedro-bozzano)
 - Vinícius da Silva Chaves (https://www.linkedin.com/in/vinícius-chaves-197353244/)
 
 # Funcionalidades
