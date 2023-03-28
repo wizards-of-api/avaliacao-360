@@ -1,6 +1,10 @@
-# Contexto do projeto e objetivo da solução
+# Contexto do projeto
 
-O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia chamada "Avaliação 360". O programa terá uma tela de login para o usuário da ferramenta poder acessá-la. Dependendo do tipo de login, terá duas telas diferentes. A tela "aluno" possibilitará o usuário ver a turma e o grupo que está inserido, além de se avaliar e avaliar as outras pessoas incluídas no grupo. O administrador terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e ver os resultados da mesma.
+A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Based Learning) desenvolveu uma dinâmica de **Avaliação Democratizada** baseada na técnica de Avaliação 360º. O desafio será de apoiar a instituição a levantar, especificar e desenvolver uma solução computacional que viabilize a aplicação da técnica em questão.
+
+# Objetivo da solução
+
+O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia chamada "Avaliação 360". O programa terá uma tela de login para o usuário da ferramenta poder acessá-la. Dependendo do tipo de login, terá duas telas diferentes. A tela "aluno" possibilitará o usuário ver a turma e o grupo que está inserido, avaliar as outras pessoas incluídas no grupo e se avaliar, podendo ver os resultados da sua própria avalialiação. O "Administrador" terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e ver os resultados da mesma.
 
 # Membros da equipe
 
