@@ -1,4 +1,3 @@
-
 # Contexto do projeto 
 
 A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Based Learning) desenvolveu uma dinâmica de **Avaliação Democratizada** baseada na técnica de Avaliação 360º. O desafio será de apoiar a instituição a levantar, especificar e desenvolver uma solução computacional que viabilize a aplicação da técnica em questão. 
@@ -19,7 +18,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 ## Desenvolvedores:
 
-- Cauan Vinicius Barbaglio
+- Cauan Vinicius Barbaglio (https://www.linkedin.com/in/cauan-vmb-213a2a26b)
 - Bruno dos Santos (https://www.linkedin.com/in/bruno6-santos)
 - Daniel Victor D'Emilio Barbosa (https://www.linkedin.com/in/danielvdbarbosa)
 - Julio Cesar Ferreira de Freitas (https://www.linkedin.com/in/julio-freitas-415b73216)
