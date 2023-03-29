@@ -43,12 +43,12 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 |Tecnologia|Logo|
 | -------- |-------- |
-|**Python**|[<img  height="30" width="40" alt="Python-Logo"  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"/>](https://www.python.org/downloads/)|
-|**Vscode**|[<img  height="30" width="40" alt="Vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png"/>](https://code.visualstudio.com/)|
-|**Github**|[<img  height="30" width="40" alt="github-logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/>]()|
-|**Git**|[<img  height="30" width="40" alt="git-logo" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>](https://git-scm.com/)|
-|**Trello**|[<img  height="30" width="40"  alt="trello-logo"  src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png"/>](https://trello.com/b/3F5TFt4V/roadmap)|
 |**Figma**|[<img  height="30" width="40" alt="figma-logo" src="https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma"/>](https://www.figma.com/file/PpgTtZ6TuyJLRLldN91gtZ/Wizards-of-API?node-id=0-1&t=UONXHmsfIPc8CKpC-0)|
+|**Git**|[<img  height="30" width="40" alt="git-logo" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>](https://git-scm.com/)|
+|**Github**|[<img  height="30" width="40" alt="github-logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/>]()|
+|**Python**|[<img  height="30" width="40" alt="Python-Logo"  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"/>](https://www.python.org/downloads/)|
+|**Trello**|[<img  height="30" width="40"  alt="trello-logo"  src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png"/>](https://trello.com/b/3F5TFt4V/roadmap)|
+|**Vscode**|[<img  height="30" width="40" alt="Vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png"/>](https://code.visualstudio.com/)|
 
 # Backlog 
 
