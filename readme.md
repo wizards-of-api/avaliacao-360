@@ -22,43 +22,33 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 |**Vinícius da Silva Chaves**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/vinícius-chaves-197353244/)|<img src = "https://media.licdn.com/dms/image/C4D03AQHj5vc1W_-a8Q/profile-displayphoto-shrink_200_200/0/1656891571024?e=1685577600&v=beta&t=fMr8uGP75yYdis03yVaeOOmtftPnFzwmRSdOkDD_2Vg" height="50"/>|
 
 
-
-
-
-
-
-
 # Funcionalidades
 
-- Login (Tela para entrar no programa)
-- Interface do aluno (O perfil do aluno, onde encontrará o grupo e turma que está inserido)
-- Realizar avaliação (Fazer a avaliação proposta para os alunos)
-- Consulta dashboard aluno (Gráficos para o aluno acompanhar a sua evolução)
+## Aluno
+
+- Realizar avaliação
+- Interface do aluno
+- Consulta dashboard aluno
+- Login
 
 ## Administrador
 
-- Login (Tela para entrar no programa)
-- Registro de grupos, turmas e alunos (Criar os grupos e turmas e o registro dos alunos)
-- Requisitar a avaliação (Pedir em um período de tempo para os alunos realizarem a avaliação)
-- Interface do administrador (O perfil do administrador)
-- Consulta dashboard administrador (Gráficos para o acompanhamento dos alunos em qualquer grupo/turma)
+- Registro de grupos, turmas e alunos
+- Requisitar a avaliação
+- Interface do administrador
+- Consulta dashboard administrador
+- Login
 
 # Tecnologias usadas e ferramentas externas
-<div style="display: inline_block">
-  <img align="center" alt="python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-  <img align="center" alt="vscode" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png">
-  <img align="center" alt="github" height="30" width="40" src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-  <img align="center" alt="git" height="30" width="40" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png">
-  <img align="center" alt="trello" height="30" width="40" src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png">
-  <img align="center" alt="figma" height="30" width="40" src="https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma">
-</div>
 
-- Linguagem de programação Python
-- VSCode
-- Github
-- Git
-- <a href="https://trello.com/b/3F5TFt4V/roadmap">Trello</a>
-- <a href="https://www.figma.com/file/PpgTtZ6TuyJLRLldN91gtZ/Wizards-of-API?node-id=0-1&t=UONXHmsfIPc8CKpC-0">Figma<a/>
+|Tecnologia|Logo|
+| -------- |-------- |
+|**Python**|[<img  height="30" width="40" alt="Python-Logo"  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"/>](https://www.python.org/downloads/)|
+|**Vscode**|[<img  height="30" width="40" alt="Vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png"/>](https://code.visualstudio.com/)|
+|**Github**|[<img  height="30" width="40" alt="github-logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/>]()|
+|**Git**|[<img  height="30" width="40" alt="git-logo" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>](https://git-scm.com/)|
+|**Trello**|[<img  height="30" width="40"  alt="trello-logo"  src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png"/>](https://trello.com/b/3F5TFt4V/roadmap)|
+|**Figma**|[<img  height="30" width="40" alt="figma-logo" src="https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma"/>](https://www.figma.com/file/PpgTtZ6TuyJLRLldN91gtZ/Wizards-of-API?node-id=0-1&t=UONXHmsfIPc8CKpC-0)|
 
 # Backlog 
 
