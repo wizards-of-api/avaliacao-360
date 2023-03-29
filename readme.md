@@ -28,7 +28,6 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 
 
-
 # Funcionalidades
 
 - Login (Tela para entrar no programa)
