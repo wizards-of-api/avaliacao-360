@@ -8,41 +8,43 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 # Membros da equipe
 
-## Product Owner:
+|Nome|Função|LinkedIn|foto|
+| -------- |-------- |-------- |-------- |
+|**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|<img src = "https://media.licdn.com/dms/image/D4D35AQGhxp6Li56WGA/profile-framedphoto-shrink_200_200/0/1648576700138?e=1680696000&v=beta&t=tikCk4Gl9wG7hX1HPBCbOHQ9t1KqKmyMJgfcZ0aS5cg" height="50"/>|
+|**Gabriel de Souza Mota**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-mota-4a0816a0)|<img src = "https://media.licdn.com/dms/image/D4E03AQFZaVf-_yjffg/profile-displayphoto-shrink_200_200/0/1680046275902?e=1685577600&v=beta&t=gcRFqtX0_YTqX3MWifsAaNX594kmKkmmYNpBMW80DYg" height="50"/>|
+|**Bruno dos Santos**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bruno6-santos/)|<img src = "https://media.licdn.com/dms/image/C4D03AQFVBZghpCQ2FQ/profile-displayphoto-shrink_200_200/0/1593525226557?e=1685577600&v=beta&t=wUmkKeftU2CE38GQa44aMaz9hCTXIG52LYDUr38Y22s" height="50"/>|
+|**Cauan Vinicius Barbaglio**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/cauan-vmb-213a2a26b)|<img src = "https://media.licdn.com/dms/image/D4E03AQHSIY1PWW-6lA/profile-displayphoto-shrink_200_200/0/1680035835089?e=1685577600&v=beta&t=7xDdpTnlXOMnnq9HnRXE5KZ0mmm-8o04nN0Wf4N7VEc" height="50"/>|
+|**Daniel Victor D'Emilio Barbosa**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/danielvdbarbosa)|<img src = "https://media.licdn.com/dms/image/C5603AQG1DKSGZdQ5fg/profile-displayphoto-shrink_200_200/0/1632140335771?e=1685577600&v=beta&t=3e6NwR7vtwf6j1ywjlWw7DSqSFzAAMTLvyKBAiBng1E" height="50"/>|
+|**Julio Cesar Ferreira de Freitas**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/julio-freitas-415b73216)|<img src = "https://media.licdn.com/dms/image/D4D03AQEJC0oxfvbwYA/profile-displayphoto-shrink_200_200/0/1669854497018?e=1685577600&v=beta&t=rXxAQ5EYnsnLcL463Bv42qITZPcTKxAFvFsTTRVY60E" height="50"/>|
+|**Otavio Calderan Bruguel**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/otavio-calderan-578b48239)|<img src = "https://media.licdn.com/dms/image/D4D03AQEQYFPyjaXEzA/profile-displayphoto-shrink_200_200/0/1679969286056?e=1685577600&v=beta&t=99K13xG-LVAf2kCZvZdyRHxKP4lQZMFhCD9y6G_AJeI" height="50"/>|
+|**Paulo Arantes Machado**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)|<img src = "https://media.licdn.com/dms/image/C4E03AQEDp6DHmqB3iw/profile-displayphoto-shrink_200_200/0/1655570821629?e=1685577600&v=beta&t=RtfN468ysPDsUGCSwCdUt8FjC3U5i6hatPgP1kH223U" height="50"/>|
+|**Pedro Henrique da Silva Bozzano Pereira**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-bozzano)|<img src = "https://media.licdn.com/dms/image/C4E03AQG5Rssk92J9YA/profile-displayphoto-shrink_200_200/0/1612708570557?e=1685577600&v=beta&t=g2zBcgtKJFu8xbz6LdaYuL0td91JmxryM-eQpw4a2bw" height="50"/>|
+|**Vinícius da Silva Chaves**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/vinícius-chaves-197353244/)|<img src = "https://media.licdn.com/dms/image/C4D03AQHj5vc1W_-a8Q/profile-displayphoto-shrink_200_200/0/1656891571024?e=1685577600&v=beta&t=fMr8uGP75yYdis03yVaeOOmtftPnFzwmRSdOkDD_2Vg" height="50"/>|
 
-- Gabriel de Souza Mota (https://www.linkedin.com/in/gabriel-mota-4a0816a0)
 
-## Scrum Master:
 
-- Matheus Marciano Leite (https://www.linkedin.com/in/matheus-leite-186738135/)
 
-## Desenvolvedores:
 
-- Bruno dos Santos (https://www.linkedin.com/in/bruno6-santos)
-- Cauan Vinicius Barbaglio (https://www.linkedin.com/in/cauan-vmb-213a2a26b)
-- Daniel Victor D'Emilio Barbosa (https://www.linkedin.com/in/danielvdbarbosa)
-- Julio Cesar Ferreira de Freitas (https://www.linkedin.com/in/julio-freitas-415b73216)
-- Otavio Calderan Bruguel (https://www.linkedin.com/in/otavio-calderan-578b48239)
-- Paulo Arantes Machado (https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)
-- Pedro Henrique da Silva Bozzano Pereira (https://www.linkedin.com/in/pedro-bozzano)
-- Vinícius da Silva Chaves (https://www.linkedin.com/in/vinícius-chaves-197353244/)
+
+
+
 
 # Funcionalidades
 
 ## Aluno
 
-- Login (Tela para entrar no programa)
-- Interface do aluno (O perfil do aluno, lá, encontrará o grupo e turma que está inserido)
-- Realizar avaliação (Fazer a avaliação proposta para os alunos)
-- Consulta dashboard aluno (Gráficos para o aluno acompanhar a sua evolução)
+- Realizar avaliação
+- Interface do aluno
+- Consulta dashboard aluno
+- Login
 
 ## Administrador
 
-- Login (Tela para entrar no programa)
-- Registro de grupos, turmas e alunos (Criar os grupos e turmas e o registro dos alunos)
-- Requisitar a avaliação (Pedir em um período de tempo para os alunos realizarem a avaliação)
-- Interface do administrador (O perfil do administrador)
-- Consulta dashboard administrador (Gráficos para o acompanhamento dos alunos em qualquer grupo/turma)
+- Registro de grupos, turmas e alunos
+- Requisitar a avaliação
+- Interface do administrador
+- Consulta dashboard administrador
+- Login
 
 # Tecnologias usadas e ferramentas externas
 <div style="display: inline_block">
