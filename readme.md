@@ -45,13 +45,21 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Login
 
 # Tecnologias usadas e ferramentas externas
+<div style="display: inline_block">
+  <img align="center" alt="python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+  <img align="center" alt="vscode" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png">
+  <img align="center" alt="github" height="30" width="40" src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+  <img align="center" alt="git" height="30" width="40" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png">
+  <img align="center" alt="trello" height="30" width="40" src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png">
+  <img align="center" alt="figma" height="30" width="40" src="https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma">
+</div>
 
 - Linguagem de programação Python
 - VSCode
 - Github
 - Git
-- Trello
-- Figma
+- <a href="https://trello.com/b/3F5TFt4V/roadmap">Trello</a>
+- <a href="https://www.figma.com/file/PpgTtZ6TuyJLRLldN91gtZ/Wizards-of-API?node-id=0-1&t=UONXHmsfIPc8CKpC-0">Figma<a/>
 
 # Backlog 
 
