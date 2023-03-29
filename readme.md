@@ -40,9 +40,9 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 - Login (Tela para entrar no programa)
 - Registro de grupos, turmas e alunos (Criar os grupos e turmas e o registro dos alunos)
-- Requisitar a avaliação (Pedir em um período de tempo 
-- Interface do administrador
-- Consulta dashboard administrador
+- Requisitar a avaliação (Pedir em um período de tempo para os alunos realizarem a avaliação)
+- Interface do administrador (O perfil do administrador)
+- Consulta dashboard administrador (Dashboard para o acompanhamento dos alunos em qualquer grupo/turma)
 
 # Tecnologias usadas e ferramentas externas
 
