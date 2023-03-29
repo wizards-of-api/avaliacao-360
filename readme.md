@@ -28,23 +28,20 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 
 
 
-
 # Funcionalidades
 
-## Aluno
-
-- Realizar avaliação
-- Interface do aluno
-- Consulta dashboard aluno
-- Login
+- Login (Tela para entrar no programa)
+- Interface do aluno (O perfil do aluno, onde encontrará o grupo e turma que está inserido)
+- Realizar avaliação (Fazer a avaliação proposta para os alunos)
+- Consulta dashboard aluno (Gráficos para o aluno acompanhar a sua evolução)
 
 ## Administrador
 
-- Registro de grupos, turmas e alunos
-- Requisitar a avaliação
-- Interface do administrador
-- Consulta dashboard administrador
-- Login
+- Login (Tela para entrar no programa)
+- Registro de grupos, turmas e alunos (Criar os grupos e turmas e o registro dos alunos)
+- Requisitar a avaliação (Pedir em um período de tempo para os alunos realizarem a avaliação)
+- Interface do administrador (O perfil do administrador)
+- Consulta dashboard administrador (Gráficos para o acompanhamento dos alunos em qualquer grupo/turma)
 
 # Tecnologias usadas e ferramentas externas
 <div style="display: inline_block">
