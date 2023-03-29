@@ -4,7 +4,7 @@ A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Bas
 
 # Objetivo da solução 
 
-O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia chamada "Avaliação 360". O programa terá uma tela de login para o usuário da ferramenta poder acessá-la. Dependendo do tipo de login, terá duas telas diferentes. A tela "aluno" possibilitará o usuário ver a turma e o grupo que está inserido, avaliar as outras pessoas incluídas no grupo e se avaliar, podendo ver os resultados da sua própria avalialiação. O "Administrador" terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e ver os resultados da mesma.
+O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia chamada "Avaliação 360". O programa terá uma tela de login para o usuário da ferramenta poder acessá-la. Dependendo do tipo de login, terá duas telas diferentes. A tela "aluno" possibilitará o usuário ver a turma e o grupo que está inserido, avaliar as outras pessoas incluídas no grupo e se avaliar, podendo ver os resultados da sua própria avaliação. O "Administrador" terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e ver os resultados da mesma.
 
 # Membros da equipe
 
@@ -21,7 +21,6 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 |**Pedro Henrique da Silva Bozzano Pereira**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-bozzano)|<img src = "https://media.licdn.com/dms/image/C4E03AQG5Rssk92J9YA/profile-displayphoto-shrink_200_200/0/1612708570557?e=1685577600&v=beta&t=g2zBcgtKJFu8xbz6LdaYuL0td91JmxryM-eQpw4a2bw" height="50"/>|
 |**Vinícius da Silva Chaves**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/vinícius-chaves-197353244/)|<img src = "https://media.licdn.com/dms/image/C4D03AQHj5vc1W_-a8Q/profile-displayphoto-shrink_200_200/0/1656891571024?e=1685577600&v=beta&t=fMr8uGP75yYdis03yVaeOOmtftPnFzwmRSdOkDD_2Vg" height="50"/>|
 
-
 # Funcionalidades
 
 ## Aluno
@@ -31,16 +30,14 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Avaliar a si mesmo e aos seus colegas
 - Visualizar gráficos de desempenho gerados pela avaliação
 
-
 ## Administrador
 
 - Realizar o login com usuário e senha
 - Acessar a Interface de administrador
 - Realizar o cadastro de grupos, turmas e alunos
 - Realizar a requisição de avaliações
-- Vizualizar lista de turmas e grupos
+- Visualizar lista de turmas e grupos
 - Visualizar gráficos de desempenho gerados pelas avaliações
-
 
 # Tecnologias usadas e ferramentas externas
 
