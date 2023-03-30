@@ -1,3 +1,5 @@
+<img src="/docs/header.jpeg" alt="header">
+
 # Contexto do projeto 
 
 A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Based Learning) desenvolveu uma dinâmica de **Avaliação Democratizada** baseada na técnica de Avaliação 360º. O desafio será de apoiar a instituição a levantar, especificar e desenvolver uma solução computacional que viabilize a aplicação da técnica em questão. 
@@ -81,3 +83,8 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 ## Sprint 4 
 
 - Interface de Login
+<br>
+
+# Cronograma
+
+<img src="/docs/footer.jpeg" alt="footer">
