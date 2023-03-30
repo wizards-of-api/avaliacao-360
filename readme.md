@@ -1,16 +1,14 @@
-<img src="/docs/header.jpeg" alt="header">
-
 # Contexto do projeto 
 
-A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Based Learning) desenvolveu uma dinâmica de **Avaliação Democratizada** baseada na técnica de Avaliação 360º. O desafio será de apoiar a instituição a levantar, especificar e desenvolver uma solução computacional que viabilize a aplicação da técnica em questão. 
+A PBLTeX, especializada em cursos práticos de ensino aplicando PBL (Problem Based Learning) desenvolveu uma dinâmica de **Avaliação Democratizada** baseada na Avaliação 360º. O desafio será de apoiar a instituição a levantar, especificar e desenvolver uma solução computacional que viabilize a aplicação da Avaliação. 
 
 # Objetivo da solução 
 
-O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia chamada "Avaliação 360". O programa terá uma tela de login para o usuário da ferramenta poder acessá-la. Dependendo do tipo de login, terá duas telas diferentes. A tela "aluno" possibilitará o usuário ver a turma e o grupo que está inserido, avaliar as outras pessoas incluídas no grupo e se avaliar, podendo ver os resultados da sua própria avaliação. O "Administrador" terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e ver os resultados da mesma.
+O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avaliação 360º. Para liberar o acesso ao programa, teremos 2 niveis de acesso: Administrador e Aluno. Dependendo do tipo de acesso, havera opções de tela diferentes. A tela "aluno" possibilitará ao usuário ver a turma e o grupo ao qual está inserido, avaliar os membros do seu grupo e se  auto-avaliar, podendo ver os resultados das avaliações realizadas por ele. O "Administrador" terá atribuições de criar as turmas, grupos e o registro dos alunos, requisitar a avaliação e observar os resultados da mesma, atraves de dashboards operacionais e gerenciais .
 
 # Membros da equipe
 
-|Nome|Função|LinkedIn|foto|
+|Nome|Função|LinkedIn|Foto|
 | -------- |-------- |-------- |-------- |
 |**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|<img src = "https://media.licdn.com/dms/image/D4D35AQGhxp6Li56WGA/profile-framedphoto-shrink_200_200/0/1648576700138?e=1680696000&v=beta&t=tikCk4Gl9wG7hX1HPBCbOHQ9t1KqKmyMJgfcZ0aS5cg" height="50"/>|
 |**Gabriel de Souza Mota**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-mota-4a0816a0)|<img src = "https://media.licdn.com/dms/image/D4E03AQFZaVf-_yjffg/profile-displayphoto-shrink_200_200/0/1680046275902?e=1685577600&v=beta&t=gcRFqtX0_YTqX3MWifsAaNX594kmKkmmYNpBMW80DYg" height="50"/>|
@@ -30,7 +28,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Realizar login com usuário e senha
 - Acessar a Interface de Aluno
 - Avaliar a si mesmo e aos seus colegas
-- Visualizar gráficos de desempenho gerados pela avaliação
+- Visualizar gráficos de desempenho gerados pela sua avaliação
 
 ## Administrador
 
@@ -39,7 +37,7 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 - Realizar o cadastro de grupos, turmas e alunos
 - Realizar a requisição de avaliações
 - Visualizar lista de turmas e grupos
-- Visualizar gráficos de desempenho gerados pelas avaliações
+- Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
 # Tecnologias usadas e ferramentas externas
 
@@ -83,8 +81,3 @@ O programa viabiliza a avaliação dos alunos, se baseando em uma metodologia ch
 ## Sprint 4 
 
 - Interface de Login
-<br>
-
-# Cronograma
-
-<img src="/docs/footer.jpeg" alt="footer">
