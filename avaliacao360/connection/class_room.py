@@ -1,7 +1,6 @@
 from utils.filters import filter_by_key
 import connection.connection as connection
 import connection.group as group_connection
-import connection.student as student_connection
 
 key = 'class-room-list'
 
