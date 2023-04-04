@@ -53,6 +53,9 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 |**Trello**|[<img  height="30" width="40"  alt="trello-logo"  src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png"/>](https://trello.com/b/3F5TFt4V/roadmap)|
 |**Vscode**|[<img  height="30" width="40" alt="Vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png"/>](https://code.visualstudio.com/)|
 
+# Bibliotecas
+- [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
+
 # Backlog 
 
 ## Sprint 1 
