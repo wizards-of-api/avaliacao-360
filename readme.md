@@ -57,35 +57,18 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
 
 # Backlog 
-
-## Sprint 1 
-
-- Acertar a visão do projeto 
-- Criação do GIT
-- Criar Wireframe
-- Arrumar README.md
-- Apresentação do MVP 
-- Roteiro de apresentação para o cliente
-
-## Sprint 2 
-
+- Criar base do projeto
 - Criar a avaliação
 - Criar estrutura de dados mockado
 - Interface Alunos
 - Interface Administrador 
 - Realizar avaliação 
-
-## Sprint 3 
-
 - Criar algoritmo de Dashboard (4 Dashboards no total)
 - Consultar Dashboards
 - Registro de aluno
 - Registro de grupo
 - Registro de turma
 - Requisito avaliação 
-
-## Sprint 4 
-
 - Interface de Login
 <br>
 
