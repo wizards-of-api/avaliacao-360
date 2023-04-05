@@ -11,6 +11,7 @@ def close():
 
 def change_interface(new_interface):
     global current_interface
+    current_interface.window.Hide()
     current_interface = new_interface
 
 def run():
