@@ -6,7 +6,7 @@ layout = [[sg.Text('Bem-vindo!')],
         ]
 
 # Create the Window
-window = sg.Window('Window Title', layout)
+window = sg.Window('Avaliação 360', layout)
 
 def event_handler(event, values):
     if event == 'Cancel': # if user closes window or clicks cancel
