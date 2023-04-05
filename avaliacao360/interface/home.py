@@ -15,5 +15,4 @@ def event_handler(event, values):
     if event == 'Cancel': # if user closes window or clicks cancel
         app.close()
     elif event == 'Login':
-        app.run()
         app.change_interface(interface_login)
