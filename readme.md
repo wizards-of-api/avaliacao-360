@@ -53,36 +53,22 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 |**Trello**|[<img  height="30" width="40"  alt="trello-logo"  src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_b748e1a9feac220d506734f2a6a69a51/trello.png"/>](https://trello.com/b/3F5TFt4V/roadmap)|
 |**Vscode**|[<img  height="30" width="40" alt="Vscode-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png"/>](https://code.visualstudio.com/)|
 
+# Bibliotecas
+- [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
+
 # Backlog 
-
-## Sprint 1 
-
-- Acertar a visão do projeto 
-- Criação do GIT
-- Criar Wireframe
-- Arrumar README.md
-- Apresentação do MVP 
-- Roteiro de apresentação para o cliente
-
-## Sprint 2 
-
+- Criar base do projeto
 - Criar a avaliação
 - Criar estrutura de dados mockado
 - Interface Alunos
 - Interface Administrador 
 - Realizar avaliação 
-
-## Sprint 3 
-
 - Criar algoritmo de Dashboard (4 Dashboards no total)
 - Consultar Dashboards
 - Registro de aluno
 - Registro de grupo
 - Registro de turma
 - Requisito avaliação 
-
-## Sprint 4 
-
 - Interface de Login
 <br>
 
