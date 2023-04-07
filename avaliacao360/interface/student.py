@@ -9,7 +9,7 @@ layout = [[sg.Column(col1, justification='center', pad=(0, 10))], [sg.Button('Ba
 
 window = sg.Window('Avaliação360', layout, size=(230, 180))
 
-def event_handler(event, values):
+def event_handler(event):
     if event == 'Cancel':
         app.close()
     elif event == 'Back':
