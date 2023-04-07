@@ -6,6 +6,7 @@ sg.theme('DarkAmber')   # Add a touch of color
 layout = [[sg.Text('Não Possui Login')],
         [sg.Button('Back'), sg.Button('Cancel')]]
 # Create the Window
+
 window = sg.Window('Window Title', layout)
 
 def event_handler(event, values):
