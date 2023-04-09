@@ -1,7 +1,5 @@
 import PySimpleGUI as sg
-import interface.home as inteface_home
 
-current_interface = inteface_home
 to_close = False
 is_running = False
 
@@ -9,24 +7,27 @@ def close():
     global to_close
     to_close = True
 
-def change_interface(new_interface):
-    global current_interface
-    current_interface.window.Hide()
-    current_interface = new_interface
+def change_interface(new_window, new_event_handler):
+    global window, event_handler
+
+    if 'window' in globals():
+        window.close()
+
+    window = new_window
+    event_handler = new_event_handler
 
 def run():
-    global to_close, current_interface, is_running
+    global window, event_handler, to_close, is_running
 
     if is_running:
         raise Exception('App already running')
     is_running = True
 
     while True:
-        current_window = current_interface.window
-        event, values = current_window.read()
+        event, values = window.read()
 
-        current_interface.event_handler(event, values)
+        event_handler(event, values)
         if event == sg.WIN_CLOSED or to_close:
             break
 
-    current_window.close()
+    window.close()
