@@ -47,13 +47,15 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 Para ver o dashboard, [Clique aqui](https://trello.com/b/3F5TFt4V/roadmap/)!
 
 # Bibliotecas
-- [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
+|Bibliotecas|Logo|
+| -------- |-------- |
+|**Py simple GUI**|[<img  height="30" width="40" alt="figma-logo" src="https://raw.githubusercontent.com/PySimpleGUI/PySimpleGUI/master/images/for_readme/Logo%20with%20text%20for%20GitHub%20Top.png"/>](https://www.pysimplegui.org/en/latest/)|
 
 # Membros da equipe
 
 |Nome|Função|LinkedIn|Foto|
 | -------- |-------- |-------- |-------- |
-|**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|<img src = "https://media.licdn.com/dms/image/D4D35AQGhxp6Li56WGA/profile-framedphoto-shrink_200_200/0/1648576700138?e=1681732800&v=beta&t=8tpdKkGxxdqpaqs7KH0bGrp7tXiRQgzA6T3IxkYtV58" height="50"/>|
+|**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|<img src = "https://pps.whatsapp.net/v/t61.24694-24/322305525_193751409952494_7274193488470614501_n.jpg?ccb=11-4&oh=01_AdSlnhV69d4V7c7ecB_DG_dQof4edhZZnTO-m0XreEpt6A&oe=6441118E" height="50"/>|
 |**Gabriel de Souza Mota**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-mota-4a0816a0)|<img src = "https://media.licdn.com/dms/image/D4D03AQHh2eT1n4SH6A/profile-displayphoto-shrink_200_200/0/1680641315449?e=1686787200&v=beta&t=qVZXcMP0N0f9437OJtRAH_vMQKm8_VL-TGMSRHkVc4M" height="50"/>|
 |**Bruno dos Santos**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bruno6-santos/)|<img src = "https://media.licdn.com/dms/image/C4D03AQFVBZghpCQ2FQ/profile-displayphoto-shrink_200_200/0/1593525226557?e=1685577600&v=beta&t=wUmkKeftU2CE38GQa44aMaz9hCTXIG52LYDUr38Y22s" height="50"/>|
 |**Cauan Vinicius Barbaglio**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/cauan-vmb-213a2a26b)|<img src = "https://media.licdn.com/dms/image/D4E03AQHSIY1PWW-6lA/profile-displayphoto-shrink_200_200/0/1680035835089?e=1685577600&v=beta&t=7xDdpTnlXOMnnq9HnRXE5KZ0mmm-8o04nN0Wf4N7VEc" height="50"/>|
