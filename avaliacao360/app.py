@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+sg.theme('DarkAmber') 
 
 to_close = False
 is_running = False
