@@ -42,6 +42,8 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 |Registro de turma|Para fazer|
 |Requisito avaliação|Para fazer|
 |Interface de Login|Para fazer|
+<br>
+[Clique aqui](https://trello.com/b/3F5TFt4V/roadmap) para ver nosso dashboard
 
 # Bibliotecas
 - [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
