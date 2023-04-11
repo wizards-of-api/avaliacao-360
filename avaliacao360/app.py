@@ -1,7 +1,24 @@
 import PySimpleGUI as sg
+sg.theme('DarkAmber') 
 
 to_close = False
 is_running = False
+
+def pop_up(msg):
+    layout = [[sg.Text(msg)], [sg.Button('Ok')]]
+    window = sg.Window('Avaliação 360', layout)
+    window.read()
+    window.close()
+
+def error(msg):
+    global window
+    window.close()
+
+    layout = [[sg.Text(msg)], [sg.Button('Close')]]
+    err_window = sg.Window('Avaliação 360 - ERROR', layout)
+    err_window.read()
+    err_window.close()
+
 
 def close():
     global to_close
