@@ -11,7 +11,7 @@ def create_window():
             [sg.Button('Criar turma/grupo/aluno', key='create class', s=(18, 1) )],
             [sg.Button('Resultados da avaliação', key='result evaluation', s=(18, 1))],
             [sg.Button('Requisitar avaliação', key='request evaluation', s=(18, 1))],
-            [sg.Button('Lista de turmas/grupos', key='class list', s=(18, 1))],
+            [sg.Button('Lista de turmas/grupos', key='class list', s=(18, 1))]
               ]
   return sg.Window('Administrador', layout=layout, element_justification='c', finalize=True)
   
