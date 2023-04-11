@@ -12,7 +12,7 @@ def create_window():
     return window
 
 def event_handler(event, _):
-    if event == 'Cancel': # if user closes window or clicks cancel
+    if event == 'Cancel':
         app.close()
     elif event == 'Back':
         app.change_interface(interface_login.create_window(), interface_login.event_handler)
