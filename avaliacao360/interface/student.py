@@ -4,10 +4,15 @@ import interface.login as interface_login
 
 def create_window():
     col1 = [[sg.Text('Aluno: test')], [sg.Text('Turma: test')], [sg.Text('Grupo: test')], [sg.Text('\n')]]
+    col2 = [[sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]]
 
-    layout = [[sg.Column(col1, justification='center', pad=(0, 10))], [sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]]
 
-    window = sg.Window('Avaliação360', layout, size=(300, 180))
+    layout = [
+        [sg.Column(col1, justification='center', pad=(0, 10))],
+        [sg.Column(col2, justification='center')]
+    ]        
+
+    window = sg.Window('Avaliação360', layout, resizable=True, size=(400, 180))
 
     return window
 
