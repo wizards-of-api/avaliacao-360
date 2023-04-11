@@ -13,16 +13,36 @@ question_list = [
 ]
 
 def create_evaluation(student_list):
-    result = []
-    student_index = 0 
+    evaluation = {}
+    evaluated_index = 0 
+
+    print(student_list)
     
-    def event_handler(event, _):
-        nonlocal result, student_index
+    def event_handler(event, values):
+        nonlocal evaluation, evaluated_index
         if event == 'Enviar':
-            if student_index < len(student_list) - 1:
-                student_index += 1
+            result = []
+            #para cada tela capturar a combinacao de resultados
+            #iterar um contador para nomear o botao de radio capturado
+            for counter in range(len(question_list)):
+                if values['1'+'Answer'+ str(counter)]:
+                    result.append(1)
+                if values['2'+'Answer'+ str(counter)]:
+                    result.append(2)
+                if values['3'+'Answer'+ str(counter)]:
+                    result.append(3)
+                if values['4'+'Answer'+ str(counter)]:
+                    result.append(4)
+                if values['5'+'Answer'+ str(counter)]:
+                    result.append(5)
+
+            evaluation[student_list[evaluated_index]['name']] = result
+
+            if evaluated_index < len(student_list) - 1:
+                evaluated_index += 1
                 evaluate()
             else:
+                print(evaluation)
                 app.close()
                 
 
@@ -34,9 +54,9 @@ def create_evaluation(student_list):
     
             group_id = 'Answer' + str(counter)
 
-            column_list.append([sg.Text(student_list[student_index]['name'] +' '+ question)])
+            column_list.append([sg.Text(student_list[evaluated_index]['name'] +' '+ question)])
             column_list.append(
-                [sg.Radio('Discordo totalmente', group_id, '1' + str(group_id)),
+                [sg.Radio('Discordo totalmente', group_id, key = '1' + str(group_id)),
                 sg.Radio('Discordo', group_id, key = '2' + str(group_id)),
                 sg.Radio('Neutro', group_id, key = '3' + str(group_id)),
                 sg.Radio('Concordo', group_id, key = '4' + str(group_id)), 
