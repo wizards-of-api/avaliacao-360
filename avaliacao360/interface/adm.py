@@ -2,10 +2,7 @@ import app
 import PySimpleGUI as sg
 import interface.login as interface_login  
 
-#Create Windows and layout
-
 def create_window():
-  sg.theme('DarkAmber')
   layout = [ 
             [sg.Text('Administrador')], 
             [sg.Button('Criar turma/grupo/aluno', key='create class', s=(18, 1) )],
@@ -16,8 +13,8 @@ def create_window():
   return sg.Window('Administrador', layout=layout, element_justification='c', finalize=True)
   
 
-def event_handler(event, values):
-  if event == 'Cancel': # if user closes window or clicks cancel
+def event_handler(event, _):
+  if event == 'Cancel':
     app.close()
   elif event == 'Back':
     app.change_interface(interface_login)
