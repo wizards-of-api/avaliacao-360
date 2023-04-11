@@ -3,11 +3,16 @@ import PySimpleGUI as sg
 import interface.login as interface_login
 
 def create_window():
-    layout = [ [sg.Text('Aluno')], [sg.Button('Back'), sg.Button('Cancel')]]
-    return sg.Window('Avaliação360', layout)
+    col1 = [[sg.Text('Aluno: test')], [sg.Text('Turma: test')], [sg.Text('Grupo: test')], [sg.Text('\n')]]
+
+    layout = [[sg.Column(col1, justification='center', pad=(0, 10))], [sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]]
+
+    window = sg.Window('Avaliação360', layout, size=(300, 180))
+
+    return window
 
 def event_handler(event, _):
-    if event == 'Cancel': # if user closes window or clicks cancel
+    if event == 'Cancelar':
         app.close()
-    elif event == 'Back':
+    elif event == 'Voltar':
         app.change_interface(interface_login.create_window(), interface_login.event_handler)

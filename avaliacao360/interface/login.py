@@ -22,5 +22,4 @@ def event_handler(event, values):
         elif input_text_value =='adm':
             app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
         else: 
-            error_window = sg.Window('Error', [[sg.Text('Não Possui Login')]])
-            error_window.read()
+            app.pop_up('Não possui Login')
