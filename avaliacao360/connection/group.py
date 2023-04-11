@@ -1,11 +1,11 @@
 from utils.filters import filter_by_key
-import connection.connection as connection
+import avaliacao360.connection.controller as controller
 import connection.student as student_connection
 
 key = 'group-list'
 
 def get_group_list():
-    return connection.get_data()[key]
+    return controller.get_data()[key]
     
 def get_group_by_id(id):
     return filter_by_key(get_group_list(), 'id', id)
@@ -20,7 +20,7 @@ def get_group_student_list(id):
 def create_group(new_group_dict):
     group_list = get_group_list()
     
-    id = connection.get_last_id(key) + 1
+    id = controller.get_last_id(key) + 1
 
     group_dict = {
         'id': id,
@@ -29,6 +29,6 @@ def create_group(new_group_dict):
     }
 
     group_list.append(group_dict)
-    connection.overwirte_data(key, group_list)
+    controller.overwrite_data(key, group_list)
 
     return id
