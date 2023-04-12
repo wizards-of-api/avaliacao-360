@@ -11,7 +11,7 @@ def get_group_list():
     
 def get_group_by_id(id):
     """Retorna o grupo com o ID especificado."""
-    return filter_by_key(get_group_list(), 'id', id)
+    return filter_by_key(get_group_list(), 'id', id)[0]
 
 def get_group_by_name(name):
     """Retorna o grupo com o nome especificado."""
@@ -40,10 +40,22 @@ def create_group(new_group_dict):
     return id
 
 def resolve_group(group_dict):
+    """
+    Transforma o inteiro class-room-id em um dict de uma classe
+
+    :parâmetro group_dict: dicionario a ser convertido
+    :return: dicionario convertido
+    """
     class_room = class_room_connection.get_class_room_by_id(group_dict['class-room-id'])
     del group_dict['class-room-id']
     group_dict['class-room'] = class_room
     return group_dict
 
 def resolve_group_by_id(group_id):
+    """
+    Transforma o inteiro class-room-id em um dict de uma classe
+
+    :parâmetro group_id: id do dicionario a ser convertido
+    :return: dicionario convertido
+    """
     return resolve_group(get_group_by_id(group_id))

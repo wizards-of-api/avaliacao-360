@@ -25,7 +25,7 @@ def get_student_by_id(id):
     Retorna:
     dict: O estudante com o ID fornecido.
     """
-    return filter_by_key(get_student_list(), 'id', id)
+    return filter_by_key(get_student_list(), 'id', id)[0]
 
 
 def get_student_by_name(name):
@@ -69,14 +69,31 @@ def create_student(new_student_dict):
     return id
 
 def get_student_evaluation_by_id(student_id):
+    """
+    Retorna um dict das avaliações de um estudante
+
+    :parâmetro student_id: referencia do estudante
+    :return: array de dict do estudante
+    """
     return evaluation_connection.get_evaluation_by_student_id(student_id)
 
-
 def resolve_student(student_dict):
+    """
+    Transforma o inteiro group-id em um dict de grupo ja resolvido
+
+    :parâmetro student_dict: Dicionario a ser convertido
+    :return: Dicionario convertido
+    """
     group = group_connection.resolve_group_by_id(student_dict['group-id'])
     del student_dict['group-id']
     student_dict['group'] = group
     return student_dict
 
 def resolve_student_by_id(student_id):
+    """
+    Transforma o inteiro group-id em um dict de grupo ja resolvido
+
+    :parâmetro student_id: id do dicionario a ser convertido
+    :return: dicionario convertido
+    """
     return resolve_student(get_student_by_id(student_id))

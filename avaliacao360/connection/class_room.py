@@ -17,7 +17,7 @@ def get_class_room_by_id(id):
     :parâmetro id: Inteiro representando o id da sala de aula.
     :return: Um dicionário representando a sala de aula encontrada, ou None caso não seja encontrada.
     """
-    return filter_by_key(get_class_room_list(), 'id', id)
+    return filter_by_key(get_class_room_list(), 'id', id)[0]
 
 def get_class_room_by_name(name):
     """
