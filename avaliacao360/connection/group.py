@@ -1,5 +1,5 @@
 from utils.filters import filter_by_key
-import avaliacao360.connection.controller as controller
+import connection.controller as controller
 import connection.student as student_connection
 
 key = 'group-list'

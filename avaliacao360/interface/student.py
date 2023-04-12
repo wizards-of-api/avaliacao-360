@@ -1,6 +1,8 @@
 import app
 import PySimpleGUI as sg
 import interface.login as interface_login
+import interface.evaluation as interface_evaluation
+import connection.group as connection_group
 
 def create_window():
     col1 = [[sg.Text('Aluno: test')], [sg.Text('Turma: test')], [sg.Text('Grupo: test')], [sg.Text('\n')]]
@@ -21,3 +23,8 @@ def event_handler(event, _):
         app.close()
     elif event == 'Voltar':
         app.change_interface(interface_login.create_window(), interface_login.event_handler)
+    elif event == 'Avaliação':
+        #seleciona um grupo para realizar avaliacao
+        student_list = []
+        student_list = connection_group.get_group_student_list(1)
+        interface_evaluation.create_evaluation(student_list)
