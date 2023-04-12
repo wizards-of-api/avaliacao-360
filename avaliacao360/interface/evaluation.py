@@ -15,8 +15,6 @@ question_list = [
 def create_evaluation(student_list):
     evaluation = {}
     evaluated_index = 0 
-
-    print(student_list)
     
     def event_handler(event, values):
         nonlocal evaluation, evaluated_index
@@ -53,7 +51,7 @@ def create_evaluation(student_list):
         for question in question_list:
     
             group_id = 'Answer' + str(counter)
-
+            
             column_list.append([sg.Text(student_list[evaluated_index]['name'] +' '+ question)])
             column_list.append(
                 [sg.Radio('Discordo totalmente', group_id, key = '1' + str(group_id)),
