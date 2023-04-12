@@ -5,8 +5,9 @@ import interface.adm as interface_adm
 
 def create_window():
     layout = [[sg.Text('Login!')],
-        [sg.Text('Usuário: ', size = (8,0)), sg.InputText(size = (15,0), key='input')],
-        [sg.Text('Senha: ', size = (8,0)), sg.InputText(size = (15,0))],
+        [sg.Text('Usuário: ', size = (6,0)), sg.InputText(size = (20,0), key='input')],
+        [sg.Text('Senha: ', size = (6,0)), sg.InputText(size = (20,0))]
+        [sg.Text('\n')],
         [sg.Button('Login'), sg.Button('Cancelar')]
         ]
 
