@@ -1,5 +1,5 @@
 from utils.filters import filter_by_key
-import avaliacao360.connection.controller as controller
+import connection.controller as controller
 import connection.group as group_connection
 
 key = 'class-room-list'
