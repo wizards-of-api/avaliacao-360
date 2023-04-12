@@ -14,7 +14,7 @@ def create_window():
         [sg.Column(col2, justification='center')]
     ]        
 
-    window = sg.Window('Avaliação360', layout, resizable=True, size=(400, 180))
+    window = sg.Window('Avaliação360', layout)
 
     return window
 
