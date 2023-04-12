@@ -1,5 +1,9 @@
 from utils.filters import filter_by_key
+<<<<<<< HEAD
 import connection.controller as controller
+=======
+import avaliacao360.connection.controller as controller
+>>>>>>> dev
 
 key = 'student-list'
 
