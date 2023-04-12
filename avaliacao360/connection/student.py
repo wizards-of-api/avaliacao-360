@@ -1,5 +1,7 @@
 from utils.filters import filter_by_key
 import connection.controller as controller
+import connection.group as group_connection
+import connection.evaluation as evaluation_connection
 
 key = 'student-list'
 
@@ -65,3 +67,16 @@ def create_student(new_student_dict):
     controller.overwrite_data(key, student_list)
     
     return id
+
+def get_student_evaluation_by_id(student_id):
+    return evaluation_connection.get_evaluation_by_student_id(student_id)
+
+
+def resolve_student(student_dict):
+    group = group_connection.resolve_group_by_id(student_dict['group-id'])
+    del student_dict['group-id']
+    student_dict['group'] = group
+    return student_dict
+
+def resolve_student_by_id(student_id):
+    return resolve_student(get_student_by_id(student_id))
