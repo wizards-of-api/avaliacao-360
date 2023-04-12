@@ -1,5 +1,6 @@
 from utils.filters import filter_by_key
 import connection.controller as controller
+import connection.class_room as class_room_connection
 import connection.student as student_connection
 
 key = 'group-list'
@@ -32,3 +33,12 @@ def create_group(new_group_dict):
     controller.overwrite_data(key, group_list)
 
     return id
+
+def resolve_group(group_dict):
+    class_room = class_room_connection.get_class_room_by_id(group_dict['class-room-id'])
+    del group_dict['class-room-id']
+    group_dict['class-room'] = class_room
+    return group_dict
+
+def resolve_group_by_id(group_id):
+    return resolve_group(get_group_by_id(group_id))
