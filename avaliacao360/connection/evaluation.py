@@ -8,14 +8,22 @@ key = 'evaluation-list'
 def get_evaluation_list():
     return controller.get_data()[key]
 
-
 def get_evaluation_by_id(id):
     return filter_by_key(get_evaluation_list(), 'id', id)
+
+def get_evaluation_by_student_id(student_id):
+    group_id = student_connection.get_student_by_id(student_id)['group-id']
+    return filter_by_key(get_evaluation_list(), 'group-id', group_id)
 
 def get_evaluation_by_group_id(group_id):
     return filter_by_key(get_evaluation_list(), 'group-id', group_id)
 
 def request_evaluation():
+    evaluation_list = get_evaluation_list()
+    unfinish_evaluation_list = [evaluation for evaluation in evaluation_list if evaluation['status'] == 'todo']
+    if(len(unfinish_evaluation_list) > 0):
+        return { 'msg': 'Nem todas as avaliações foram finalizadas.', 'group-list': unfinish_evaluation_list }
+
     group_list = group_connection.get_group_list()
 
     for group in group_list:
