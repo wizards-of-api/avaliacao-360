@@ -20,7 +20,8 @@ def clear_db():
     base_db = {
         'class-room-list': [],
         'group-list': [],
-        'student-list': []
+        'student-list': [],
+        'evaluation-list': []
     }
     with open(mock_path, 'w') as mock_db_file:
         json.dump(base_db, mock_db_file, indent=2)
