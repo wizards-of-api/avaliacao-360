@@ -5,19 +5,24 @@ import connection.student as student_connection
 key = 'group-list'
 
 def get_group_list():
+    """Retorna a lista de grupos."""
     return controller.get_data()[key]
     
 def get_group_by_id(id):
+    """Retorna o grupo com o ID especificado."""
     return filter_by_key(get_group_list(), 'id', id)
 
 def get_group_by_name(name):
+    """Retorna o grupo com o nome especificado."""
     return filter_by_key(get_group_list(), 'name', name)
 
 def get_group_student_list(id):
+    """Retorna a lista de estudantes pertencentes ao grupo com o ID especificado."""
     student_list = student_connection.get_student_list()
     return [student for student in student_list if student['group-id'] == id]
 
 def create_group(new_group_dict):
+    """Cria um novo grupo com as informações fornecidas em new_group_dict."""
     group_list = get_group_list()
     
     id = controller.get_last_id(key) + 1
