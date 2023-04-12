@@ -5,15 +5,15 @@ import interface.adm as interface_adm
 
 def create_window():
     layout = [[sg.Text('Login!')],
-        [sg.Text('User: '), sg.InputText(key='input')],
-        [sg.Text('Password: '), sg.InputText()],
-        [sg.Button('Login'), sg.Button('Cancel')]
+        [sg.Text('Usuário: ', size = (8,0)), sg.InputText(size = (15,0), key='input')],
+        [sg.Text('Senha: ', size = (8,0)), sg.InputText(size = (15,0))],
+        [sg.Button('Login'), sg.Button('Cancelar')]
         ]
 
-    return sg.Window('Window Title', layout)
+    return sg.Window('Avaliação 360 - Login', layout, element_justification = 'c')
 
 def event_handler(event, values):
-    if event == 'Cancel':
+    if event == 'Cancelar':
         app.close()
     elif event == 'Login':
         input_text_value = values['input']
