@@ -11,7 +11,7 @@ def create_window():
             [sg.Button('Lista de turmas/grupos', key='class list', s=(18, 1))],
             [sg.Button('Voltar', key='return interface', s=(18, 1))]
               ]
-  return sg.Window('Administrador', layout=layout, element_justification='c', finalize=True)
+  return sg.Window('Avaliação 360 - Administrador', layout, element_justification='c', finalize=True)
   
 
 def event_handler(event, _):

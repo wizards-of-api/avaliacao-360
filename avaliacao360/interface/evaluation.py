@@ -72,7 +72,7 @@ def create_evaluation(student_list):
 
     def evaluate():
         layout = create_question_layout()
-        window = sg.Window('Questionário' + student_list[0]['name'], layout, element_justification = 'c')
+        window = sg.Window('Avaliação 360 - Questionário ' + student_list[0]['name'], layout, element_justification = 'c')
         app.change_interface(window, event_handler)
 
     evaluate()
