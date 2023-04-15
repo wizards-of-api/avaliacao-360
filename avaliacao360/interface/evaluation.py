@@ -1,7 +1,8 @@
-import PySimpleGUI as sg
-
 import app
-
+import PySimpleGUI as sg
+import interface.login as interface_login
+from connection.evaluation import answer_evaluation, resolve_evaluation_by_id
+from connection.student import get_student_evaluation_by_id, get_student_by_name
 
 question_list = [
     'se comunica de forma clara e objetiva.',
@@ -14,8 +15,8 @@ question_list = [
 
 def create_evaluation(student_list):
     evaluation = {}
-    evaluated_index = 0 
-
+    evaluated_index = 0
+    
     def run_trough_questions(callback):
         for index, question in enumerate(question_list):
             group_id = 'answer_' + str(index)
@@ -42,14 +43,18 @@ def create_evaluation(student_list):
             run_trough_questions(callback)
 
             evaluation[student_list[evaluated_index]['name']] = result
+            #mock dos estudantes
+            def mock_students(name):
+                student_id = get_student_by_name(name)[0]['id']
+                evaluation_id = get_student_evaluation_by_id(student_id)[0]['id']
+                answer_evaluation(student_id, evaluation_id, evaluation)
 
             if evaluated_index < len(student_list) - 1:
                 evaluated_index += 1
                 evaluate()
             else:
-                print(evaluation)
+                mock_students
                 app.close()
-                
 
     def create_question_layout():
         column_list = []
@@ -59,7 +64,7 @@ def create_evaluation(student_list):
             column_list.append(
                 [sg.Radio('Discordo totalmente', group_id, key = '1_' + str(group_id)),
                 sg.Radio('Discordo', group_id, key = '2_' + str(group_id)),
-                sg.Radio('Neutro', group_id, key = '3_' + str(group_id)),
+                sg.Radio('Neutro', group_id, default = True, key = '3_' + str(group_id)),
                 sg.Radio('Concordo', group_id, key = '4_' + str(group_id)), 
                 sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id))]
             )
