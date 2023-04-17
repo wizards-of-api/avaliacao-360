@@ -35,6 +35,5 @@ def event_handler(event, _):
         app.change_interface(interface_login.create_window(), interface_login.event_handler)
     elif event == 'Avaliação':
         #seleciona um grupo para realizar avaliacao
-        student_list = []
         student_list = connection_group.get_group_student_list(group_id)
         interface_evaluation.create_evaluation(student_list)
