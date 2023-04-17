@@ -26,7 +26,7 @@ def create_window(name):
         [sg.Column(col2, justification='center')]
     ]        
 
-    window = sg.Window('Avaliação360', layout)
+    window = sg.Window('Avaliação 360 - Aluno', layout)
 
     return window
 

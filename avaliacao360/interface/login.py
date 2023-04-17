@@ -6,12 +6,13 @@ import connection.student as connection_student
 
 def create_window():
     layout = [[sg.Text('Login!')],
-        [sg.Text('User: '), sg.InputText(key='input')],
-        [sg.Text('Password: '), sg.InputText()],
+       [sg.Text('Usuário: ', size = (6,0)), sg.InputText(size = (20,0), key='input')],
+        [sg.Text('Senha: ', size = (6,0)), sg.InputText(size = (20,0))],
+        [sg.Text('\n')],
         [sg.Button('Login'), sg.Button('Cancel')]
         ]
-
-    return sg.Window('Window Title', layout)
+    
+    return sg.Window('Avaliação 360 - Login', layout, element_justification = 'c')
 
 def event_handler(event, values):
     input_name = values['input']
