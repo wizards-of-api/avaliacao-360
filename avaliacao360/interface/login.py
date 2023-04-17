@@ -24,6 +24,6 @@ def event_handler(event, values):
         if student_list:
             app.change_interface(interface_student.create_window(input_name), interface_student.event_handler)
         elif input_name =='adm':
-            app.change_interface(interface_adm.create_window(), interface_adm.event_handler, input_name  )
+            app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
         else: 
             app.pop_up('Não possui Login')
