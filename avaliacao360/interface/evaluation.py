@@ -54,7 +54,7 @@ def create_evaluation(student_id, student_list):
                 evaluate()
             else:
                 mock_students()
-                app.close()
+                app.change_interface(interface_login.create_window(), interface_login.event_handler)
 
     def create_question_layout():
         column_list = []
