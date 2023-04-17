@@ -35,4 +35,3 @@ def reset():
 
 if __name__ == '__main__':
     reset()
-    print(student.resolve_student_by_id(1))
