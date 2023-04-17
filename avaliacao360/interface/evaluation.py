@@ -1,8 +1,8 @@
 import app
 import PySimpleGUI as sg
 import interface.login as interface_login
-from connection.evaluation import answer_evaluation, resolve_evaluation_by_id
-from connection.student import get_student_evaluation_by_id, get_student_by_name
+from connection.evaluation import answer_evaluation
+from connection.student import get_student_evaluation_by_id, get_student_by_id
 
 question_list = [
     'se comunica de forma clara e objetiva.',
@@ -13,7 +13,7 @@ question_list = [
     'tem afinidade com autogestão.'
 ]
 
-def create_evaluation(student_list):
+def create_evaluation(student_id, student_list):
     evaluation = {}
     evaluated_index = 0
     
@@ -40,20 +40,20 @@ def create_evaluation(student_list):
                 if values['5_' + group_id]:
                     result.append(5)
 
-            run_trough_questions(callback)
-
-            evaluation[student_list[evaluated_index]['name']] = result
             #mock dos estudantes
-            def mock_students(name):
-                student_id = get_student_by_name(name)[0]['id']
+            def mock_students():
                 evaluation_id = get_student_evaluation_by_id(student_id)[0]['id']
                 answer_evaluation(student_id, evaluation_id, evaluation)
+
+            run_trough_questions(callback)
+
+            evaluation[student_list[evaluated_index]['id']] = result
 
             if evaluated_index < len(student_list) - 1:
                 evaluated_index += 1
                 evaluate()
             else:
-                mock_students
+                mock_students()
                 app.close()
 
     def create_question_layout():
@@ -77,7 +77,7 @@ def create_evaluation(student_list):
 
     def evaluate():
         layout = create_question_layout()
-        window = sg.Window('Avaliação 360 - Questionário ' + student_list[0]['name'], layout, element_justification = 'c')
+        window = sg.Window('Avaliação 360 - Questionário ' + get_student_by_id(student_id)['name'], layout, element_justification = 'c')
         app.change_interface(window, event_handler)
 
     evaluate()
