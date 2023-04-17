@@ -16,15 +16,15 @@ def create_window(name):
     class_room_information = connection_class_room.get_class_room_by_id(class_room_id)
     class_room_name = class_room_information['name']
 
-    col1 = [[sg.Text(f'Aluno: {name}')], [sg.Text(f'Turma: {group_name}')], [sg.Text(f'Grupo: {class_room_name}')], [sg.Text('\n')]]
+    col1 = [[sg.Text(f'Aluno: {name}')], [sg.Text(f'Turma: { group_name}')], [sg.Text(f'Grupo: {class_room_name}')], [sg.Text('\n')]]
     col2 = [[sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]]
 
     layout = [
         [sg.Column(col1, justification='center', pad=(0, 10))],
         [sg.Column(col2, justification='center')]
     ]        
-    
-    window = sg.Window('Avaliação 360 - Aluno', layout)
+
+    window = sg.Window('Avaliação360', layout)
 
     return window
 
@@ -35,6 +35,5 @@ def event_handler(event, _):
         app.change_interface(interface_login.create_window(), interface_login.event_handler)
     elif event == 'Avaliação':
         #seleciona um grupo para realizar avaliacao
-        student_list = []
         student_list = connection_group.get_group_student_list(group_id)
         interface_evaluation.create_evaluation(student_list)
