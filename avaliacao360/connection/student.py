@@ -77,6 +77,19 @@ def get_student_evaluation_by_id(student_id):
     """
     return evaluation_connection.get_evaluation_by_student_id(student_id)
 
+def check_student_todo_evaluation(student_id):
+    """
+    Retorna se o aluno tem uma avaliação disponivel ou não
+
+    :parâmetro student_id: ID do estudante str
+    :return: bool
+    """
+    evaluation_list = get_student_evaluation_by_id(student_id)
+    for evaluation in evaluation_list:
+        if student_id in evaluation['todo-student-id-list']:
+            return True
+    return False
+
 def resolve_student(student_dict):
     """
     Transforma o inteiro group-id em um dict de grupo ja resolvido
