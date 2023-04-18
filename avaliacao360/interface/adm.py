@@ -20,14 +20,26 @@ def create_window():
 
 def event_handler(event, _):
   if event == 'Cancel':
+
     app.close()
+
   elif event == 'return interface':
+
     app.change_interface(interface_login.create_window(), interface_login.event_handler)
+
   elif event == 'create class':
+
     app.change_interface(create_class.create_window(),create_class.event_handler)
+
   elif event == 'result evaluation':
+    
     app.change_interface(result_evaluation.create_window(),result_evaluation.event_handler)
+
   elif event == 'request evaluation':
+    
     app.change_interface(request_evaluation.create_window(),request_evaluation.event_handler)
+
   elif event == 'class list':
+    
     app.change_interface(class_list.create_window(),class_list.event_handler)
+    
