@@ -86,6 +86,8 @@ def check_student_todo_evaluation(student_id):
     """
     evaluation_list = get_student_evaluation_by_id(student_id)
     for evaluation in evaluation_list:
+        if 'todo-student-id-list' not in evaluation:
+            continue
         if student_id in evaluation['todo-student-id-list']:
             return True
     return False
