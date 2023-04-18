@@ -7,10 +7,11 @@ def create_window ():
                 [sg.Text("Desenvolvimento...")],
                 [sg.Button('Voltar', key='return interface', s=(18, 1))]
                    ]
-    return sg.Window('Avaliação 360 - Criar Classe/Turma/Grupo', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Lista de Turmas/Grupos', layout, element_justification='c', finalize= True)
 
 def event_handler(event, _):
     if event == 'return interface':
         app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
     elif event == "Desenvolvimento...":
         sg.Text("Desenvolvimento...")
+        
