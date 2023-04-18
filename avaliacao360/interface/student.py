@@ -7,10 +7,11 @@ import connection.group as connection_group
 
 def create_window(name):
 
-    global student_info, group_info
+    global student_info, group_info,  window, student_evaluation
 
     student_raw = connection_student.get_student_by_name(name)[0]
     student_info = connection_student.resolve_student(student_raw)
+    student_evaluation = connection_student.check_student_todo_evaluation(student_info['id'])
 
     group_info = student_info['group']
     group_name = group_info['name']
@@ -27,6 +28,7 @@ def create_window(name):
     ]        
 
     window = sg.Window('Avaliação 360 - Aluno', layout)
+    
 
     return window
 
@@ -35,7 +37,11 @@ def event_handler(event, _):
         app.close()
     elif event == 'Voltar':
         app.change_interface(interface_login.create_window(), interface_login.event_handler)
+   
     elif event == 'Avaliação':
-        #seleciona um grupo para realizar avaliacao
-        student_list = connection_group.get_group_student_list(group_info['id'])
-        interface_evaluation.create_evaluation(student_info['id'], student_list)
+    #seleciona um grupo para realizar avaliacao
+        if student_evaluation:
+            student_list = connection_group.get_group_student_list(group_info['id'])
+            interface_evaluation.create_evaluation(student_info['id'], student_list)
+        else:
+             window['Avaliação'].update(disabled=True, button_color=('white', 'grey'))
