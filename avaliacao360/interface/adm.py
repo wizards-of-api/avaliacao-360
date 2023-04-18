@@ -1,6 +1,7 @@
 import app
 import PySimpleGUI as sg
 import interface.login as interface_login  
+import interface.createclass as create_class
 
 def create_window():
   layout = [ 
@@ -19,4 +20,5 @@ def event_handler(event, _):
     app.close()
   elif event == 'return interface':
     app.change_interface(interface_login.create_window(), interface_login.event_handler)
-
+  elif event == 'create class':
+    app.change_interface(create_class.create_window(),create_class.event_handler)
