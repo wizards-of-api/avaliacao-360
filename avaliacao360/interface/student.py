@@ -4,6 +4,7 @@ import interface.login as interface_login
 import interface.evaluation as interface_evaluation
 import connection.student as connection_student
 import connection.group as connection_group
+import interface.dashboard_aluno as interface_dashboard_aluno
 
 def create_window(name):
 
@@ -18,15 +19,15 @@ def create_window(name):
     class_room_info = group_info['class-room']
     class_room_name = class_room_info['name']
 
-    col1 = [[sg.Text(f'Aluno: {name}')], [sg.Text(f'Turma: { group_name}')], [sg.Text(f'Grupo: {class_room_name}')], [sg.Text('\n')]]
-    col2 = [[sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]]
-
     layout = [
-        [sg.Column(col1, justification='center', pad=(0, 10))],
-        [sg.Column(col2, justification='center')]
+        [sg.Text(f'Aluno: {name}')],
+        [sg.Text(f'Turma: { group_name}')],
+        [sg.Text(f'Grupo: {class_room_name}')],
+        [sg.Text('\n')],
+        [sg.Button('Voltar'), sg.Button('Avaliação'), sg.Button('Cancelar'), sg.Button('Resultados')]
     ]        
 
-    window = sg.Window('Avaliação 360 - Aluno', layout)
+    window = sg.Window('Avaliação 360 - Aluno', layout, element_justification='c')
 
     return window
 
@@ -39,3 +40,5 @@ def event_handler(event, _):
         #seleciona um grupo para realizar avaliacao
         student_list = connection_group.get_group_student_list(group_info['id'])
         interface_evaluation.create_evaluation(student_info['id'], student_list)
+    elif event =='Resultados':
+        app.change_interface(interface_dashboard_aluno.dashboard_aluno())
