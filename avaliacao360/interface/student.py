@@ -45,4 +45,4 @@ def event_handler(event, _):
         student_list = connection_group.get_group_student_list(group_info['id'])
         interface_evaluation.create_evaluation(student_info['id'], student_list)
     elif event =='Resultados':
-        app.change_interface(interface_dashboard_aluno.dashboard_aluno())
+        app.change_interface(interface_dashboard_aluno.create_window())
