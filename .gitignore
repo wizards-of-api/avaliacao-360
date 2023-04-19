@@ -3,3 +3,4 @@ venv/
 *.sandbox.py
 sandbox.py
 mock_db.json
+.scannerwork

@@ -55,10 +55,10 @@ def create_student(new_student_dict):
     """
     student_list = get_student_list()
 
-    id = controller.get_last_id(key) + 1
+    student_id = controller.get_last_id(key) + 1
 
     student_dict = {
-        'id': id,
+        'id': student_id,
         'group-id': new_student_dict['group-id'],
         'name': new_student_dict['name'],
     }
@@ -66,7 +66,8 @@ def create_student(new_student_dict):
     student_list.append(student_dict)
     controller.overwrite_data(key, student_list)
     
-    return id
+    return student_id
+
 
 def get_student_evaluation_by_id(student_id):
     """
@@ -76,6 +77,7 @@ def get_student_evaluation_by_id(student_id):
     :return: array de dict do estudante
     """
     return evaluation_connection.get_evaluation_by_student_id(student_id)
+
 
 def check_student_todo_evaluation(student_id):
     """
@@ -92,6 +94,7 @@ def check_student_todo_evaluation(student_id):
             return True
     return False
 
+
 def resolve_student(student_dict):
     """
     Transforma o inteiro group-id em um dict de grupo ja resolvido
@@ -103,6 +106,7 @@ def resolve_student(student_dict):
     del student_dict['group-id']
     student_dict['group'] = group
     return student_dict
+
 
 def resolve_student_by_id(student_id):
     """

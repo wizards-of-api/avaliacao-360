@@ -61,13 +61,13 @@ def create_class_room(new_class_room_dict):
     """
     class_room_list = get_class_room_list()
 
-    id = get_last_id(key) + 1
+    class_room_id = get_last_id(key) + 1
 
     class_room_dict = {
-        'id': id,
+        'id': class_room_id,
         'name': new_class_room_dict['name'],
     }
 
     class_room_list.append(class_room_dict)
     overwrite_data(key, class_room_list)
-    return id
+    return class_room_id

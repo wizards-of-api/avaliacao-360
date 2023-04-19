@@ -37,7 +37,8 @@ def run():
     global window, event_handler, to_close, is_running
 
     if is_running:
-        raise Exception('App already running')
+        raise RuntimeError('Application is already running')
+
     is_running = True
 
     while True:
@@ -45,6 +46,7 @@ def run():
 
         if event_handler:
             event_handler(event, values)
+
         if event == sg.WIN_CLOSED or to_close:
             break
 

@@ -124,13 +124,13 @@ def create_evaluation(new_evaluation_dict):
 
     evaluation_list = get_evaluation_list()
 
-    id = controller.get_last_id(key) + 1
+    evaluation_id = controller.get_last_id(key) + 1
 
     student_list = group_connection.get_group_student_list(new_evaluation_dict['group-id'])
     student_id_list = [student['id'] for student in student_list]
 
     evaluation_dict = {
-        'id': id,
+        'id': evaluation_id,
         'group-id': new_evaluation_dict['group-id'],
         'todo-student-id-list': student_id_list,
         'status': 'todo',
@@ -140,7 +140,8 @@ def create_evaluation(new_evaluation_dict):
     evaluation_list.append(evaluation_dict)
     controller.overwrite_data(key, evaluation_list)
 
-    return id
+    return evaluation_id
+
 
 def resolve_evaluation(evaluation_dict):
     """

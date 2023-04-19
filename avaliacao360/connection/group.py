@@ -26,10 +26,10 @@ def create_group(new_group_dict):
     """Cria um novo grupo com as informações fornecidas em new_group_dict."""
     group_list = get_group_list()
     
-    id = controller.get_last_id(key) + 1
+    new_id = controller.get_last_id(key) + 1
 
     group_dict = {
-        'id': id,
+        'id': new_id,
         'class-room-id': new_group_dict['class-room-id'],
         'name': new_group_dict['name'],
     }
@@ -37,7 +37,7 @@ def create_group(new_group_dict):
     group_list.append(group_dict)
     controller.overwrite_data(key, group_list)
 
-    return id
+    return new_id
 
 def resolve_group(group_dict):
     """
