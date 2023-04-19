@@ -24,7 +24,7 @@ def close():
     global to_close
     to_close = True
 
-def change_interface(new_window, new_event_handler):
+def change_interface(new_window, new_event_handler=None):
     global window, event_handler
 
     if 'window' in globals():
@@ -43,7 +43,8 @@ def run():
     while True:
         event, values = window.read()
 
-        event_handler(event, values)
+        if event_handler:
+            event_handler(event, values)
         if event == sg.WIN_CLOSED or to_close:
             break
 
