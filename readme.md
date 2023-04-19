@@ -27,20 +27,21 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - Visualizar lista de turmas e grupos
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
-# Backlog 
+# Backlog do produto
 |Feature|Status|
 | -------- |-------- |
-|Criar estrutura de dados mockado|Pronto|
-|Criar base do projeto|Fazendo|
-|Criar a avaliação|Fazendo|
-|Interface Alunos|Fazendo|
-|Interface Administrador|Fazendo|
+|Estrutura de Dados mockado|Pronto|
+|Interface da Avaliação|Pronto|
+|Interface do Aluno|Pronto|
+|Interface do Admistrador|Pronto|
+|Interação das interfaces com os dados Mockados|Pronto|
+|Controle de sprint por Turma|Para fazer|
 |Criar algoritmo de Dashboard (4 Dashboards no total)|Para fazer|
 |Consultar Dashboards|Para fazer|
-|Registro de aluno|Para fazer|
 |Registro de grupo|Para fazer|
 |Registro de turma|Para fazer|
-|Requisito avaliação|Para fazer|
+|Registro de aluno|Para fazer|
+|Mockar Usuario|Para fazer|
 |Interface de Login|Para fazer|
 <br>
 
