@@ -23,7 +23,7 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - Realizar o login com usuário e senha
 - Acessar a Interface de administrador
 - Realizar o cadastro de grupos, turmas e alunos
-- Realizar a requisição de avaliações
+- Configurar sprint das turmas
 - Visualizar lista de turmas e grupos
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
