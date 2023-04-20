@@ -35,6 +35,7 @@ def create_window(name):
     return window
 
 def event_handler(event, _):
+    global student_info
     if event == 'Cancelar':
         app.close()
     elif event == 'Voltar':
@@ -45,4 +46,4 @@ def event_handler(event, _):
         student_list = connection_group.get_group_student_list(group_info['id'])
         interface_evaluation.create_evaluation(student_info['id'], student_list)
     elif event =='Resultados':
-        app.change_interface(interface_dashboard_aluno.create_window())
+        app.change_interface(interface_dashboard_aluno.create_window(student_info['name']), interface_dashboard_aluno.event_handler)
