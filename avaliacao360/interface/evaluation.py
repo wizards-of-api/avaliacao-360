@@ -26,8 +26,7 @@ def create_evaluation(student_id, student_list):
         nonlocal evaluation, evaluated_index
         if event == 'Enviar':
             result = []
-            #para cada tela capturar a combinacao de resultados
-            #iterar um contador para nomear o botao de radio capturado
+            
             def callback(group_id, _):
                 if values['1_' + group_id]:
                     result.append(1)
@@ -68,9 +67,14 @@ def create_evaluation(student_id, student_list):
                 sg.Radio('Concordo', group_id, key = '4_' + str(group_id)), 
                 sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id))]
             )
+            column_list.append([sg.Text("")])
 
         run_trough_questions(callback)
 
+        column_list.append(
+            [sg.Text("Deixe um comentário sobre o aluno, se houver.")]
+            )
+        column_list.append([sg.Input()])
         column_list.append([sg.Button('Enviar', size = (6,0))])
 
         return column_list
