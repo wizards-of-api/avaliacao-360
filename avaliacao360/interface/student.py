@@ -31,8 +31,7 @@ def create_window(name):
         layout[4].insert(1, sg.Button('Avaliação'))
     else:
         layout[4].insert(1, sg.Button('Avaliação', disabled=True, button_color=('white', 'grey')))
-    window = sg.Window('Avaliação 360 - Aluno', layout, element_justification='c', resizable = True)
-    return window
+    return sg.Window('Avaliação 360 - Aluno', layout, element_justification='c')
 
 def event_handler(event, _):
     global student_info
