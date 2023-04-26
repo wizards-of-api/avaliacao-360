@@ -28,21 +28,21 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
 # Backlog do produto
-|Feature|Status|
-| -------- |-------- |
-|Estrutura de Dados mockado|Pronto|
-|Interface da Avaliação|Pronto|
-|Interface do Aluno|Pronto|
-|Interface do Admistrador|Pronto|
-|Interação das interfaces com os dados Mockados|Pronto|
-|Controle de sprint por Turma|Para fazer|
-|Criar algoritmo de Dashboard (4 Dashboards no total)|Para fazer|
-|Consultar Dashboards|Para fazer|
-|Registro de grupo|Para fazer|
-|Registro de turma|Para fazer|
-|Registro de aluno|Para fazer|
-|Mockar Usuario|Para fazer|
-|Interface de Login|Para fazer|
+|Ordem|Feature|Sprint|Status|
+| -------- | -------- | -------- | -------- |
+|1|Estrutura de Dados mockado|2|Pronto|
+|2|Interface da Avaliação|2|Pronto|
+|3|Interface do Aluno|2|Pronto|
+|4|Interface do Admistrador|2|Pronto|
+|5|Interação das interfaces com os dados Mockados|2|Pronto|
+|6|Controle de sprint por Turma|3|Para fazer|
+|7|Criar algoritmo de Dashboard (4 Dashboards no total)|3|Para fazer|
+|8|Consultar Dashboards|3|Para fazer|
+|9|Registro de grupo|3|Para fazer|
+|10|Registro de turma|3|Para fazer|
+|11|Registro de aluno|3|Para fazer|
+|12|Mockar Usuario|3|Para fazer|
+|13|Interface de Login|4|Para fazer|
 <br>
 
 Para ver o dashboard, [Clique aqui](https://trello.com/b/3F5TFt4V/roadmap/)!
