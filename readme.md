@@ -28,8 +28,8 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
 # Backlog do produto
-|Ordem|Feature|Sprint|Status|
-| -------- | -------- | -------- | -------- |
+|Prioridade|Feature|Sprint|Status|
+| :------: | -------- | :------: | -------- |
 |1|Estrutura de Dados mockado|2|Pronto|
 |2|Interface da Avaliação|2|Pronto|
 |3|Interface do Aluno|2|Pronto|
