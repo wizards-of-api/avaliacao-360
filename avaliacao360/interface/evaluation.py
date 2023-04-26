@@ -29,8 +29,10 @@ def create_evaluation(student_id, student_list):
             
             def callback(group_id, _):
                 if values['1_' + group_id]:
+                    sg.popup_get_text("Justifique sua resposta: ", title=question_list[int(group_id[-1])])
                     result.append(1)
                 if values['2_' + group_id]:
+                    sg.popup_get_text("Justifique sua resposta: ", title=question_list[int(group_id[-1])])
                     result.append(2)
                 if values['3_' + group_id]:
                     result.append(3)
@@ -67,14 +69,11 @@ def create_evaluation(student_id, student_list):
                 sg.Radio('Concordo', group_id, key = '4_' + str(group_id)), 
                 sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id))]
             )
+            
             column_list.append([sg.Text("")])
 
         run_trough_questions(callback)
 
-        column_list.append(
-            [sg.Text("Deixe um comentário sobre o aluno, se houver.")]
-            )
-        column_list.append([sg.Input()])
         column_list.append([sg.Button('Enviar', size = (6,0))])
 
         return column_list
