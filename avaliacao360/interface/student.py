@@ -8,7 +8,7 @@ import interface.dashboard_aluno as interface_dashboard_aluno
 
 def create_window(name):
 
-    global student_info, group_info,  window, student_evaluation
+    global student_info, group_info, window, student_evaluation
 
     student_raw = connection_student.get_student_by_name(name)[0]
     student_info = connection_student.resolve_student(student_raw)
@@ -22,8 +22,8 @@ def create_window(name):
 
     layout = [
         [sg.Text(f'Aluno: {name}')],
-        [sg.Text(f'Turma: { group_name}')],
-        [sg.Text(f'Grupo: {class_room_name}')],
+        [sg.Text(f'Grupo: {group_name}')],
+        [sg.Text(f'Sala: {class_room_name}')],
         [sg.Text('\n')],
         [sg.Button('Voltar'), sg.Button('Cancelar'), sg.Button('Resultados')]
     ]     
@@ -31,7 +31,7 @@ def create_window(name):
         layout[4].insert(1, sg.Button('Avaliação'))
     else:
         layout[4].insert(1, sg.Button('Avaliação', disabled=True, button_color=('white', 'grey')))
-    window = sg.Window('Avaliação 360 - Aluno', layout, element_justification='c')
+    window = sg.Window('Avaliação 360 - Aluno', layout, element_justification='c', resizable = True)
     return window
 
 def event_handler(event, _):
