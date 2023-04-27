@@ -12,7 +12,7 @@ def create_window(name):
 
     student_raw = connection_student.get_student_by_name(name)[0]
     student_info = connection_student.resolve_student(student_raw)
-    student_evaluation = connection_student.check_student_todo_evaluation(student_info['id'])
+    student_evaluation = connection_student.get_student_todo_evaluation(student_info['id'])
 
     group_info = student_info['group']
     group_name = group_info['name']
@@ -35,7 +35,7 @@ def create_window(name):
     return window
 
 def event_handler(event, _):
-    global student_info
+    global student_info, student_evaluation
     if event == 'Cancelar':
         app.close()
     elif event == 'Voltar':
@@ -44,6 +44,6 @@ def event_handler(event, _):
     elif event == 'Avaliação':
     #seleciona um grupo para realizar avaliacao
         student_list = connection_group.get_group_student_list(group_info['id'])
-        interface_evaluation.create_evaluation(student_info['id'], student_list)
+        interface_evaluation.create_evaluation(student_info['id'], student_evaluation, student_list)
     elif event =='Resultados':
         app.change_interface(interface_dashboard_aluno.create_window(student_info['name']), interface_dashboard_aluno.event_handler)
