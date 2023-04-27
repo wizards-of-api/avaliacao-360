@@ -48,7 +48,6 @@ def get_class_room_student_list(id):
     group_list = get_class_room_group_list(id)
     student_list = []
     for group in group_list:
-        print(group)
         student_list += group_connection.get_group_student_list(group['id'])
     return student_list
 
