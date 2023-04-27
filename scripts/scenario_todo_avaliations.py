@@ -1,10 +1,16 @@
 from reset_mock_db import reset
+import avaliacao360.connection.class_room as room_connection
 import avaliacao360.connection.evaluation as evaluation_connection
 import avaliacao360.connection.student as student_connection
 
 reset()
 
-evaluation_connection.request_evaluation()
+room_connection.add_sprint(1, {'start': '03/04/2023', 'end': '14/04/2023'})
+room_connection.add_sprint(1, {'start': '15/04/2023', 'end': '26/04/2023'})
+room_connection.add_sprint(1, {'start': '27/04/2023', 'end': '04/05/2023'})
+
+evaluation_connection.create_evaluation({'group-id': 1, 'sprint': 1})
+evaluation_connection.create_evaluation({'group-id': 1, 'sprint': 2})
 
 maria_id = student_connection.get_student_by_name('Maria')[0]['id']
 joao_id = student_connection.get_student_by_name('João')[0]['id']
