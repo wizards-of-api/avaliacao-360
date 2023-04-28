@@ -38,11 +38,12 @@ def check_sprint(room, date_now):
         eval_end_date = sprint_end_date + timedelta(days=5)
         if date_now <= sprint_end_date:
             continue
+
+        init_evaluations(room, sprint_index)
         if date_now > eval_end_date:
             close_evaluations(sprint_index)
             continue
 
-        init_evaluations(room, sprint_index)
 
 def check_sprint_all(date_now):
     room_list = room_connection.get_class_room_list()
