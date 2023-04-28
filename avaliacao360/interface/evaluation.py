@@ -30,14 +30,16 @@ def create_evaluation(student_id, student_list):
             def callback(group_id, _):
                 if values['1_' + group_id]:
                     feedback = sg.popup_get_text(
-                        "Justifique sua resposta: ",
-                        title=question_list[int(group_id[-1])]
+                        question_list[int(group_id[-1])]+
+                        "\nJustifique sua resposta: ",
+                        title='Justificativa'
                         )
                     result.append({'value':1, 'feedback':feedback})
                 if values['2_' + group_id]:
                     feedback = sg.popup_get_text(
-                        "Justifique sua resposta: ",
-                        title=question_list[int(group_id[-1])]
+                        question_list[int(group_id[-1])]+
+                        "\nJustifique sua resposta: ",
+                        title='Justificativa'
                         )
                     result.append({'value':2, 'feedback':feedback})
                 if values['3_' + group_id]:
