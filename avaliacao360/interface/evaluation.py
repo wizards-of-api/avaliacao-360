@@ -29,17 +29,23 @@ def create_evaluation(student_id, student_list):
             
             def callback(group_id, _):
                 if values['1_' + group_id]:
-                    sg.popup_get_text("Justifique sua resposta: ", title=question_list[int(group_id[-1])])
-                    result.append(1)
+                    feedback = sg.popup_get_text(
+                        "Justifique sua resposta: ",
+                        title=question_list[int(group_id[-1])]
+                        )
+                    result.append({'value':1, 'feedback':feedback})
                 if values['2_' + group_id]:
-                    sg.popup_get_text("Justifique sua resposta: ", title=question_list[int(group_id[-1])])
-                    result.append(2)
+                    feedback = sg.popup_get_text(
+                        "Justifique sua resposta: ",
+                        title=question_list[int(group_id[-1])]
+                        )
+                    result.append({'value':2, 'feedback':feedback})
                 if values['3_' + group_id]:
-                    result.append(3)
+                    result.append({'value':3, 'feedback':None})
                 if values['4_' + group_id]:
-                    result.append(4)
+                    result.append({'value':4, 'feedback':None})
                 if values['5_' + group_id]:
-                    result.append(5)
+                    result.append({'value':5, 'feedback':None})
 
             #mock dos estudantes
             def mock_students():
