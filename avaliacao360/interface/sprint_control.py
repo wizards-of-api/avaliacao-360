@@ -22,6 +22,7 @@ def sprint_configure_handler(room_id, sprint_total):
     sprint_num = 1
     date_format = '%d/%m/%Y'
     last_date = None
+    sprint_list = []
 
     room_connection.reset_sprints(room_id)
 
@@ -29,6 +30,8 @@ def sprint_configure_handler(room_id, sprint_total):
         nonlocal room_id
 
         if sprint_num > sprint_total:
+            for sprint in sprint_list:
+                room_connection.add_sprint(room_id, sprint)
             app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
             return
         app.change_interface(create_window(), event_handler)
@@ -64,8 +67,7 @@ def sprint_configure_handler(room_id, sprint_total):
             if date1 >= date2:
                 sg.popup('Data Inical não pode ser antes da Data Final')
                 return
-
-            room_connection.add_sprint(room_id, {'start': values['date1'], 'end': values['date2']})
+            sprint_list.append({'start': values['date1'], 'end': values['date2']})
 
             last_date = date2
             sprint_num += 1
