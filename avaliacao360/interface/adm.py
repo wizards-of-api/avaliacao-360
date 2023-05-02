@@ -3,7 +3,7 @@ import PySimpleGUI as sg
 import interface.login as interface_login  
 import interface.createclass as create_class
 import interface.resultevaluation as result_evaluation
-import interface.requestevaluation as request_evaluation
+import interface.sprint_control as request_evaluation
 import interface.classlist as class_list
 
 def create_window():
@@ -37,7 +37,9 @@ def event_handler(event, _):
 
   elif event == 'request evaluation':
     
-    app.change_interface(request_evaluation.create_window(),request_evaluation.event_handler)
+    room_select_interface = request_evaluation.room_select_interface()
+
+    app.change_interface(room_select_interface[0](),room_select_interface[1])
 
   elif event == 'class list':
     

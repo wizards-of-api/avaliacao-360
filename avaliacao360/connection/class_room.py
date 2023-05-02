@@ -1,4 +1,4 @@
-from utils.filters import filter_by_key
+from utils.filters import filter_by_key, replace_on_list
 from connection.controller import get_data, get_last_id, overwrite_data
 import connection.group as group_connection
 
@@ -48,9 +48,25 @@ def get_class_room_student_list(id):
     group_list = get_class_room_group_list(id)
     student_list = []
     for group in group_list:
-        print(group)
         student_list += group_connection.get_group_student_list(group['id'])
     return student_list
+
+def reset_sprints(class_room_id):
+    class_room_list = get_class_room_list()
+    class_room = get_class_room_by_id(class_room_id)
+    class_room['sprint_list'] = []
+    class_room_list = replace_on_list(class_room_list, 'id', class_room)
+
+    overwrite_data(key, class_room_list)
+
+
+def add_sprint(class_room_id, sprint):
+    class_room_list = get_class_room_list()
+    class_room = get_class_room_by_id(class_room_id)
+    class_room['sprint_list'].append(sprint)
+    class_room_list = replace_on_list(class_room_list, 'id', class_room)
+
+    overwrite_data(key, class_room_list)
 
 def create_class_room(new_class_room_dict):
     """
@@ -66,6 +82,7 @@ def create_class_room(new_class_room_dict):
     class_room_dict = {
         'id': class_room_id,
         'name': new_class_room_dict['name'],
+        'sprint_list': []
     }
 
     class_room_list.append(class_room_dict)

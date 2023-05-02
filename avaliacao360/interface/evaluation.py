@@ -3,17 +3,9 @@ import PySimpleGUI as sg
 import interface.login as interface_login
 from connection.evaluation import answer_evaluation
 from connection.student import get_student_evaluation_by_id, get_student_by_id
+from config import question_list
 
-question_list = [
-    'se comunica de forma clara e objetiva.',
-    'faz contribuições regulares pro projeto.',
-    'consegue receber críticas.',
-    'entende como o projeto funciona.',
-    'realizou as entregas no prazo.',
-    'tem afinidade com autogestão.'
-]
-
-def create_evaluation(student_id, student_list):
+def create_evaluation(student_id, evaluation_id, student_list):
     evaluation = {}
     evaluated_index = 0
     
@@ -53,7 +45,6 @@ def create_evaluation(student_id, student_list):
 
             #mock dos estudantes
             def mock_students():
-                evaluation_id = get_student_evaluation_by_id(student_id)[0]['id']
                 answer_evaluation(student_id, evaluation_id, evaluation)
 
             run_trough_questions(callback)
