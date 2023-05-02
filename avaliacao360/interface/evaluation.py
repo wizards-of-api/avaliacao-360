@@ -26,19 +26,30 @@ def create_evaluation(student_id, student_list):
         nonlocal evaluation, evaluated_index
         if event == 'Enviar':
             result = []
-            #para cada tela capturar a combinacao de resultados
-            #iterar um contador para nomear o botao de radio capturado
+            
             def callback(group_id, _):
                 if values['1_' + group_id]:
-                    result.append(1)
+                    feedback = None
+                    while not feedback or feedback == "":
+                        feedback = sg.popup_get_text(
+                            question_list[int(group_id[-1])]+"\nJustifique sua resposta: ",
+                            title='Justificativa'
+                            )
+                    result.append({'value':1, 'feedback':feedback})
                 if values['2_' + group_id]:
-                    result.append(2)
+                    feedback = None
+                    while not feedback or feedback == "":
+                        feedback = sg.popup_get_text(
+                            question_list[int(group_id[-1])]+"\nJustifique sua resposta: ",
+                            title='Justificativa'
+                        )
+                    result.append({'value':2, 'feedback':feedback})
                 if values['3_' + group_id]:
-                    result.append(3)
+                    result.append({'value':3, 'feedback':None})
                 if values['4_' + group_id]:
-                    result.append(4)
+                    result.append({'value':4, 'feedback':None})
                 if values['5_' + group_id]:
-                    result.append(5)
+                    result.append({'value':5, 'feedback':None})
 
             #mock dos estudantes
             def mock_students():
@@ -68,6 +79,8 @@ def create_evaluation(student_id, student_list):
                 sg.Radio('Concordo', group_id, key = '4_' + str(group_id)), 
                 sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id))]
             )
+            
+            column_list.append([sg.Text("")])
 
         run_trough_questions(callback)
 
