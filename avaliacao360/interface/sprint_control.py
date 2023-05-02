@@ -65,7 +65,7 @@ def sprint_configure_handler(room_id, sprint_total):
             date1 = convert_date_str(values['date1'])
             date2 = convert_date_str(values['date2'])
             if date1 >= date2:
-                sg.popup('Data Inical não pode ser antes da Data Final')
+                sg.popup('Data Final dever ser depois da Data Inicial')
                 return
             sprint_list.append({'start': values['date1'], 'end': values['date2']})
 
