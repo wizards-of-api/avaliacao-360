@@ -27,23 +27,35 @@ def create_evaluation(student_id, evaluation_id, student_list):
             result = []
             
             def callback(group_id, _):
-                """"""
-                if values['1_' + group_id]:#and evaluated_index != student_id:
+                evaluated = student_list[evaluated_index]['name']
+                evaluater = get_student_by_id(student_id)['name']
+
+                if values['1_' + group_id] and evaluated != evaluater:
                     feedback = None
                     while not feedback or feedback == "":
                         feedback = sg.popup_get_text(
-                            question_list[int(group_id[-1])]+"\nJustifique sua resposta: ",
+                            question_list[int(group_id[-1])]+
+                            "\nJustifique sua resposta: ",
                             title='Justificativa'
                             )
                     result.append({'value':1, 'feedback':feedback})
-                if values['2_' + group_id]:#and evaluated_index != student_id:
+
+                elif values['1_' + group_id] and evaluated == evaluater:
+                    result.append({'value':1, 'feedback':None})
+
+                if values['2_' + group_id] and evaluated != evaluater:
                     feedback = None
                     while not feedback or feedback == "":
                         feedback = sg.popup_get_text(
-                            question_list[int(group_id[-1])]+"\nJustifique sua resposta: ",
+                            question_list[int(group_id[-1])]+
+                            "\nJustifique sua resposta: ",
                             title='Justificativa'
-                        )
+                            )
                     result.append({'value':2, 'feedback':feedback})
+                    
+                elif values['1_' + group_id] and evaluated == evaluater:
+                    result.append({'value':2, 'feedback':None})
+
                 if values['3_' + group_id]:
                     result.append({'value':3, 'feedback':None})
                 if values['4_' + group_id]:
