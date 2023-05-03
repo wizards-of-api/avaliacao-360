@@ -3,20 +3,9 @@ import PySimpleGUI as sg
 import interface.login as interface_login
 from connection.evaluation import answer_evaluation
 from connection.student import get_student_evaluation_by_id, get_student_by_id
+from config import question_list
 
-question_list = [
-    'se comunica de forma clara e objetiva.',
-    'faz contribuições regulares pro projeto.',
-    'consegue receber críticas.',
-    'entende como o projeto funciona.',
-    'realizou as entregas no prazo.',
-    'tem afinidade com autogestão.'
-]
-
-def create_evaluation(student_id, student_list):
-    """Inicializa um dicionário que armazena o nome do aluno avaliado e
-    as notas da avaliação."""
-    
+def create_evaluation(student_id, evaluation_id, student_list):
     evaluation = {}
     evaluated_index = 0
     

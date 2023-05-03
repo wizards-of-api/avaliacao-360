@@ -40,26 +40,6 @@ def get_evaluation_by_group_id(group_id: int):
     """
     return filter_by_key(get_evaluation_list(), 'group-id', group_id)
 
-def request_evaluation():
-    """
-    Cria uma avaliação para todos os grupos existentes no banco de dados mockado (fictício).
-
-    Caso exista alguma avaliação não completa, não irá executar o comando e retornara um 
-    dicionario com uma mensagem e a lista de grupos que não finalizaram a avaliação.
-
-    :parâmetro group_id: um integer que representa o id do estudante que deseja procurar.
-    :return: None or dict
-    """
-    evaluation_list = get_evaluation_list()
-    unfinish_evaluation_list = [evaluation for evaluation in evaluation_list if evaluation['status'] == 'todo']
-    if(len(unfinish_evaluation_list) > 0):
-        return { 'msg': 'Nem todas as avaliações foram finalizadas.', 'group-list': unfinish_evaluation_list }
-
-    group_list = group_connection.get_group_list()
-
-    for group in group_list:
-        create_evaluation({'group-id': group['id']})
-
 def close_evaluation(evaluation: dict):
     """
     Checa se a avaliação esta pronta o modifica os dados no bando de dados mocado (ficticio).
@@ -132,6 +112,7 @@ def create_evaluation(new_evaluation_dict):
     evaluation_dict = {
         'id': evaluation_id,
         'group-id': new_evaluation_dict['group-id'],
+        'sprint': new_evaluation_dict['sprint'],
         'todo-student-id-list': student_id_list,
         'status': 'todo',
         'answer-dict': {},
