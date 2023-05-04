@@ -1,7 +1,7 @@
 import app
 import interface.dashboard_aluno as interface_dashboard_aluno
 import interface.student as interface_student
-import interface.createclass as interface_createclass
+import interface.create_class as interface_createclass
 import connection.student as connection_student
 import PySimpleGUI as sg
 
