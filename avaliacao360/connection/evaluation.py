@@ -62,6 +62,21 @@ def close_evaluation(evaluation: dict):
 
     return True
     
+def validate_answer_dict(student_id: int, answer_dict: dict):
+    student = student_connection.get_student_by_id(student_id)
+    group_student_list = group_connection.get_group_student_list(student['group-id'])
+    student_id_list = [student['id'] for student in group_student_list]
+
+    for evaluted_id, answer_list in answer_dict.items():
+        if evaluted_id not in student_id_list:
+            raise Exception('Aluno com id [' + str(evaluted_id) + '] não pertence ao mesmo grupo do aluno com id [' + str(student_id) + ']')
+        for individual_answer in answer_list:
+            if type(individual_answer) != dict:
+                raise Exception('Respostas deve ser um dicionario com as chaves [value, feedback]')
+            for key in individual_answer.keys():
+                if key not in ['value', 'feedback']:
+                    raise Exception('Resposta com chave [' + key + '] invalida')
+
 
 # Adicionar validação de resposta
 def answer_evaluation(student_id: int, evaluation_id: int, answer_dict: dict):
@@ -76,6 +91,8 @@ def answer_evaluation(student_id: int, evaluation_id: int, answer_dict: dict):
     e o valor uma array com as notas da pergunta
 
     """
+
+    validate_answer_dict(student_id, answer_dict)
 
     student = student_connection.get_student_by_id(student_id)
     evaluation_list = get_evaluation_by_group_id(student['group-id'])

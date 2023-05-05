@@ -59,8 +59,15 @@ def reset_sprints(class_room_id):
 
     overwrite_data(key, class_room_list)
 
+def validate_sprint(sprint):
+    if type(sprint) != dict:
+        raise Exception('Sprint deve ser um dicionario com chaves [start, end]')
+    for key in sprint.keys():
+        if key not in ['start', 'end']:
+            raise Exception('Chave de sprint invalida: ' + key)
 
 def add_sprint(class_room_id, sprint):
+    validate_sprint(sprint)
     class_room_list = get_class_room_list()
     class_room = get_class_room_by_id(class_room_id)
     class_room['sprint_list'].append(sprint)
