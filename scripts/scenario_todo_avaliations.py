@@ -18,6 +18,18 @@ joao_id = student_connection.get_student_by_name('João')[0]['id']
 maria_eval_id = student_connection.get_student_evaluation_by_id(maria_id)[0]['id']
 joao_eval_id = student_connection.get_student_evaluation_by_id(joao_id)[0]['id']
 
-evaluation_connection.answer_evaluation(1, maria_eval_id, { 1: [2, 5, 3, 3, 3, 4], 2: [3, 5, 4, 4, 1, 2] })
-evaluation_connection.answer_evaluation(2, joao_eval_id, { 1: [5, 2, 2, 2, 3, 1], 2: [4, 4, 2, 5, 4, 2] })
+def generate_feedback(value, feedback = None):
+    return {
+        'value': value,
+        'feedback': feedback
+    }
+
+evaluation_connection.answer_evaluation(1, maria_eval_id, { 
+        1: [generate_feedback(2, 'Muito ruim'), generate_feedback(3), generate_feedback(3), generate_feedback(3), generate_feedback(3), generate_feedback(4)], 
+        2: [generate_feedback(3), generate_feedback(5), generate_feedback(4), generate_feedback(4), generate_feedback(1, 'Não fez nada'), generate_feedback(2, 'Pouca ajuda')] 
+    })
+evaluation_connection.answer_evaluation(2, joao_eval_id, { 
+        1: [generate_feedback(5), generate_feedback(2, 'Não ajudou muito'), generate_feedback(2, 'Fez nada'), generate_feedback(2, 'Faltou aquilo'), generate_feedback(3), generate_feedback(1, 'Vish, até fede')], 
+        2: [generate_feedback(4), generate_feedback(4), generate_feedback(2, 'Nem eu sei direito'), generate_feedback(5), generate_feedback(4), generate_feedback(2, 'Essa nota pareceu certa')] 
+    })
 
