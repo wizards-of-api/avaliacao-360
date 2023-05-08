@@ -5,7 +5,7 @@ import interface.create_room as create_room
 import interface.resultevaluation as result_evaluation
 import interface.sprint_control as request_evaluation
 import interface.classlist as class_list
-
+import interface.dashboard_adm as dashboard_adm
 def create_window():
   layout = [ 
             [sg.Text('Administrador')], 
@@ -33,7 +33,7 @@ def event_handler(event, _):
 
   elif event == 'result evaluation':
     
-    app.change_interface(result_evaluation.create_window(),result_evaluation.event_handler)
+    app.change_interface(dashboard_adm.create_window(),dashboard_adm.event_handler)
 
   elif event == 'request evaluation':
     
