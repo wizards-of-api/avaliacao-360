@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-import interface.create_room as create_room
+import interface.entity_manager as entity_manager
 import app
 import json
 import os
@@ -25,8 +25,8 @@ def create_window(key):
 def event_handler(event, values):
     print('Evento:', event)  # adicionando um print para verificar o evento
     if event == 'return':
-        app.change_interface(create_room.create_window(),
-                             create_room.event_handler)
+        app.change_interface(entity_manager.create_window(),
+                             entity_manager.event_handler)
     elif event == 'register':
         name = values['name']
         password = values['password']

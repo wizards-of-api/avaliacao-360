@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-import interface.create_room as create_room
+import interface.entity_manager as entity_manager
 import connection.class_room as create_class
 import app
 
@@ -16,7 +16,7 @@ def create_window(key):
 def event_handler(event, values):
     input_class = values['input']
     if event == 'return interface':
-        app.change_interface(create_room.create_window(), create_room.event_handler)
+        app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'button create':
         if input_class == '':
             app.pop_up('Por favor, insira o nome da Turma!')

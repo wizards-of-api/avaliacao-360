@@ -82,7 +82,7 @@ def room_select_interface():
         room_name_list = [room['name'] for room in room_list]
 
         layout = [
-            [sg.Text("Selecione uma sala: "), sg.Combo(room_name_list, default_value=room_name_list[0], key='class_room')],
+            [sg.Text("Selecione uma sala: "), sg.Combo(room_name_list, default_value=room_name_list[0], readonly=True, key='class_room')],
             [sg.Text("Total de sprints: "), sg.Input(key='sprint_total')],
             [sg.Button('Confirmar', key='confirm'), sg.Button('Voltar', key='return interface')]
         ]

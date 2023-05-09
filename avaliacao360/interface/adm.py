@@ -1,7 +1,7 @@
 import app
 import PySimpleGUI as sg
 import interface.login as interface_login  
-import interface.create_room as create_room
+import interface.entity_manager as entity_manager
 import interface.resultevaluation as result_evaluation
 import interface.sprint_control as request_evaluation
 import interface.classlist as class_list
@@ -29,7 +29,7 @@ def event_handler(event, _):
 
   elif event == 'create room':
 
-    app.change_interface(create_room.create_window(),create_room.event_handler)
+    app.change_interface(entity_manager.create_window(),entity_manager.event_handler)
 
   elif event == 'result evaluation':
     
