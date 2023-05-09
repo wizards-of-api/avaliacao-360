@@ -61,6 +61,7 @@ def create_student(new_student_dict):
         'id': student_id,
         'group-id': new_student_dict['group-id'],
         'name': new_student_dict['name'],
+        'password': new_student_dict['password']
     }
 
     student_list.append(student_dict)
