@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import connection.group as connection_group
 import connection.class_room as connection_class_room
-import interface.create_room as create_room
+import interface.entity_manager as create_room
 import app
 from utils.filters import filter_by_key
 
@@ -14,7 +14,7 @@ def create_window():
         [sg.Button('Registrar Grupo', key='create group')],
         [sg.Button('Voltar', key='return interface')]
         ]
-    return sg.Window('Avaliação 360 - Criar Classe/Turma/Grupo', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Criar Grupo', layout, element_justification='c', finalize= True)
 
 
 def event_handler(event, values):

@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 import interface.adm as interface_adm
 import interface.create_class as create_class
 import interface.create_group as create_group
+import interface.create_student as create_student
 import app
 
 def create_window():
@@ -21,3 +22,6 @@ def event_handler(event, _):
         app.change_interface(create_class.create_window(key='output'), create_class.event_handler)
     elif event == 'group':
         app.change_interface(create_group.create_window(), create_group.event_handler)
+    elif event == 'student':
+        app.change_interface(create_student.create_window(), create_student.event_handler)
+        
