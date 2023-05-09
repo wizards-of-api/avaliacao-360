@@ -1,8 +1,5 @@
 import PySimpleGUI as sg
-import interface.entity_manager as entity_manager
-import connection.group as connection_group
-import connection.class_room as connection_class_room
-import connection.student as connection_student
+import interface.create_room as create_room
 import app
 import json
 import os
@@ -13,22 +10,13 @@ sys.path.insert(0, os.path.abspath(os.path.join(
 
 
 def create_window(key):
-    student_list = connection_student.get_student_list()
-    student_names = [student['name'] for student in student_list]
-    class_room_list = connection_class_room.get_class_room_list()
-    class_room_names = [class_room['name'] for class_room in class_room_list]
-    group_list = connection_group.get_group_list()
-    group_names = [group['name'] for group in group_list]
     layout = [
-        [sg.Text('Aluno'), sg.Combo(student_names, readonly=True, key='student_names', size=(35,1))],
-        [sg.Text('Turma'), sg.Combo(class_room_names, readonly=True, key='class', size=(35,1))],
-        [sg.Text('Grupo'), sg.Combo(group_names, readonly=True, key='group', size=(35,1))],
-        [sg.Text('Usuário:', size=(6,1)), sg.Input('', key='user_name', size=(35,1))],
-        [sg.Text('Senha:', size=(6,1)), sg.Input('', key='password', password_char='*', size=(35,1))],
+        [sg.Text('Nome do Aluno:', size=(14,1)), sg.Input('', key='name', size=(20,1))],
+        [sg.Text('Senha:', size=(14,1)), sg.Input('', key='password', password_char='*', size=(20,1))],
         [sg.Text('', key='error', text_color='red')],
-        # [sg.Text('', key='output')],
+        [sg.Text('', key='output')],
         [sg.Button('Cadastrar', key='register', size=(10,1)),
-         sg.Button('Voltar', key='return', size=(10,1))]
+         sg.Button('Voltar', key='return', size=(10,1), button_color=('white', 'gray'))]
     ]
     return sg.Window('Cadastro de Aluno', layout, element_justification='c', finalize=True)
 
@@ -37,14 +25,14 @@ def create_window(key):
 def event_handler(event, values):
     print('Evento:', event)  # adicionando um print para verificar o evento
     if event == 'return':
-        app.change_interface(entity_manager.create_window(),
-                             entity_manager.event_handler)
+        app.change_interface(create_room.create_window(),
+                             create_room.event_handler)
     elif event == 'register':
-        user_name = values['user_name']
+        name = values['name']
         password = values['password']
 
         # Validar se o nome e senha foram preenchidos
-        if not user_name.strip() or not password.strip():
+        if not name.strip() or not password.strip():
             app.pop_up('Por favor, preencha o nome e a senha')
             return
 
@@ -62,15 +50,13 @@ def event_handler(event, values):
         else:
             data = {}
 
-        if user_name in data:
+        if name in data:
             app.pop_up('Este nome de usuário já foi cadastrado')
             return
 
-        data[user_name] = password
+        data[name] = password
 
         with open(path, 'w') as f:
             json.dump(data, f)
 
         app.pop_up('Cadastro realizado com sucesso')
-        app.change_interface(entity_manager.create_window(),
-                             entity_manager.event_handler)
