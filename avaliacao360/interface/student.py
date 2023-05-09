@@ -25,7 +25,7 @@ def create_window(name):
         [sg.Text(f'Grupo: {group_name}')],
         [sg.Text(f'Sala: {class_room_name}')],
         [sg.Text('\n')],
-        [sg.Button('Voltar'), sg.Button('Cancelar'), sg.Button('Resultados')]
+        [sg.Button('Voltar'), sg.Button('Resultados')]
     ]     
     if student_evaluation:
         layout[4].insert(1, sg.Button('Avaliação'))
