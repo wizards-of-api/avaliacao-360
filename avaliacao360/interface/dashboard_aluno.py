@@ -3,13 +3,15 @@ import interface.dashboard_aluno as interface_dashboard_aluno
 import interface.student as interface_student
 import interface.create_class as interface_createclass
 import connection.student as connection_student
+import connection.result_evaluation as result_evaluation
 import PySimpleGUI as sg
 
 def create_window(name):
     global _name
     _name = name
+    result_group = result_evaluation.evaluation_result_student(_name)
     layout = [
-                [sg.Text(interface_createclass.dev_text)],
+                [sg.Text("Desenvolvendo")],
                 [sg.Button('Voltar', key='return', s=(18, 1))]
             ]
 
