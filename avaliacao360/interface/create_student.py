@@ -11,7 +11,6 @@ def create_window():
     layout = [
         [sg.Text('Criar Aluno')],
         [sg.Text('Nome do Aluno:'), sg.Input(key='input')],
-        [sg.Text('Insira a senha de login:'), sg.Input(key='password')],
         [sg.Text('Grupo'), sg.Combo(group_names, readonly=True, key = 'list')],
         [sg.Button('Registrar Aluno', key = 'create student'),sg.Button('Voltar', key = 'return interface')]
         ]
@@ -20,7 +19,6 @@ def create_window():
 def event_handler(event, values):
     student_list = connection_student.get_student_list()
     input_student_name = values['input']
-    input_student_password = values['password']
     input_group_name = values['list']
 
     if event == 'return interface':
@@ -28,10 +26,6 @@ def event_handler(event, values):
     elif event == 'create student':
         if input_student_name == '':
             sg.popup('Por favor, preencha o nome do aluno')
-        elif input_student_password == '':
-            sg.popup('Por favor, insira uma senha para login')
-        elif filter_by_key(student_list, 'name', input_student_name):
-            sg.popup('Aluno já cadastrado')
         elif input_group_name == '':
             sg.popup('Por favor, selecione um grupo')
         else:
@@ -39,7 +33,7 @@ def event_handler(event, values):
             group = filter_by_key(group_list, 'name', input_group_name)
             if group:
                 group_id = group[0]['id']
-                connection_student.create_student({'name': input_student_name,'group-id': group_id, 'password': input_student_password})
+                connection_student.create_student({'name': input_student_name,'group-id': group_id})
                 sg.popup(f'Aluno {input_student_name} criado com sucesso!')
             else:
                 sg.popup('Grupo não encontrado')
