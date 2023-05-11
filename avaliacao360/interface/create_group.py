@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import connection.group as connection_group
 import connection.class_room as connection_class_room
-import interface.entity_manager as create_room
+import interface.entity_manager as entity_manager
 import app
 from utils.filters import filter_by_key
 
@@ -23,7 +23,7 @@ def event_handler(event, values):
     input_class_room_name = values['list']
 
     if event == 'return interface':
-        app.change_interface(create_room.create_window(), create_room.event_handler)
+        app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'create group':
         if input_groupname == '':
             sg.popup('Por favor, preencha o nome do grupo')
