@@ -41,19 +41,6 @@ def get_student_by_name(name):
     return filter_by_key(get_student_list(), 'name', name)
 
 
-def get_student_password(password):
-    """
-    Retorna o estudante com a senha fornecida.
-    
-    Args:
-    password (str): A senha do estudante.
-    
-    Retorna:
-    dict: O estudante com a senha fornecida.
-    """
-    return filter_by_key(get_student_list(), 'password', password)
-
-
 def create_student(new_student_dict):
     """
     Cria um novo estudante e adiciona-o à lista de estudantes.
@@ -74,7 +61,6 @@ def create_student(new_student_dict):
         'id': student_id,
         'group-id': new_student_dict['group-id'],
         'name': new_student_dict['name'],
-        'password': new_student_dict['password']
     }
 
     student_list.append(student_dict)
