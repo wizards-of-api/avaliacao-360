@@ -18,18 +18,16 @@ def create_window():
 def event_handler(event, values):
     username = values['username']
     password = values['password']
-    student_list = connection_student.get_student_list()
-    names = [student['name'] for student in student_list]
-    nome = {"student_names": names}
     if event == 'Cancel':
         app.close()
     elif event == 'Login':
         if username == '':
             app.pop_up('Insira seu usuário')
-        elif connection_login.check_login(username, password):
-            app.pop_up('Login Realizado com sucesso')
-            app.change_interface(interface_student.create_window(nome), interface_student.event_handler)
         elif username =='adm':
             app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
+        elif connection_login.check_login(username, password):
+            student_id = connection_login.check_login(username, password)
+            app.pop_up('Login Realizado com sucesso')
+            app.change_interface(interface_student.create_window(student_id), interface_student.event_handler)
         else:
             app.pop_up('Não possui Login')
