@@ -6,12 +6,14 @@ import connection.student as connection_student
 import connection.group as connection_group
 import interface.dashboard_aluno as interface_dashboard_aluno
 
-def create_window(name):
+def create_window(student_id):
 
     global student_info, group_info, window, student_evaluation
 
-    student_raw = connection_student.get_student_by_name(name)[0]
+    student_raw = connection_student.get_student_by_id(student_id)
     student_info = connection_student.resolve_student(student_raw)
+    student_name = student_info['name']
+
     student_evaluation = connection_student.get_student_todo_evaluation(student_info['id'])
 
     group_info = student_info['group']
@@ -21,7 +23,7 @@ def create_window(name):
     class_room_name = class_room_info['name']
 
     layout = [
-        [sg.Text(f'Aluno: {name}')],
+        [sg.Text(f'Aluno: {student_name}')],
         [sg.Text(f'Grupo: {group_name}')],
         [sg.Text(f'Sala: {class_room_name}')],
         [sg.Text('\n')],

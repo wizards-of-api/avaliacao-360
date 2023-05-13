@@ -48,6 +48,6 @@ def check_login(username, password):
 
     for user in user_list:
         if user['username'] == username and user['password'] == password:
-            return True
+            return user['id']
 
     return False
