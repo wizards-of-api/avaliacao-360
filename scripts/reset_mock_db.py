@@ -1,13 +1,14 @@
 import sys, os
 from datetime import datetime, timedelta
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'avaliacao360')))
 
-from connection import controller
-from connection import class_room
-from connection import group
-from connection import student
-from connection import login
+from avaliacao360.connection import controller
+from avaliacao360.connection import class_room
+from avaliacao360.connection import group
+from avaliacao360.connection import student
+from avaliacao360.connection import login
 
 date_format = '%d/%m/%Y'
 
