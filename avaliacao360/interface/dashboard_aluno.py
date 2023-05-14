@@ -1,10 +1,10 @@
 import app
+import PySimpleGUI as sg
 import interface.dashboard_aluno as interface_dashboard_aluno
-import interface.student as interface_student
+import interface.student as student
 import interface.create_class as interface_createclass
 import connection.student as connection_student
 import connection.result_evaluation as result_evaluation
-import PySimpleGUI as sg
 
 def create_window(name):
     global _name
@@ -20,4 +20,4 @@ def create_window(name):
 def event_handler(event, _):
     global _name
     if event == 'return':
-        app.change_interface(interface_student.create_window(_name), interface_student.event_handler)
+        app.change_interface(student.create_window(_name), student.event_handler)

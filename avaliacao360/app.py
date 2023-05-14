@@ -60,10 +60,14 @@ def run():
     while True:
         event, values = window.read()
 
+        if event == sg.WIN_CLOSED:
+            break
+        
         if event_handler:
             event_handler(event, values)
-
-        if event == sg.WIN_CLOSED or to_close:
+        
+        if  to_close:
             break
+
 
     window.close()

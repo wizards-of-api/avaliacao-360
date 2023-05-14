@@ -2,7 +2,7 @@ import reset_mock_db
 import PySimpleGUI as sg
 
 from datetime import date
-from avaliacao360.init import init
+from avaliacao360.__init__ import init
 from avaliacao360.utils.date_functions import convert_date_str
     
 date_format = '%d/%m/%Y'
