@@ -21,13 +21,15 @@ def event_handler(event, values):
     if event == 'Cancel':
         app.close()
     elif event == 'Login':
-        if username == '':
-            app.pop_up('Insira seu usuário')
+        if not username.strip() or not password.strip():
+            app.pop_up('Por favor, preencha o nome e a senha!')
         elif username =='adm':
             app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
+        elif connection_login.check_username(username) and not connection_login.check_password(password):
+            app.pop_up('Senha incorreta!')
         elif connection_login.check_login(username, password):
             student_id = connection_login.check_login(username, password)
-            app.pop_up('Login Realizado com sucesso')
+            app.pop_up('Login Realizado com sucesso!')
             app.change_interface(interface_student.create_window(student_id), interface_student.event_handler)
         else:
             app.pop_up('Não possui Login')

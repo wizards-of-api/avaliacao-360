@@ -51,3 +51,27 @@ def check_login(username, password):
             return user['id']
 
     return False
+
+def check_username(username):
+    """
+    Verifica se o usuário e a senha existem no JSON e retorna True se forem encontrados, caso contrário, retorna False.
+    """
+    user_list = get_username_list()
+
+    for user in user_list:
+        if user['username'] == username:
+            return True
+
+    return False
+
+def check_password(password):
+    """
+    Verifica se o usuário e a senha existem no JSON e retorna True se forem encontrados, caso contrário, retorna False.
+    """
+    user_list = get_username_list()
+
+    for user in user_list:
+        if user['password'] == password:
+            return True
+        
+    return False
