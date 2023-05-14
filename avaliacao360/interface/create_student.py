@@ -3,37 +3,34 @@ import interface.entity_manager as entity_manager
 import connection.student as connection_student
 import connection.group as connection_group
 import app
-from utils.filters import filter_by_key
 
 def create_window():
     group_list = connection_group.get_group_list()
-    group_names = [group['name'] for group in group_list]
+    group_name_list = []
+    for group in group_list:
+        resolved_group = connection_group.resolve_group(group)
+        group_name_list.append(str(resolved_group['id']) + ' | ' + resolved_group['class-room']['name'] + ' / ' + resolved_group['name'])
+
     layout = [
         [sg.Text('Criar Aluno')],
         [sg.Text('Nome do Aluno:'), sg.Input(key='input')],
-        [sg.Text('Grupo'), sg.Combo(group_names, readonly=True, key = 'list')],
+        [sg.Text('Grupo'), sg.Combo(group_name_list, readonly=True, key = 'list')],
         [sg.Button('Registrar Aluno', key = 'create student'),sg.Button('Voltar', key = 'return interface')]
         ]
     return sg.Window('Avaliação 360 - Criar Aluno', layout, element_justification='c', finalize=True)
 
 def event_handler(event, values):
-    student_list = connection_student.get_student_list()
-    input_student_name = values['input']
-    input_group_name = values['list']
+    input_student = values['input']
+    input_group = values['list']
 
     if event == 'return interface':
         app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'create student':
-        if input_student_name == '':
+        if input_student == '':
             sg.popup('Por favor, preencha o nome do aluno')
-        elif input_group_name == '':
+        elif input_group == '':
             sg.popup('Por favor, selecione um grupo')
-        else:
-            group_list = connection_group.get_group_list()
-            group = filter_by_key(group_list, 'name', input_group_name)
-            if group:
-                group_id = group[0]['id']
-                connection_student.create_student({'name': input_student_name,'group-id': group_id})
-                sg.popup(f'Aluno {input_student_name} criado com sucesso!')
-            else:
-                sg.popup('Grupo não encontrado')
+        else:          
+            group_id = int(input_group.split(' | ')[0])
+            connection_student.create_student({'name': input_student,'group-id': group_id})
+            sg.popup(f'Aluno {input_student} criado com sucesso!')
