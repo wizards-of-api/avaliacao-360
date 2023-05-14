@@ -12,7 +12,7 @@ def close_evaluations(sprint):
         if evaluation['status'] == 'done':
             continue
         for student_id in evaluation['todo-student-id-list']:
-            default_answer_list = [1 for _ in question_list]
+            default_answer_list = [{'value': 1, 'feedback': 'não foi respondido'} for _ in question_list]
             group_id = evaluation['group-id']
             student_list = group_connection.get_group_student_list(group_id)
 
