@@ -2,9 +2,9 @@ import app
 import PySimpleGUI as sg
 import interface.student as student
 
-def create_window(name):
-    global _name
-    _name = name
+def create_window(student_id):
+    global _student_id
+    _student_id = student_id
     layout = [
     [sg.Text('Dashboard desempenho médio do aluno', font=('Arial Black', 16))],
     #essa linha abaixo não sabemos muito se seria cabivel nos dashs do aluno
@@ -23,7 +23,7 @@ def create_window(name):
     return sg.Window('Avaliação 360 - Dashboard Aluno', layout, element_justification='c')
 
 def event_handler(event, _):
-    global _name
+    global _student_id
     if event == 'return':
-        app.change_interface(student.create_window(_name), student.event_handler)
+        app.change_interface(student.create_window(_student_id), student.event_handler)
     
