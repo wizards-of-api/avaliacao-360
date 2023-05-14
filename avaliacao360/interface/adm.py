@@ -5,7 +5,6 @@ import interface.entity_manager as entity_manager
 import interface.resultevaluation as result_evaluation
 import interface.sprint_control as request_evaluation
 import interface.classlist as class_list
-import interface.dashboard_adm as dashboard_adm
 def create_window():
   layout = [ 
             [sg.Text('Administrador')], 
@@ -32,8 +31,7 @@ def event_handler(event, _):
     app.change_interface(entity_manager.create_window(),entity_manager.event_handler)
 
   elif event == 'result evaluation':
-    
-    app.change_interface(dashboard_adm.create_window(),dashboard_adm.event_handler)
+    app.pop_up('Em desenvolvimento')
 
   elif event == 'request evaluation':
     
