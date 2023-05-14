@@ -17,9 +17,6 @@ layout.addWidget(plot_widget)
 main_window.setLayout(layout)
 plot_widget.setBackground('lightGray')
 
-
-
-
 # Dados dos aspectos avaliados e suas notas
 aspectos_nomes = ['Comunicação', 'Contribuição', 'Autoconhecimento', 'Conhecimento\n Técnico', 'Pontualidade', 'Autogestão']
 aspectos = {'Comunicação': 0, 'Contribuição': 1, 'Autoconhecimento': 2, 'Conhecimento\n Técnico': 3, 'Pontualidade': 4, 'Autogestão': 5}
