@@ -22,7 +22,7 @@ def get_evaluation_by_id(id: int):
 
 def get_evaluation_by_student_id(student_id: int):
     """
-    Returna avaliação usando o id de um estudante.
+    Retorna avaliação usando o id de um estudante.
 
     :parâmetro student_id: um integer que representa o id do estudante que deseja procurar.
     :return: dicionario da avaliação
