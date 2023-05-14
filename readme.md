@@ -29,7 +29,7 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 
 # Backlog do produto
 |Épico|User Story|Sprint|Prioridade|Status|
-| :------ | :------- | :------ | :-------- |:------|
+| :------ | :------- | :------: | :--------: |:------:|
 |Avalição 360|Como aluno posso realizar a autoavaliação e a avaliação de outros alunos do mesmo grupo, em 6 tópicos diferentes, utilizando a escala likert, para receber e retribuir feedback|2|Alta|:heavy_check_mark:|
 |Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|:x:|
 |Controle de Turma|Como administrador posso efetuar o cadastro, salas e grupos e fazer a organização dos elementos, para configurar o ambiente em que os alunos vão fazer a avaliação|3|Baixa|:heavy_check_mark:|
