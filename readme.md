@@ -34,8 +34,8 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 |Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|➖|
 |Controle de Turma|Como administrador posso efetuar o cadastro, salas e grupos e fazer a organização dos elementos, para configurar o ambiente em que os alunos vão fazer a avaliação|3|Baixa|:heavy_check_mark:|
 |Controle de Turma|Como administrador posso atribuir datas inicio e final de Sprints às turmas, para registrar quando a avaliação estará disponível|3|Média|:heavy_check_mark:|
-|Dashboards de Acompanhamento|Como administrador posso visualizar desempenho das avaliações de todos os grupos de uma sala, na forma de dashboards, para acompanhar a evolução dos alunos|4|Alta|➖|
-|Dashboards de Acompanhamento|Como aluno posso visualizar meu desempenho após as avaliações, na forma de dashboards, para compreender minhas forças e fraquezas|4|Alta|➖|
+|Dashboards de Acompanhamento|Como administrador posso visualizar desempenho das avaliações de todos os grupos de uma sala, na forma de dashboards, para acompanhar a evolução dos alunos|4|Alta|🔜|
+|Dashboards de Acompanhamento|Como aluno posso visualizar meu desempenho após as avaliações, na forma de dashboards, para compreender minhas forças e fraquezas|4|Alta|🔜|
 |Gestão de usuário|Como administrador, posso efetuar o cadastro de alunos como usuarios, para que consigam utilizar a aplicação|3|Baixa|:heavy_check_mark:|
 |Gestão de usuário|Como usuário da aplicação devo acessá-la atraves de uma interface com autenticação, para utilizar das funcionalidades do aplicativo|3|Baixa|:heavy_check_mark:|
 <br>
