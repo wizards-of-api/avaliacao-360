@@ -34,7 +34,11 @@ def create_window(key):
         [sg.Text('Senha:', size=(6,1)), sg.Input('', key='password', password_char='*', size=(35,1))],
         [sg.Text('', key='error', text_color='red')],
         [sg.Button('Cadastrar', key='register', size=(10,1)),
+<<<<<<< HEAD
          sg.Button('Voltar', key='return', size=(10,1), button_color=('white', 'gray'))]
+=======
+         sg.Button('Voltar', key='return', size=(10,1))]
+>>>>>>> dev
     ]
     return sg.Window('Cadastro de Aluno', layout, element_justification='c', finalize=True)
 
