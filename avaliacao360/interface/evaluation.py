@@ -66,7 +66,6 @@ def create_evaluation(student_id, evaluation_id, student_list):
             
             def mock_students():
                 """Armazena o aluno e suas respectivas avaliacoes em um dicionario no mock"""
-                evaluation_id = get_student_evaluation_by_id(student_id)[0]['id']
                 answer_evaluation(student_id, evaluation_id, evaluation)
 
             run_trough_questions(callback)
