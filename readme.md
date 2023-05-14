@@ -28,21 +28,16 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
 
 # Backlog do produto
-|Prioridade|Feature|Sprint|Status|
-| :------: | -------- | :------: | -------- |
-|1|Estrutura de Dados mockado|2|Pronto|
-|2|Interface da Avaliação|2|Pronto|
-|3|Interface do Aluno|2|Pronto|
-|4|Interface do Admistrador|2|Pronto|
-|5|Interação das interfaces com os dados Mockados|2|Pronto|
-|6|Controle de sprint por Turma|3|Para fazer|
-|7|Criar algoritmo de Dashboard (4 Dashboards no total)|3|Para fazer|
-|8|Consultar Dashboards|3|Para fazer|
-|9|Registro de grupo|3|Para fazer|
-|10|Registro de turma|3|Para fazer|
-|11|Registro de aluno|3|Para fazer|
-|12|Mockar Usuario|3|Para fazer|
-|13|Interface de Login|4|Para fazer|
+|Épico|User Story|Sprint|Prioridade|Status|
+| :------ | :------- | :------ | :-------- |:------|
+|Avalição 360|Como aluno posso realizar a autoavaliação e a avaliação de outros alunos do mesmo grupo, em 6 tópicos diferentes, utilizando a escala likert, para receber e retribuir feedback|2|Alta|:heavy_check_mark:|
+|Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|:x:|
+|Controle de Turma|Como administrador posso efetuar o cadastro, salas e grupos e fazer a organização dos elementos, para configurar o ambiente em que os alunos vão fazer a avaliação|3|Baixa|:heavy_check_mark:|
+|Controle de Turma|Como administrador posso atribuir datas inicio e final de Sprints às turmas, para registrar quando a avaliação estará disponível|3|Média|:heavy_check_mark:|
+|Dashboards de Acompanhamento|Como administrador posso visualizar desempenho das avaliações de todos os grupos de uma sala, na forma de dashboards, para acompanhar a evolução dos alunos|4|Alta|:x:|
+|Dashboards de Acompanhamento|Como aluno posso visualizar seu desempenho após as avaliações, na forma de dashboards, para compreender minhas forças e fraquezas|4|Alta|:x:|
+|Gestão de usuário|Como administrador, posso efetuar o cadastro de alunos como usuarios, para que consigam utilizar a aplicação|3|Baixa|:heavy_check_mark:|
+|Gestão de usuário|Como usuário da aplicação devo acessá-la atraves de uma interface com autenticação, para utilizar das funcionalidades do aplicativo|3|Baixa|:heavy_check_mark:|
 <br>
 
 Para ver o dashboard, [Clique aqui](https://trello.com/b/3F5TFt4V/roadmap/)!
@@ -54,18 +49,18 @@ Para ver o dashboard, [Clique aqui](https://trello.com/b/3F5TFt4V/roadmap/)!
 
 # Membros da equipe
 
-|Nome|Função|LinkedIn|Foto|
-| -------- |-------- |-------- |-------- |
-|**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|<img src = "https://pps.whatsapp.net/v/t61.24694-24/322305525_193751409952494_7274193488470614501_n.jpg?ccb=11-4&oh=01_AdSlnhV69d4V7c7ecB_DG_dQof4edhZZnTO-m0XreEpt6A&oe=6441118E" height="50"/>|
-|**Gabriel de Souza Mota**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-mota-4a0816a0)|<img src = "https://media.licdn.com/dms/image/D4D03AQHh2eT1n4SH6A/profile-displayphoto-shrink_200_200/0/1680641315449?e=1686787200&v=beta&t=qVZXcMP0N0f9437OJtRAH_vMQKm8_VL-TGMSRHkVc4M" height="50"/>|
-|**Bruno dos Santos**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bruno6-santos/)|<img src = "https://media.licdn.com/dms/image/C4D03AQFVBZghpCQ2FQ/profile-displayphoto-shrink_200_200/0/1593525226557?e=1685577600&v=beta&t=wUmkKeftU2CE38GQa44aMaz9hCTXIG52LYDUr38Y22s" height="50"/>|
-|**Cauan Vinicius Barbaglio**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/cauan-vmb-213a2a26b)|<img src = "https://media.licdn.com/dms/image/D4E03AQHSIY1PWW-6lA/profile-displayphoto-shrink_200_200/0/1680035835089?e=1685577600&v=beta&t=7xDdpTnlXOMnnq9HnRXE5KZ0mmm-8o04nN0Wf4N7VEc" height="50"/>|
-|**Daniel Victor D'Emilio Barbosa**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/danielvdbarbosa)|<img src = "https://media.licdn.com/dms/image/C5603AQG1DKSGZdQ5fg/profile-displayphoto-shrink_200_200/0/1632140335771?e=1685577600&v=beta&t=3e6NwR7vtwf6j1ywjlWw7DSqSFzAAMTLvyKBAiBng1E" height="50"/>|
-|**Julio Cesar Ferreira de Freitas**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/julio-freitas-415b73216)|<img src = "https://media.licdn.com/dms/image/D4D03AQEJC0oxfvbwYA/profile-displayphoto-shrink_200_200/0/1669854497018?e=1685577600&v=beta&t=rXxAQ5EYnsnLcL463Bv42qITZPcTKxAFvFsTTRVY60E" height="50"/>|
-|**Otavio Calderan Bruguel**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/otavio-calderan-578b48239)|<img src = "https://media.licdn.com/dms/image/D4D03AQEQYFPyjaXEzA/profile-displayphoto-shrink_200_200/0/1679969286056?e=1685577600&v=beta&t=99K13xG-LVAf2kCZvZdyRHxKP4lQZMFhCD9y6G_AJeI" height="50"/>|
-|**Paulo Arantes Machado**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)|<img src = "https://media.licdn.com/dms/image/D4D03AQGHDFvhlaF2FQ/profile-displayphoto-shrink_200_200/0/1680539395356?e=1686787200&v=beta&t=HMQ7qA9fauhHoQTDr8vK27tysipJDBTcQ56aLUGFsoI" height="50"/>|
-|**Pedro Henrique da Silva Bozzano Pereira**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-bozzano)|<img src = "https://media.licdn.com/dms/image/C4E03AQG5Rssk92J9YA/profile-displayphoto-shrink_200_200/0/1612708570557?e=1685577600&v=beta&t=g2zBcgtKJFu8xbz6LdaYuL0td91JmxryM-eQpw4a2bw" height="50"/>|
-|**Vinícius da Silva Chaves**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/vinícius-chaves-197353244/)|<img src = "https://media.licdn.com/dms/image/C4D03AQHj5vc1W_-a8Q/profile-displayphoto-shrink_200_200/0/1656891571024?e=1685577600&v=beta&t=fMr8uGP75yYdis03yVaeOOmtftPnFzwmRSdOkDD_2Vg" height="50"/>|
+|Nome|Função|LinkedIn|
+| -------- |-------- |-------- |
+|**Matheus Marciano Leite**|Scrum Master|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/matheus-leite-186738135/)|
+|**Gabriel de Souza Mota**|Product Owner|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/gabriel-mota-4a0816a0)|
+|**Bruno dos Santos**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/bruno6-santos/)|
+|**Cauan Vinicius Barbaglio**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/cauan-vmb-213a2a26b)|
+|**Daniel Victor D'Emilio Barbosa**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/danielvdbarbosa)|
+|**Julio Cesar Ferreira de Freitas**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/julio-freitas-415b73216)|
+|**Otavio Calderan Bruguel**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/otavio-calderan-578b48239)|
+|**Paulo Arantes Machado**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/paulo-antonio-arantes-machado-a8a89b23b)|
+|**Pedro Henrique da Silva Bozzano Pereira**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-bozzano)|
+|**Vinícius da Silva Chaves**|Desenvolvedor|[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/vinícius-chaves-197353244/)|
 
 # Tecnologias usadas e ferramentas externas
 
