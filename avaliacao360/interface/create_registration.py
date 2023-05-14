@@ -43,13 +43,15 @@ def event_handler(event, values):
 
     input_student = values['student_list']
     print('Evento:', event)  # adicionando um print para verificar o evento
+    if event == 'return':
+        print('heyo')
+        app.change_interface(entity_manager.create_window(),
+                             entity_manager.event_handler)
+        return
     if input_student == '':
         app.pop_up('Por favor, selecione o estudante')
         return
 
-    if event == 'return':
-        app.change_interface(create_room.create_window(),
-                             create_room.event_handler)
     elif event == 'register':
         username = values['username']
         password = values['password']
