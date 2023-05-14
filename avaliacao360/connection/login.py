@@ -22,8 +22,8 @@ def create_user(credentials):
     username_id = get_last_id(key) + 1
 
     # student_list = get_student_list()
-    student_id = get_last_id('student-list')
 
+    student_id = credentials['student-id']
     username = credentials['username']
     password = credentials['password']
 
@@ -36,7 +36,7 @@ def create_user(credentials):
 
     # Salva os dados atualizados no arquivo JSON
     with open(mock_path, 'w') as mock_db_file:
-        json.dump(data, mock_db_file)
+        json.dump(data, mock_db_file, indent=4)
 
 import json
 

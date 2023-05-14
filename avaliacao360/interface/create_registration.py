@@ -1,18 +1,35 @@
 import PySimpleGUI as sg
 import interface.entity_manager as entity_manager
+import connection.student as connection_student
+import connection.class_room as connection_room
 import connection.login as login
 from utils.filters import filter_by_key
 import app
 import os
 import sys
 
+from utils.filters import filter_by_key
+
 sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), '..', 'utils')))
 
 
 def create_window(key):
+    student_list = connection_student.get_student_list()
+    student_name_list = []
+    user_student_id_list = [user['student-id'] for user in login.get_username_list()]
+    for student in student_list:
+        if student['id'] in user_student_id_list:
+            continue
+        resolved_student = connection_student.resolve_student(student)
+        student_name_list.append(
+            str(resolved_student['id']) + ' | ' +
+            resolved_student['group']['class-room']['name'] + ' / ' +
+            resolved_student['group']['name'] + ' / ' + 
+            resolved_student['name'])
 
     layout = [
+        [sg.Text('Aluno:', size=(6,1)), sg.Combo(student_name_list, readonly=True, key = 'student_list',size=(35,1))],
         [sg.Text('Usuário:', size=(6,1)), sg.Input('', key='username', size=(35,1))],
         [sg.Text('Senha:', size=(6,1)), sg.Input('', key='password', password_char='*', size=(35,1))],
         [sg.Text('', key='error', text_color='red')],
@@ -23,13 +40,21 @@ def create_window(key):
 
 
 def event_handler(event, values):
+
+    input_student = values['student_list']
     print('Evento:', event)  # adicionando um print para verificar o evento
+    if input_student == '':
+        app.pop_up('Por favor, selecione o estudante')
+        return
+
     if event == 'return':
         app.change_interface(entity_manager.create_window(),
                              entity_manager.event_handler)
     elif event == 'register':
         username = values['username']
         password = values['password']
+        student_input = values['student_list']
+
         user_list = login.get_username_list()
 
         # Validar se o nome e senha foram preenchidos
@@ -45,7 +70,9 @@ def event_handler(event, values):
         elif filter_by_key(user_list, 'username', username):
             sg.popup('Usuário já existente')
         else:
-            credentials = {'username': username, 'password': password}
+            student_id = int(student_input.split(' | ')[0])
+
+            credentials = {'username': username, 'password': password, 'student-id': student_id}
             login.create_user(credentials)
             app.pop_up(msg='Usuário %s criado com sucesso' %username)
             app.change_interface(entity_manager.create_window(),
