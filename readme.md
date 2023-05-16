@@ -22,7 +22,7 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 
 - Realizar o login com usuário e senha
 - Acessar a Interface de administrador
-- Realizar o cadastro de grupos, turmas e alunos
+- Realizar o cadastro de alunos, grupos e turmas
 - Configurar sprint das turmas
 - Visualizar lista de turmas e grupos
 - Visualizar gráficos de desempenho gerados pelas avaliações dos grupos, das turmas.
@@ -30,7 +30,7 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 # Backlog do produto
 |Épico|User Story|Sprint|Prioridade|Status|
 | :------ | :------- | :------: | :--------: |:------:|
-|Avalição 360|Como aluno posso realizar a autoavaliação e a avaliação de outros alunos do mesmo grupo, em 6 tópicos diferentes, utilizando a escala likert, para receber e retribuir feedback|2|Alta|:heavy_check_mark:|
+|Avaliação 360|Como aluno posso realizar a autoavaliação e a avaliação de outros alunos do mesmo grupo, em 6 tópicos diferentes, utilizando a escala likert, para receber e retribuir feedback|2|Alta|:heavy_check_mark:|
 |Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|➖|
 |Controle de Turma|Como administrador posso efetuar o cadastro, salas e grupos e fazer a organização dos elementos, para configurar o ambiente em que os alunos vão fazer a avaliação|3|Baixa|:heavy_check_mark:|
 |Controle de Turma|Como administrador posso atribuir datas inicio e final de Sprints às turmas, para registrar quando a avaliação estará disponível|3|Média|:heavy_check_mark:|
