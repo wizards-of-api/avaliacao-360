@@ -5,6 +5,9 @@ import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import PySimpleGUI as sg
 
+width = .25
+colors = ['b','g','r','c','m','y','k','w']
+
 def draw_figure(canvas, figure):
     canvas = canvas.TKCanvas
     figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
@@ -12,8 +15,35 @@ def draw_figure(canvas, figure):
     figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
     return figure_canvas_agg
 
+def generate_combine_bar_graph(title, x_label, y_label, group_data, legend_list, label_list, size):
+    fig = plt.figure(figsize = size)
+    per_legend_data = [[] for _ in legend_list]
+
+    for data in group_data:
+        for i, value in enumerate(data):
+            per_legend_data[i].append(value)
+
+    offset = 0
+    for i, data in enumerate(per_legend_data):
+        br = [offset + x * width * (len(legend_list) + 1) for x in range(len(data))]
+        plt.bar(br, data, color=colors[i], width=width, label=legend_list[i])
+        offset += width
+
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    tick_list = []
+
+    offset = len(legend_list) * width / 2 - width / 2
+    for i in range(len(label_list)):
+        tick_list.append(i * width * (len(legend_list) + 1) + offset)
+
+    plt.xticks(tick_list, label_list)
+    plt.legend()
+
+    return fig
+
 def generate_bar_graph(title, x_label, y_label, label_list, data, size):
-    width = .25
 
     fig = plt.figure(figsize = size)
 
@@ -26,10 +56,7 @@ def generate_bar_graph(title, x_label, y_label, label_list, data, size):
     return fig
 
 def generate_line_graph(title, data, label_list, size):
-    fig = plt.figure(figsize=size)
-
-    colors = ['b','g','r','c','m','y','k','w']
-    
+    fig = plt.figure(figsize=size)    
     x_list = []
     y_list = []
 
