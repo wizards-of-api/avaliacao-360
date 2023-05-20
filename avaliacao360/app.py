@@ -7,9 +7,9 @@ to_close = False
 is_running = False
 fix_date = None
 
-def pop_up(msg):
+def pop_up_success(msg):
     layout = [[sg.Text(msg)], [sg.Button('Ok')]]
-    window = sg.Window('Avaliação 360', layout)
+    window = sg.Window('Avaliação 360 - Sucesso', layout, element_justification='c')
     window.read()
     window.close()
 
@@ -17,14 +17,14 @@ def set_date(date):
     global fix_date
     fix_date = date
 
-def error(msg):
-    global window
-    window.close()
+def pop_up_advice(msg):
+    #global window
+    #window.close()
 
-    layout = [[sg.Text(msg)], [sg.Button('Close')]]
-    err_window = sg.Window('Avaliação 360 - ERROR', layout)
-    err_window.read()
-    err_window.close()
+    layout = [[sg.Text(msg)], [sg.Button('Ok')]]
+    error_window = sg.Window('Avaliação 360 - Aviso', layout, element_justification='c')
+    error_window.read()
+    error_window.close()
 
 
 def close():

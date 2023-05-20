@@ -15,7 +15,7 @@ def create_window():
         [sg.Button('Usuário', key= 'username', s=(18,1))],
         [sg.Button('Voltar', key='return interface', s=(18, 1))]
         ]
-    return sg.Window('Avaliação 360 - Criar Classe/Turma/Grupo', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Criar Classe/Turma/Grupo/Usuário', layout, element_justification='c', finalize= True)
 
 def event_handler(event, _):
     if event == 'return interface':

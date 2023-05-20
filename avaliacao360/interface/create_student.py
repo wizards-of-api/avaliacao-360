@@ -17,7 +17,7 @@ def create_window():
         [sg.Text('Grupo'), sg.Combo(group_name_list, readonly=True, key = 'list')],
         [sg.Button('Registrar Aluno', key = 'create student'),sg.Button('Voltar', key = 'return interface')]
         ]
-    return sg.Window('Avaliação 360 - Criar Aluno', layout, element_justification='c', finalize=True)
+    return sg.Window('Avaliação 360 - Criação de Alunos', layout, element_justification='c', finalize=True)
 
 def event_handler(event, values):
     input_student = values['input']
@@ -27,10 +27,10 @@ def event_handler(event, values):
         app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'create student':
         if input_student == '':
-            sg.popup('Por favor, preencha o nome do aluno')
+            app.pop_up_advice('Por favor, preencha o nome do aluno')
         elif input_group == '':
-            sg.popup('Por favor, selecione um grupo')
+            app.pop_up_advice('Por favor, selecione um grupo')
         else:          
             group_id = int(input_group.split(' | ')[0])
             connection_student.create_student({'name': input_student,'group-id': group_id})
-            sg.popup(f'Aluno {input_student} criado com sucesso!')
+            app.pop_up_success(f'Aluno {input_student} criado com sucesso!')

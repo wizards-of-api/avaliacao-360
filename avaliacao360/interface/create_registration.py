@@ -36,7 +36,7 @@ def create_window(key):
         [sg.Button('Cadastrar', key='register', size=(10,1)),
          sg.Button('Voltar', key='return', size=(10,1))]
     ]
-    return sg.Window('Cadastro de Aluno', layout, element_justification='c', finalize=True)
+    return sg.Window('Criação de Usuários', layout, element_justification='c', finalize=True)
 
 
 def event_handler(event, values):
@@ -49,7 +49,7 @@ def event_handler(event, values):
                              entity_manager.event_handler)
         return
     if input_student == '':
-        app.pop_up('Por favor, selecione o estudante')
+        app.pop_up_advice('Por favor, selecione o estudante')
         return
 
     elif event == 'register':
@@ -61,21 +61,21 @@ def event_handler(event, values):
 
         # Validar se o nome e senha foram preenchidos
         if not username.strip() or not password.strip():
-            app.pop_up('Por favor, preencha o nome e a senha')
+            app.pop_up_advice('Por favor, preencha o nome e a senha')
             return
 
         # Validar se a senha tem pelo menos 8 caracteres
         if len(password) < 8:
-            app.pop_up('A senha deve ter pelo menos 8 caracteres')
+            app.pop_up_advice('A senha deve ter pelo menos 8 caracteres')
             return
 
         elif filter_by_key(user_list, 'username', username):
-            sg.popup('Usuário já existente')
+            app.pop_up_advice('Usuário já existente')
         else:
             student_id = int(student_input.split(' | ')[0])
 
             credentials = {'username': username, 'password': password, 'student-id': student_id}
             login.create_user(credentials)
-            app.pop_up(msg='Usuário %s criado com sucesso' %username)
+            app.pop_up_success(msg='Usuário %s criado com sucesso' %username)
             app.change_interface(entity_manager.create_window(),
                              entity_manager.event_handler)

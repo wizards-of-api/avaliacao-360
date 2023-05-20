@@ -16,7 +16,7 @@ def get_sprint_number(values):
             raise Exception('')
         return sprint_total
     except:
-        sg.popup('Numero total de sprint invalido (1 à 10)')
+        app.pop_up_advice('Numero total de sprint invalido (1 à 10)')
 
 def sprint_configure_handler(room_id, sprint_total):
     sprint_num = 1
@@ -65,7 +65,7 @@ def sprint_configure_handler(room_id, sprint_total):
             date1 = convert_date_str(values['date1'])
             date2 = convert_date_str(values['date2'])
             if date1 >= date2:
-                sg.popup('Data Final dever ser depois da Data Inicial')
+                app.pop_up_advice('A Data Final deve ser depois da Data Inicial')
                 return
             sprint_list.append({'start': values['date1'], 'end': values['date2']})
 

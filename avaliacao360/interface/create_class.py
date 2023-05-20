@@ -10,7 +10,7 @@ def create_window(key):
         [sg.Text('', key='output')],
         [sg.Button('Criar', key='button create', s=(8, 1)),sg.Button('Voltar', key='return interface', s=(8, 1))]
         ]
-    return sg.Window('Avaliação 360 - Criar Classe/Turma/Grupo', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Criação de Turmas', layout, element_justification='c', finalize= True)
     
 
 def event_handler(event, values):
@@ -21,10 +21,10 @@ def event_handler(event, values):
         app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'button create':
         if input_class == '':
-            sg.popup('Por favor, insira o nome da Turma!')
+            app.pop_up_advice('Por favor, insira o nome da Turma!')
         elif filter_by_key(class_list, 'name', input_class):
-            sg.popup('Nome da Turma já existente')
+            app.pop_up_advice('Nome da Turma já existente')
         else:
             create_class.create_class_room({'name': input_class})
-            app.pop_up(msg='Turma %s criada com sucesso' %input_class)
+            app.pop_up_success(msg='Turma %s criada com sucesso' %input_class)
             

@@ -14,7 +14,7 @@ def create_window():
         [sg.Button('Registrar Grupo', key='create group')],
         [sg.Button('Voltar', key='return interface')]
         ]
-    return sg.Window('Avaliação 360 - Criar Grupo', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Criação de Grupos', layout, element_justification='c', finalize= True)
 
 
 def event_handler(event, values):
@@ -26,16 +26,16 @@ def event_handler(event, values):
         app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
     elif event == 'create group':
         if input_class_room_name == '':    
-            sg.popup('Por favor, selecione uma turma')
+            app.pop_up_advice('Por favor, selecione uma turma')
             return
         
         class_room_id = int(input_class_room_name.split(' | ')[0])
         room_group_list = connection_class_room.get_class_room_group_list(class_room_id)
 
         if input_groupname == '':
-            sg.popup('Por favor, preencha o nome do grupo')
+            app.pop_up_advice('Por favor, preencha o nome do grupo')
         elif filter_by_key(room_group_list, 'name', input_groupname):
-            sg.popup('Nome de grupo já existente')
+            app.pop_up_advice('Nome de grupo já existente')
         else:
             connection_group.create_group({'name': input_groupname, 'class-room-id': class_room_id})
-            sg.popup(f'Grupo {input_groupname} criado com sucesso!')
+            app.pop_up_success(f'Grupo {input_groupname} criado com sucesso!')

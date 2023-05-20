@@ -8,11 +8,11 @@ import interface.classlist as class_list
 def create_window():
   layout = [ 
             [sg.Text('Administrador')], 
-            [sg.Button('Criar turma/grupo/aluno', key='create room', s=(18, 1) )],
-            [sg.Button('Resultados da avaliação', key='result evaluation', s=(18, 1))],
-            [sg.Button('Requisitar avaliação', key='request evaluation', s=(18, 1))],
-            [sg.Button('Lista de turmas/grupos', key='class list', s=(18, 1))],
-            [sg.Button('Voltar', key='return interface', s=(18, 1))]
+            [sg.Button('Criar turma/grupo/aluno/usuário', key='create room', s=(25, 1) )],
+            [sg.Button('Resultados da avaliação', key='result evaluation', s=(25, 1))],
+            [sg.Button('Requisitar avaliação', key='request evaluation', s=(25, 1))],
+            [sg.Button('Lista de turmas/grupos', key='class list', s=(25, 1))],
+            [sg.Button('Voltar', key='return interface', s=(25, 1))]
               ]
   return sg.Window('Avaliação 360 - Administrador', layout, element_justification='c', finalize=True)
   
@@ -31,7 +31,7 @@ def event_handler(event, _):
     app.change_interface(entity_manager.create_window(),entity_manager.event_handler)
 
   elif event == 'result evaluation':
-    app.pop_up('Em desenvolvimento')
+    app.pop_up_advice('Em desenvolvimento')
 
   elif event == 'request evaluation':
     

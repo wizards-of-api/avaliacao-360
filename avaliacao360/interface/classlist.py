@@ -9,7 +9,7 @@ def create_window ():
                 [sg.Text(dev_text)],
                 [sg.Button('Voltar', key='return interface', s=(18, 1))]
                    ]
-    return sg.Window('Avaliação 360 - Lista de Turmas/Grupos', layout, element_justification='c', finalize= True)
+    return sg.Window('Avaliação 360 - Lista de Turmas e Grupos', layout, element_justification='c', finalize= True)
 
 def event_handler(event, _):
     if event == 'return interface':
