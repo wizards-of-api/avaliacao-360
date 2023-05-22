@@ -20,7 +20,7 @@ def get_group_by_name(name):
 def get_group_student_list(id):
     """Retorna a lista de estudantes pertencentes ao grupo com o ID especificado."""
     student_list = student_connection.get_student_list()
-    return [student for student in student_list if student['group-id'] == id]
+    return [student for student in student_list if id in student['group-id-list']]
 
 def create_group(new_group_dict):
     """Cria um novo grupo com as informações fornecidas em new_group_dict."""

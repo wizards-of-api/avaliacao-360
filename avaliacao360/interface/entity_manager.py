@@ -27,4 +27,4 @@ def event_handler(event, _):
     elif event == 'student':
         app.change_interface(create_student.create_window(), create_student.event_handler)
     elif event == 'username':
-        app.change_interface(create_registration.create_window(key='output'), create_registration.event_handler)
+        app.change_interface(create_registration.create_window(), create_registration.event_handler)
