@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 import interface.entity_manager as entity_manager
 import connection.student as connection_student
 import connection.class_room as connection_room
-import connection.group as connection_group
 import app
 
 def select_group_handler(student_name, room_id_list):
@@ -48,7 +47,6 @@ def create_window():
     room_check_list = []
     for room_name in room_name_list:
         room_check_list.append([sg.Checkbox(room_name, key='cb_room-'+str(len(room_check_list)+1))])
-
 
     layout = [
         [sg.Text('Criar Aluno')],

@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 import interface.entity_manager as entity_manager
 import connection.student as connection_student
-import connection.class_room as connection_room
 import connection.login as login
 from utils.filters import filter_by_key
 import app

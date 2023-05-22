@@ -84,7 +84,7 @@ def get_student_evaluation_by_id(student_id):
     return evaluation_connection.get_evaluation_by_student_id(student_id)
 
 
-def get_student_todo_evaluation(student_id):
+def get_student_todo_evaluation(student_id, group_id):
     """
     Retorna se o aluno tem uma avaliação disponivel ou não
 
@@ -93,6 +93,8 @@ def get_student_todo_evaluation(student_id):
     """
     evaluation_list = get_student_evaluation_by_id(student_id)
     for evaluation in evaluation_list:
+        if evaluation['group-id'] != group_id:
+            continue
         if 'todo-student-id-list' not in evaluation:
             continue
         if student_id in evaluation['todo-student-id-list']:
