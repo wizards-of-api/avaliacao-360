@@ -53,13 +53,18 @@ def create_student(new_student_dict):
     Retorna:
     int: O ID do novo estudante.
     """
+    
+    for group_id in new_student_dict['group-id-list']:
+        if not isinstance(group_id, int):
+            raise Exception('group-id-list deve ser uma lista de inteiros')
+
     student_list = get_student_list()
 
     student_id = controller.get_last_id(key) + 1
 
     student_dict = {
         'id': student_id,
-        'group-id': new_student_dict['group-id'],
+        'group-id-list': new_student_dict['group-id-list'],
         'name': new_student_dict['name'],
     }
 
@@ -102,9 +107,13 @@ def resolve_student(student_dict):
     :parâmetro student_dict: Dicionario a ser convertido
     :return: Dicionario convertido
     """
-    group = group_connection.resolve_group_by_id(student_dict['group-id'])
-    del student_dict['group-id']
-    student_dict['group'] = group
+
+    group_list = []
+    for group_id in student_dict['group-id-list']:
+        group = group_connection.resolve_group_by_id(group_id)
+        group_list.append(group)
+    del student_dict['group-id-list']
+    student_dict['group-list'] = group_list
     return student_dict
 
 

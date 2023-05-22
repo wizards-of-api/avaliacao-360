@@ -20,15 +20,13 @@ def get_evaluation_by_id(id: int):
     """
     return filter_by_key(get_evaluation_list(), 'id', id)
 
-def get_evaluation_by_student_id(student_id: int):
+def get_evaluation_by_student_id(group_id: int):
     """
     Retorna avaliação usando o id de um estudante.
 
     :parâmetro student_id: um integer que representa o id do estudante que deseja procurar.
     :return: dicionario da avaliação
     """
-
-    group_id = student_connection.get_student_by_id(student_id)['group-id']
     return filter_by_key(get_evaluation_list(), 'group-id', group_id)
 
 def get_evaluation_by_group_id(group_id: int):
