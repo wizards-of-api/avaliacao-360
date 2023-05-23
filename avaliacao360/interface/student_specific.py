@@ -1,12 +1,11 @@
 import app
 import PySimpleGUI as sg
-import interface.login as interface_login
-import interface.evaluation as interface_evaluation
 import connection.student as connection_student
 import connection.group as connection_group
-import interface.dashboard_aluno as dashboard_aluno
+import interface.student_general as interface_student_general
+import interface.evaluation as interface_evaluation
 
-def create_window(student_id):
+def create_window(student_id, room_id):
 
     global student_info, group_info, window, student_evaluation
 
@@ -14,10 +13,9 @@ def create_window(student_id):
     student_info = connection_student.resolve_student(student_raw)
     student_name = student_info['name']
 
-    student_evaluation = connection_student.get_student_todo_evaluation(student_info['id'])
-
-    group_info = student_info['group']
+    group_info = [group for group in student_info['group-list'] if group['class-room']['id'] == room_id][0]
     group_name = group_info['name']
+    student_evaluation = connection_student.get_student_todo_evaluation(student_id, group_info['id'])
 
     class_room_info = group_info['class-room']
     class_room_name = class_room_info['name']
@@ -37,14 +35,10 @@ def create_window(student_id):
 
 def event_handler(event, _):
     global student_info, student_evaluation
-    if event == 'Cancelar':
-        app.close()
-    elif event == 'Voltar':
-        app.change_interface(interface_login.create_window(), interface_login.event_handler)
+    if event == 'Voltar':
+        app.change_interface(interface_student_general.create_window(student_info['id']), interface_student_general.event_handler)
    
     elif event == 'Avaliação':
     #seleciona um grupo para realizar avaliacao
         student_list = connection_group.get_group_student_list(group_info['id'])
         interface_evaluation.create_evaluation(student_info['id'], student_evaluation, student_list)
-    elif event =='Resultados':
-        app.change_interface(dashboard_aluno.create_window(student_info['id']),dashboard_aluno.event_handler)

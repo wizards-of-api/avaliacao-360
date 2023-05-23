@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 import interface.entity_manager as entity_manager
 import connection.student as connection_student
-import connection.class_room as connection_room
 import connection.login as login
 from utils.filters import filter_by_key
 import app
@@ -14,7 +13,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), '..', 'utils')))
 
 
-def create_window(key):
+def create_window():
     student_list = connection_student.get_student_list()
     student_name_list = []
     user_student_id_list = [user['student-id'] for user in login.get_username_list()]
@@ -24,8 +23,6 @@ def create_window(key):
         resolved_student = connection_student.resolve_student(student)
         student_name_list.append(
             str(resolved_student['id']) + ' | ' +
-            resolved_student['group']['class-room']['name'] + ' / ' +
-            resolved_student['group']['name'] + ' / ' + 
             resolved_student['name'])
 
     layout = [

@@ -1,9 +1,8 @@
 import app
 import PySimpleGUI as sg
-import interface.student as interface_student 
+import interface.student_general as interface_student_general 
 import interface.adm as interface_adm
 import connection.login as connection_login
-import connection.student as connection_student
 
 def create_window():
     layout = [[sg.Text('Login!')],
@@ -16,6 +15,7 @@ def create_window():
     return sg.Window('Avaliação 360 - Login', layout, element_justification = 'c')
 
 def event_handler(event, values):
+    print(event)
     username = values['username']
     password = values['password']
     if event == 'Cancel':
@@ -29,6 +29,6 @@ def event_handler(event, values):
             app.pop_up('Senha incorreta!')
         elif connection_login.check_login(username, password):
             student_id = connection_login.check_login(username, password)
-            app.change_interface(interface_student.create_window(student_id), interface_student.event_handler)
+            app.change_interface(interface_student_general.create_window(student_id), interface_student_general.event_handler)
         else:
             app.pop_up('Não possui Login')

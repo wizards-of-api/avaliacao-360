@@ -27,9 +27,9 @@ def get_evaluation_by_student_id(student_id: int):
     :parâmetro student_id: um integer que representa o id do estudante que deseja procurar.
     :return: dicionario da avaliação
     """
-
-    group_id = student_connection.get_student_by_id(student_id)['group-id']
-    return filter_by_key(get_evaluation_list(), 'group-id', group_id)
+    student = student_connection.get_student_by_id(student_id)
+    group_id_list = student['group-id-list']
+    return [evaluation for evaluation in get_evaluation_list() if evaluation['group-id'] in group_id_list]
 
 def get_evaluation_by_group_id(group_id: int):
     """
@@ -40,9 +40,14 @@ def get_evaluation_by_group_id(group_id: int):
     """
     return filter_by_key(get_evaluation_list(), 'group-id', group_id)
 
+def force_close_evaluation(evaluation: dict):
+    evaluation['unfinish-student-id-list'] = evaluation['todo-student-id-list']
+    evaluation['todo-student-id-list'] = []
+    return close_evaluation(evaluation)
+
 def close_evaluation(evaluation: dict):
     """
-    Checa se a avaliação esta pronta o modifica os dados no bando de dados mocado (ficticio).
+    Checa se a avaliação esta pronta e modifica os dados no bando de dados mocado (ficticio).
 
     Retorna False se não estaja finalizado e True caso contrario.
 
@@ -62,9 +67,9 @@ def close_evaluation(evaluation: dict):
 
     return True
     
-def validate_answer_dict(student_id: int, answer_dict: dict):
-    student = student_connection.get_student_by_id(student_id)
-    group_student_list = group_connection.get_group_student_list(student['group-id'])
+def validate_answer_dict(student_id, evaluation_id: int, answer_dict: dict):
+    evaluation = get_evaluation_by_id(evaluation_id)[0]
+    group_student_list = group_connection.get_group_student_list(evaluation['group-id'])
     student_id_list = [student['id'] for student in group_student_list]
 
     for evaluted_id, answer_list in answer_dict.items():
@@ -91,15 +96,13 @@ def answer_evaluation(student_id: int, evaluation_id: int, answer_dict: dict):
     e o valor uma array com as notas da pergunta
 
     """
-
-    validate_answer_dict(student_id, answer_dict)
+    validate_answer_dict(student_id, evaluation_id, answer_dict)
 
     student = student_connection.get_student_by_id(student_id)
-    evaluation_list = get_evaluation_by_group_id(student['group-id'])
-
-    evaluation = [evaluation for evaluation in evaluation_list if evaluation['id'] == evaluation_id][0]
+    evaluation = get_evaluation_by_id(evaluation_id)[0]
 
     evaluation['todo-student-id-list'].remove(student['id'])
+    evaluation['finish-student-id-list'].append(student['id'])
     evaluation['answer-dict'][student['id']] = answer_dict
 
     if(close_evaluation(evaluation)):
@@ -130,6 +133,7 @@ def create_evaluation(new_evaluation_dict):
         'id': evaluation_id,
         'group-id': new_evaluation_dict['group-id'],
         'sprint': new_evaluation_dict['sprint'],
+        'finish-student-id-list': [],
         'todo-student-id-list': student_id_list,
         'status': 'todo',
         'answer-dict': {},

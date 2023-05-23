@@ -1,8 +1,6 @@
 from datetime import timedelta
 from utils.date_functions import convert_date_str
-from config import question_list
 import connection.evaluation as evaluation_connection
-import connection.group as group_connection
 import connection.class_room as room_connection
 
 def close_evaluations(sprint):
@@ -11,16 +9,7 @@ def close_evaluations(sprint):
     for evaluation in evaluation_list:
         if evaluation['status'] == 'done':
             continue
-        for student_id in evaluation['todo-student-id-list']:
-            default_answer_list = [{'value': 1, 'feedback': 'não foi respondido'} for _ in question_list]
-            group_id = evaluation['group-id']
-            student_list = group_connection.get_group_student_list(group_id)
-
-            final_answer = {}
-            for student in student_list:
-                final_answer[student['id']] = default_answer_list
-
-            evaluation_connection.answer_evaluation(student_id, evaluation['id'], final_answer)
+        evaluation_connection.force_close_evaluation(evaluation)
 
 def init_evaluations(room, sprint):
     group_list = room_connection.get_class_room_group_list(room['id'])

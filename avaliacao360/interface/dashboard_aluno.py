@@ -1,6 +1,6 @@
 import app
 import PySimpleGUI as sg
-import interface.student as student
+import interface.student_specific as student_specific
 
 def create_window(student_id):
     global _student_id
@@ -25,5 +25,5 @@ def create_window(student_id):
 def event_handler(event, _):
     global _student_id
     if event == 'return':
-        app.change_interface(student.create_window(_student_id), student.event_handler)
+        app.change_interface(student_specific.create_window(_student_id), student_specific.event_handler)
     
