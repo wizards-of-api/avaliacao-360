@@ -3,10 +3,12 @@ import PySimpleGUI as sg
 import interface.login as interface_login  
 import interface.entity_manager as entity_manager
 import interface.sprint_control as request_evaluation
+import interface.path_adm_dashboard as path_adm_dashboard
+
 def create_window():
   layout = [ 
             [sg.Text('Administrador')], 
-            [sg.Button('Criar turma/grupo/aluno', key='create room', s=(18, 1) )],
+            [sg.Button('Criar turma/grupo/aluno', key='create room', s=(18, 1))],
             [sg.Button('Resultados da avaliação', key='result evaluation', s=(18, 1))],
             [sg.Button('Controle de sprint', key='request evaluation', s=(18, 1))],
             [sg.Button('Voltar', key='return interface', s=(18, 1))]
@@ -25,10 +27,11 @@ def event_handler(event, _):
 
   elif event == 'create room':
 
-    app.change_interface(entity_manager.create_window(),entity_manager.event_handler)
+    app.change_interface(entity_manager.create_window(), entity_manager.event_handler)
 
   elif event == 'result evaluation':
-    app.pop_up('Em desenvolvimento')
+
+    app.change_interface(path_adm_dashboard.create_window(), path_adm_dashboard.event_handler)
 
   elif event == 'request evaluation':
     
