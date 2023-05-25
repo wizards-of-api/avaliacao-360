@@ -52,8 +52,46 @@ def evaluation_score(name, sprint, group):
           'average': list_avaluation_average, 
           'feedback': list_evaluation_feedback
         }
-        print(evaluation_dict_student)
         return evaluation_dict_student
+      
+def general_dash(name):
+  with open(mock_path, 'r') as mock_db_file:
+    mock_db_str = mock_db_file.read()
+    json_db = json.loads(mock_db_str)
+    name_student = name
+    group_id_list = []
+    name_group = []
+    id_group = 0
+    sprint = 0
+    for student in json_db['student-list']:
+      if student['name'] == name:
+        group_id_list = student['group-id-list']
+        for group in group_id_list:
+          id_group = group
+          for names in json_db['group-list']:
+            if id_group == names['id']:
+              name_group.append(names['name'])
+    for sprints in json_db['evaluation-list']:
+      if sprints['group-id'] == id_group:
+        sprint = sprints['sprint']
+    avarage = evaluation_score(name_student, sprint, id_group)
+    generate_dict_student = {
+      'values': avarage['values'],
+      'average': avarage['average'],
+      'group': name_group,
+      'sprint': sprint,
+    }
+    print(generate_dict_student)
+    return generate_dict_student
+
+
+
+    
+              
+
+
+        
+
           
 def media_list(list):
   nota1 = 0
@@ -68,11 +106,11 @@ def media_list(list):
     nota3 += score[2]
     nota4 += score[3]
     nota5 += score[4]
-    nota6 += score[5]
+    # nota6 += score[5]
     
   list_avaluation_average =[ nota1/len(list),
   nota2/len(list), nota3/len(list), nota4/len(list),
-  nota5/len(list), nota6/len(list)]
+  nota5/len(list)]
 
   return list_avaluation_average
   
