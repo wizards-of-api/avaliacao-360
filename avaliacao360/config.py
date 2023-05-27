@@ -6,3 +6,12 @@ question_list = [
     'realizou as entregas no prazo.',
     'tem afinidade com autogestão.'
 ]
+
+competence_list = [
+    'comunicação',
+    'contribuição',
+    'engajamento',
+    'conhecimento',
+    'entrega',
+    'auto-gestão'
+]
