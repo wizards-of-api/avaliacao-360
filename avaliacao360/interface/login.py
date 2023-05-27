@@ -6,7 +6,6 @@ import connection.login as connection_login
 import connection.student_dash as student
 
 def create_window():
-    student.general_dash('Ana')
     layout = [[sg.Text('Login!')],
        [sg.Text('Usuário: ', size = (6,0)), sg.InputText(size = (20,0), key='username')],
         [sg.Text('Senha: ', size = (6,0)), sg.InputText(size = (20,0), key = 'password', password_char='*')],
