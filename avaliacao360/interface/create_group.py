@@ -36,6 +36,8 @@ def event_handler(event, values):
             sg.popup('Por favor, preencha o nome do grupo')
         elif filter_by_key(room_group_list, 'name', input_groupname):
             sg.popup('Nome de grupo já existente')
+            app.change_interface(create_window(), event_handler)
         else:
             connection_group.create_group({'name': input_groupname, 'class-room-id': class_room_id})
             sg.popup(f'Grupo {input_groupname} criado com sucesso!')
+            app.change_interface(create_window(), event_handler)
