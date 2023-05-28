@@ -1,4 +1,5 @@
 import sys, os
+import random
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'avaliacao360')))
@@ -29,240 +30,51 @@ def reset():
 
     group_mega_id = group.create_group({'class-room-id': room_a_id, 'name': 'Grupo Mega'})
     group_ultra_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Ultra'})
+    group_super_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Ultra'})
 
     ana_id = student.create_student({'group-id-list': [group_mega_id, group_ultra_id], 'name': 'Ana'})
     login.create_user({'username': 'ana', 'password': '12345678', 'student-id': ana_id})
     paulo_id = student.create_student({'group-id-list': [group_mega_id, group_ultra_id], 'name': 'Paulo'})
     login.create_user({'username': 'paulo', 'password': '12345678', 'student-id': paulo_id})
 
+    luana_id = student.create_student({'group-id-list': [group_super_id], 'name': 'Luana'})
+    login.create_user({'username': 'luana', 'password': '12345678', 'student-id': luana_id})
+    gabriel_id = student.create_student({'group-id-list': [group_super_id], 'name': 'Gabriel'})
+    login.create_user({'username': 'gabriel', 'password': '12345678', 'student-id': gabriel_id})
+
+
     eval_mega_1 = evaluation.create_evaluation({'group-id': group_mega_id, 'sprint': 1})
     eval_mega_2 = evaluation.create_evaluation({'group-id': group_mega_id, 'sprint': 2})
     eval_ultra_1 = evaluation.create_evaluation({'group-id': group_ultra_id, 'sprint': 1})
+    eval_super_1 = evaluation.create_evaluation({'group-id': group_super_id, 'sprint': 1})
 
-    ana_eval_1 = {
-        ana_id: [
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-        ],
-        paulo_id: [
-            {
-                'value': 1,
-                'feedback': 'Não dá'
-            },
-            {
-                'value': 1,
-                'feedback': 'Não se esforça'
-            },
-            {
-                'value': 1,
-                'feedback': 'Muita ruim'
-            },
-            {
-                'value': 1,
-                'feedback': 'Tem que melhorar'
-            },
-            {
-                'value': 1,
-                'feedback': 'Faltou aquilo'
-            },
-            {
-                'value': 1,
-                'feedback': 'Lorem Ipsum'
-            },
-        ]
-    }
-    ana_eval_2 = {
-        ana_id: [
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-        ],
-        paulo_id: [
-            {
-                'value': 2,
-                'feedback': 'Não dá'
-            },
-            {
-                'value': 2,
-                'feedback': 'Não se esforça'
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 1,
-                'feedback': 'Lorem Ipsum'
-            },
-        ]
-    }
-    ana_eval_3 = {
-        ana_id: [
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-        ],
-        paulo_id: [
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-        ]
-    }
+    def random_answer_generator(id_list):
+        def random_single():
+            random_feedback_list = ['Não dá', 'Muito Ruim', 'Fala muito', 'Tem que melhorar', 'Faltou Aquilo', 'Lorem Ipsum', 'Nem sei', 'Deu vontade', 'Hmmmm pensa muito']
+            value = random.randint(1,5)
+            feedback = None
+            if value < 3:
+                feedback = random.choice(random_feedback_list)
+            return { 'value': value, 'feedback': feedback }
 
-    paulo_eval = {
-        paulo_id: [
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-        ],
-        ana_id: [
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 5,
-                'feedback': None
-            },
-            {
-                'value': 3,
-                'feedback': None
-            },
-            {
-                'value': 4,
-                'feedback': None
-            },
-        ]
-    }
+        answer_dict = {}
+        for evaluated in id_list:
+            answer_dict[evaluated] = [random_single(), random_single(), random_single(), random_single(), random_single(), random_single()]
 
-    evaluation.answer_evaluation(ana_id, eval_mega_1, ana_eval_1)
-    evaluation.answer_evaluation(ana_id, eval_mega_2, ana_eval_2)
-    evaluation.answer_evaluation(ana_id, eval_ultra_1, ana_eval_3)
-    evaluation.answer_evaluation(paulo_id, eval_mega_1, paulo_eval)
-    evaluation.answer_evaluation(paulo_id, eval_mega_2, paulo_eval)
-    evaluation.answer_evaluation(paulo_id, eval_ultra_1, paulo_eval)
+        return answer_dict
+    
+    
+    id_list_1 = [ana_id, paulo_id]
+    id_list_2 = [luana_id, gabriel_id]
+
+    evaluation.answer_evaluation(ana_id, eval_mega_1, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(ana_id, eval_mega_2, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(ana_id, eval_ultra_1, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(paulo_id, eval_mega_1, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(paulo_id, eval_mega_2, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(paulo_id, eval_ultra_1, random_answer_generator(id_list_1))
+    evaluation.answer_evaluation(luana_id, eval_super_1, random_answer_generator(id_list_2))
+    evaluation.answer_evaluation(gabriel_id, eval_super_1, random_answer_generator(id_list_2))
 
 
 if __name__ == '__main__':
