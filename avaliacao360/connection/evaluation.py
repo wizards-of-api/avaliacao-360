@@ -71,7 +71,6 @@ def validate_answer_dict(student_id, evaluation_id: int, answer_dict: dict):
     evaluation = get_evaluation_by_id(evaluation_id)[0]
     group_student_list = group_connection.get_group_student_list(evaluation['group-id'])
     student_id_list = [student['id'] for student in group_student_list]
-
     for evaluted_id, answer_list in answer_dict.items():
         if evaluted_id not in student_id_list:
             raise Exception('Aluno com id [' + str(evaluted_id) + '] não pertence ao mesmo grupo do aluno com id [' + str(student_id) + ']')
