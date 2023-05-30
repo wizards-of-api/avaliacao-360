@@ -21,7 +21,7 @@ def event_handler(event, _):
     if event == 'return interface':
         app.change_interface(interface_adm.create_window(), interface_adm.event_handler)
     elif event == 'class':
-        app.change_interface(create_class.create_window(key='output'), create_class.event_handler)
+        app.change_interface(create_class.create_window(''), create_class.event_handler)
     elif event == 'group':
         app.change_interface(create_group.create_window(), create_group.event_handler)
     elif event == 'student':
