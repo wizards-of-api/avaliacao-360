@@ -3,6 +3,7 @@ import PySimpleGUI as sg
 import interface.login as interface_login
 import connection.student as connection_student
 import interface.student_specific as interface_student_specific
+import interface.dashboard_general_student as dashboard_general
 
 def create_window(student_id):
     global student_info, group_info, window, student_evaluation
@@ -34,4 +35,4 @@ def event_handler(event, values):
     elif event == 'Entrar':
         app.change_interface(interface_student_specific.create_window(student_info['id'], room_id), interface_student_specific.event_handler)
     elif event =='Resultados':
-        app.pop_up('Desenvolvimento...')
+        app.change_interface(dashboard_general.create_window(student_info['id']), dashboard_general.event_handler)
