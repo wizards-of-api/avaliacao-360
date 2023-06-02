@@ -22,8 +22,10 @@ def create_window(student_id):
         general_data = stud_dash.general_dash(_student_id, group_id)
         media = general_data['average']
         name_group = general_data['group']
-        sprint_number = general_data['sprint']
-        sprint_name = f'Sprint {sprint_number}'
+        sprint_numbers = general_data['sprint']
+
+        for sprint_number in sprint_numbers:
+            sprint_name = f'Sprint {sprint_number}'
 
         competencies = ['Comunicação', 'Contribuição', 'Engajamento', 'Conhecimento', 'Entrega', 'Auto-Gestão']
         scores = media

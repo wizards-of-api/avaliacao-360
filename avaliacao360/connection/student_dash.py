@@ -60,7 +60,7 @@ def general_dash(id_student, group_id):
     name_student = ''
     group_id_data = group_id
     name_group = []
-    sprint = 0
+    sprint = []
     for student in json_db['student-list']:
       if student['id'] == id_student_data:
         name_student = student['name']
@@ -73,7 +73,7 @@ def general_dash(id_student, group_id):
                 name_group = names['name']
     for sprints in json_db['evaluation-list']:
       if sprints['group-id'] == group_id_data:
-        sprint = sprints['sprint']
+        sprint.append(sprints['sprint'])
     avarage = evaluation_score(name_student, sprint ,group_id)
     generate_dict_student = {
       'average': avarage['average'],
@@ -81,16 +81,7 @@ def general_dash(id_student, group_id):
       'sprint': sprint,
     }
     return generate_dict_student
-
-
-
     
-              
-
-
-        
-
-          
 def media_list(list):
   nota1 = 0
   nota2 = 0
@@ -113,14 +104,3 @@ def media_list(list):
     list_avaluation_average = [0]
     
   return list_avaluation_average
-  
-
-
-  
-   
-    
-  
-
-
-          
-      
