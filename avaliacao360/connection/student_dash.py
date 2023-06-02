@@ -15,7 +15,7 @@ def evaluation_score(name, sprint, group):
       if student['name'] == name_student:
         id_student = str(student['id'])
     for evaluation in json_db['evaluation-list']:
-      if evaluation['group-id'] == group_id_student and evaluation['sprint'] == sprint_student:
+      if evaluation['group-id'] == group_id_student and evaluation['sprint'] in sprint_student:
         dict_evaluation = evaluation['answer-dict']
         student_own_evluation = ''
         group_evaluation = ''
@@ -45,7 +45,7 @@ def evaluation_score(name, sprint, group):
         list_avaluation_full =  list_avaluation_group + list_avaluation_value
         list_avaluation_average = media_list(list_avaluation_full)
         evaluation_dict_student = {
-          name :student_own_evluation,
+          name : student_own_evluation,
           'values': list_avaluation_value,
           'average': list_avaluation_average, 
           'feedback': list_evaluation_feedback
@@ -101,6 +101,6 @@ def media_list(list):
     nota2/len(list), nota3/len(list), nota4/len(list),
     nota5/len(list), nota6/len(list)]
   else:
-    list_avaluation_average = [0]
+    list_avaluation_average = []
     
   return list_avaluation_average
