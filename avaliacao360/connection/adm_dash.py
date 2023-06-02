@@ -13,7 +13,6 @@ def generate_average_group_data(room_id):
     
     for group in group_list:
         eval_list = connect_eval.get_evaluation_by_group_id(group['id'])
-        print(group['class-room-id'])
         group_data = [[] for _ in config.competence_list]
 
         for evaluation in eval_list:
@@ -24,10 +23,13 @@ def generate_average_group_data(room_id):
                         group_data[i].append(competance_result['value'])
                         i += 1
 
-        if len(group_list) > 0:
-            group_data = [sum(value_list) / len(value_list) for value_list in group_data]
-        else:
-            group_data = [0 for _ in group_data]
+        for i in range(len(group_data)):
+            values_list = group_data[i]
+            if len(values_list) > 0:
+                group_data[i] = sum(values_list) / len(values_list)
+            else:
+                group_data[i] = 0
+                
         
         data.append(group_data)
     ret_dict['data'] = data
@@ -54,10 +56,12 @@ def generate_average_group_data_by_sprint(room_id):
                         group_data[i].append(competance_result['value'])
                         i += 1
 
-        if len(sprint_arr) > 0:
-            group_data = [sum(value_list) / len(value_list) for value_list in group_data]
-        else:
-            group_data = [0 for _ in group_data]
+        for i in range(len(group_data)):
+            values_list = group_data[i]
+            if len(values_list) > 0:
+                group_data[i] = sum(values_list) / len(values_list)
+            else:
+                group_data[i] = 0
         
         data.append(group_data)
     ret_dict['data'] = data
@@ -84,12 +88,12 @@ def generate_average_student_data(group_id):
                         group_data[i].append(competance_result['value'])
                         i += 1
 
-        print(group_data)
-
-        if len(student_list) > 0:
-            group_data = [sum(value_list) / len(value_list) for value_list in group_data]
-        else:
-            group_data = [0 for _ in group_data]
+        for i in range(len(group_data)):
+            values_list = group_data[i]
+            if len(values_list) > 0:
+                group_data[i] = sum(values_list) / len(values_list)
+            else:
+                group_data[i] = 0
         
         data.append(group_data)
     ret_dict['data'] = data
@@ -116,10 +120,12 @@ def generate_average_student_data_by_sprint(group_id):
                         group_data[i].append(competance_result['value'])
                         i += 1
 
-        if len(sprint_arr) > 0:
-            group_data = [sum(value_list) / len(value_list) for value_list in group_data]
-        else:
-            group_data = [0 for _ in group_data]
+        for i in range(len(group_data)):
+            values_list = group_data[i]
+            if len(values_list) > 0:
+                group_data[i] = sum(values_list) / len(values_list)
+            else:
+                group_data[i] = 0
         
         data.append(group_data)
     ret_dict['data'] = data

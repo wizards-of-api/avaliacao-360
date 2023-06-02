@@ -30,7 +30,7 @@ def reset():
 
     group_mega_id = group.create_group({'class-room-id': room_a_id, 'name': 'Grupo Mega'})
     group_ultra_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Ultra'})
-    group_super_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Ultra'})
+    group_super_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Super'})
 
     ana_id = student.create_student({'group-id-list': [group_mega_id, group_ultra_id], 'name': 'Ana'})
     login.create_user({'username': 'ana', 'password': '12345678', 'student-id': ana_id})
