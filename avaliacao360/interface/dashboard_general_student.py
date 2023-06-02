@@ -16,21 +16,24 @@ def create_window(student_id):
     student_name = student_info['name']
 
     table_data = []
+    lista_media = []
 
     for group in student_info['group-list']:
         group_id = group['id']
         general_data = stud_dash.general_dash(_student_id, group_id)
+        lista_media.append( general_data['average'])
         media = general_data['average']
         name_group = general_data['group']
         sprint_numbers = general_data['sprint']
 
         for sprint_number in sprint_numbers:
             sprint_name = f'Sprint {sprint_number}'
+            competencies = ['Comunicação', 'Contribuição', 'Engajamento', 'Conhecimento', 'Entrega', 'Auto-Gestão']
+            scores = media
+            table_data.append([name_group, sprint_name, *scores])
+    media_media = stud_dash.media_list(lista_media)
 
-        competencies = ['Comunicação', 'Contribuição', 'Engajamento', 'Conhecimento', 'Entrega', 'Auto-Gestão']
-        scores = media
-
-        table_data.append([name_group, sprint_name, *scores])
+    print(list)
 
     layout = [
         [sg.Text('Dashboard Geral do Aluno')],
@@ -41,7 +44,7 @@ def create_window(student_id):
     ]
     window = sg.Window('Avaliação 360 - Aluno', layout, finalize=True)
 
-    fig = generate_radial_graph('Gráfico Radial', media, competencies, (10, 6))
+    fig = generate_radial_graph('Gráfico Radial', media_media, competencies, (10, 6))
     draw_figure(window['dashradial'], fig)
 
     return window

@@ -97,9 +97,9 @@ def media_list(list):
     nota5 += score[4]
     nota6 += score[5]
   if len(list) > 0 :    
-    list_avaluation_average =[ nota1/len(list),
-    nota2/len(list), nota3/len(list), nota4/len(list),
-    nota5/len(list), nota6/len(list)]
+    list_avaluation_average =[ nota1//len(list),
+    nota2//len(list), nota3//len(list), nota4//len(list),
+    nota5//len(list), nota6//len(list)]
   else:
     list_avaluation_average = []
     
