@@ -16,7 +16,6 @@ def create_window():
     return sg.Window('Avaliação 360 - Login', layout, element_justification = 'c')
 
 def event_handler(event, values):
-    print(event)
     username = values['username']
     password = values['password']
     if event == 'Cancel':
