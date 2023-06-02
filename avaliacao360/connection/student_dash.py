@@ -75,7 +75,6 @@ def general_dash(id_student, group_id):
       if sprints['group-id'] == group_id_data:
         sprint.append(sprints['sprint'])
     avarage = evaluation_score(name_student, sprint ,group_id)
-    print(avarage)
     generate_dict_student = {
       'average': avarage['average'],
       'group': name_group,

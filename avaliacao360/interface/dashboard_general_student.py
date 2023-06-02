@@ -20,7 +20,6 @@ def create_window(student_id):
     for group in student_info['group-list']:
         group_id = group['id']
         general_data = stud_dash.general_dash(_student_id, group_id)
-        # print(general_data)
         media = general_data['average']
         name_group = general_data['group']
         sprint_number = general_data['sprint']
