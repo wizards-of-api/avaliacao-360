@@ -31,11 +31,11 @@ O programa viabiliza a avaliação dos alunos, se baseando na metodologia Avalia
 |Épico|User Story|Sprint|Prioridade|Status|
 | :------ | :------- | :------: | :--------: |:------:|
 |Avaliação 360|Como aluno posso realizar a autoavaliação e a avaliação de outros alunos do mesmo grupo, em 6 tópicos diferentes, utilizando a escala likert, para receber e retribuir feedback|2|Alta|:heavy_check_mark:|
-|Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|➖|
+|Controle de Turma|Como aluno posso fazer parte de mais de uma turma, para ramificar meu aprendizado em diferentes grupos|4|Média|:heavy_check_mark:|
 |Controle de Turma|Como administrador posso efetuar o cadastro de alunos, salas e turmas e fazer a organização dos elementos, para configurar o ambiente em que os alunos vão fazer a avaliação|3|Baixa|:heavy_check_mark:|
 |Controle de Turma|Como administrador posso atribuir datas inicio e final de Sprints às turmas, para registrar quando a avaliação estará disponível|3|Média|:heavy_check_mark:|
-|Dashboards de Acompanhamento|Como administrador posso visualizar desempenho das avaliações de todos os grupos de uma sala, na forma de dashboards, para acompanhar a evolução dos alunos|4|Alta|➡️|
-|Dashboards de Acompanhamento|Como aluno posso visualizar meu desempenho após as avaliações, na forma de dashboards, para compreender minhas forças e fraquezas|4|Alta|➡️|
+|Dashboards de Acompanhamento|Como administrador posso visualizar desempenho das avaliações de todos os grupos de uma sala, na forma de dashboards, para acompanhar a evolução dos alunos|4|Alta|:heavy_check_mark:|
+|Dashboards de Acompanhamento|Como aluno posso visualizar meu desempenho após as avaliações, na forma de dashboards, para compreender minhas forças e fraquezas|4|Alta|:heavy_check_mark:|
 |Gestão de usuário|Como administrador, posso efetuar o cadastro de alunos como usuarios, para que consigam utilizar a aplicação|3|Baixa|:heavy_check_mark:|
 |Gestão de usuário|Como usuário da aplicação devo acessá-la atraves de uma interface com autenticação, para utilizar das funcionalidades do aplicativo|3|Baixa|:heavy_check_mark:|
 <br>
@@ -46,7 +46,7 @@ Para ver o dashboard, [Clique aqui](https://trello.com/b/3F5TFt4V/roadmap/)!
 |Bibliotecas|Logo|
 | -------- |-------- |
 |**Py simple GUI**|[<img  height="30" width="40" alt="figma-logo" src="https://raw.githubusercontent.com/PySimpleGUI/PySimpleGUI/master/images/for_readme/Logo%20with%20text%20for%20GitHub%20Top.png"/>](https://www.pysimplegui.org/en/latest/)|
-
+|**matplotlib**|[<img alt="mat-plot-lib" width="40" height="30" src="https://matplotlib.org/_static/logo_dark.svg">](https://matplotlib.org/)|
 # Membros da equipe
 
 |Nome|Função|LinkedIn|
