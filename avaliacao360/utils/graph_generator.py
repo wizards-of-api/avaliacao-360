@@ -32,6 +32,7 @@ def generate_combine_bar_graph(title, x_label, y_label, group_data, legend_list,
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    plt.ylim(0,5)
     tick_list = []
 
     offset = len(legend_list) * width / 2 - width / 2
@@ -52,6 +53,7 @@ def generate_bar_graph(title, x_label, y_label, label_list, data, size):
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(title)
+    plt.ylim(0,5)
 
     return fig
 
@@ -101,6 +103,8 @@ def generate_radial_graph(title, data, label_list, size):
     
     plt.plot(theta, fix_data)
     plt.fill(theta, fix_data, 'b', alpha = 0.1)
+
+    plt.ylim(0, 5)
 
     plt.title(title)
 
