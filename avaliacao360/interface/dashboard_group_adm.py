@@ -36,7 +36,7 @@ def create_window(room_id, group_id):
       student_average = adm_dash.generate_average_student_data(group_id)
       sprint_average = adm_dash.generate_average_student_data_by_sprint(group_id)
 
-    graph1_fig = generate_combine_bar_graph('Média dos Grupos', 'Grupos', 'Médias', student_average['data'], config.competence_list, student_average['student-list'], (12, 4))
+    graph1_fig = generate_combine_bar_graph('Média dos Alunos', 'Alunos', 'Médias', student_average['data'], config.competence_list, student_average['student-list'], (12, 4))
     graph2_fig = generate_combine_bar_graph('Média das Sprints', 'Sprint', 'Médias', sprint_average['data'], config.competence_list, sprint_average['sprint-list'], (12, 4))
 
     canvas1 = sg.Canvas(key='canvas1', size=(5, 5), background_color='gray')
@@ -49,7 +49,7 @@ def create_window(room_id, group_id):
         [sg.Button('Voltar', key='return')]
     ]
 
-    window = sg.Window('Avaliação 360 - Dashboard das salas (ADM)', layout, finalize=True)
+    window = sg.Window('Avaliação 360 - Dashboard dos Grupos (ADM)', layout, finalize=True)
     draw_figure(canvas1, graph1_fig)
     draw_figure(canvas2, graph2_fig)
 

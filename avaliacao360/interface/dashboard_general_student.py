@@ -33,13 +33,11 @@ def create_window(student_id):
             table_data.append([name_group, sprint_name, *scores])
     media_media = stud_dash.media_list(lista_media)
 
-    print(list)
-
     layout = [
         [sg.Text('Dashboard Geral do Aluno')],
         [sg.Text(f'Aluno: {student_name}')],
         [sg.Canvas(background_color='grey', key='dashradial')],
-        [generate_table('table_key', ['Turma', 'Sprint'] + competencies, table_data)],
+        [generate_table('table_key', ['Grupo', 'Sprint'] + competencies, table_data)],
         [sg.Button('Voltar')]
     ]
     window = sg.Window('Avaliação 360 - Aluno', layout, finalize=True)

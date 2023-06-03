@@ -52,9 +52,12 @@ def create_window(student_id, group_id, sprint):
         average_list = [sum(value_list) / len(value_list) for value_list in average_list]
     else:
         average_list = [0 for _ in average_list]
-    fig = generate_bar_graph('Médias das Competencias', 'Competencias', 'Média', config.competence_list, average_list, (8,5))
+    fig = generate_bar_graph('Médias das Competencias das Sprints', 'Competencias', 'Média', config.competence_list, average_list, (8,5))
+
+    group = connect_group.get_group_by_id(group_id)
 
     layout = [
+        [sg.Text('Grupo: ' + group['name'])],
         [sg.Text('Sprint: '), combo, sg.Button('Refresh', key='refresh')],
         [feedback_table, sg.Canvas(key='canvas', size=(1000, 1000), background_color='gray')],
         [sg.Button('Voltar', key='return')]
