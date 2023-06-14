@@ -1,5 +1,7 @@
 import sys, os
 import random
+import datetime
+from datetime import timedelta, datetime
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'avaliacao360')))
@@ -23,10 +25,16 @@ def reset():
     sprint_1_object = {'start': '01/01/2023', 'end': '28/01/2023'}
     sprint_2_object = {'start': '01/02/2023', 'end': '28/02/2023'}
 
+    sprint_end = datetime.today() - timedelta(days=1)
+    sprint_start = sprint_end - timedelta(days=15)
+
+    sprint_3_object = {'start': sprint_start.strftime(date_format), 'end': sprint_end.strftime(date_format)}
+
     class_room.add_sprint(room_a_id, sprint_1_object)
     class_room.add_sprint(room_a_id, sprint_2_object)
     
     class_room.add_sprint(room_b_id, sprint_1_object)
+    class_room.add_sprint(room_b_id, sprint_3_object)
 
     group_mega_id = group.create_group({'class-room-id': room_a_id, 'name': 'Grupo Mega'})
     group_ultra_id = group.create_group({'class-room-id': room_b_id, 'name': 'Grupo Ultra'})
