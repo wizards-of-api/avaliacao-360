@@ -4,6 +4,7 @@ import matplotlib.patches as mpatches
 import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import PySimpleGUI as sg
+from config import LABEL_FONT
 
 width = .25
 colors = ['b','g','r','c','m','y','k','w']
@@ -115,4 +116,4 @@ def generate_table(key, top_row, rows):
    auto_size_columns=True,
    justification='center', key=key,
    expand_x=True,
-   expand_y=True)
+   expand_y=True, font=LABEL_FONT)

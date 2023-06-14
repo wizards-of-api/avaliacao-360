@@ -4,6 +4,7 @@ import interface.login as interface_login
 import connection.student as connection_student
 import interface.student_specific as interface_student_specific
 import interface.dashboard_general_student as dashboard_general
+from config import LABEL_FONT
 
 def create_window(student_id):
     global student_info, group_info, window, student_evaluation
@@ -18,10 +19,10 @@ def create_window(student_id):
         room_name_list.append(str(room['id']) + ' | ' + room['name'])
 
     layout = [
-        [sg.Text(f'Aluno: {student_name}')],
-        [sg.Text(f'Salas: '), sg.Combo(room_name_list, default_value=room_name_list[0], readonly=True, key='list'), sg.Button('Entrar')],
+        [sg.Text(f'Aluno: {student_name}', font=LABEL_FONT)],
+        [sg.Text(f'Salas: ', font=LABEL_FONT), sg.Combo(room_name_list, default_value=room_name_list[0], readonly=True, key='list', font=LABEL_FONT), sg.Button('Entrar', font=LABEL_FONT)],
         [sg.Text('\n')],
-        [sg.Button('Voltar'), sg.Button('Resultados')]
+        [sg.Button('Voltar', font=LABEL_FONT), sg.Button('Resultados', font=LABEL_FONT)]
     ]     
     return sg.Window('Avaliação 360 - Aluno', layout, element_justification='c')
 

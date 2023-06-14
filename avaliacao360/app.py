@@ -1,14 +1,15 @@
 import PySimpleGUI as sg
 from datetime import date
 from utils.sprint_handler import check_sprint_all
-sg.theme('DarkAmber') 
+from config import TITLE_FONT, LABEL_FONT
+sg.theme('DarkAmber')
 
 to_close = False
 is_running = False
 fix_date = None
 
 def pop_up(msg):
-    layout = [[sg.Text(msg)], [sg.Button('Ok')]]
+    layout = [[sg.Text(msg, font=LABEL_FONT)], [sg.Button('Ok', font=LABEL_FONT)]]
     window = sg.Window('Avaliação 360', layout)
     window.read()
     window.close()
@@ -21,7 +22,7 @@ def error(msg):
     global window
     window.close()
 
-    layout = [[sg.Text(msg)], [sg.Button('Close')]]
+    layout = [[sg.Text(msg, font=LABEL_FONT)], [sg.Button('Close', font=LABEL_FONT)]]
     err_window = sg.Window('Avaliação 360 - ERROR', layout)
     err_window.read()
     err_window.close()
@@ -31,9 +32,8 @@ def close():
     global to_close
     to_close = True
 
-def change_interface(new_window, new_event_handler=None):
+def change_interface(new_window: sg.Window, new_event_handler=None):
     global window, event_handler, fix_date
-    
     date_now = fix_date
 
     if not date_now:

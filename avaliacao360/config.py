@@ -15,3 +15,7 @@ competence_list = [
     'entrega',
     'auto-gestão'
 ]
+
+TITLE_FONT = ('Ubuntu', 16)
+LABEL_FONT = ('Ubuntu', 12)
+DEFAULT_SIZE = [1440, 810]

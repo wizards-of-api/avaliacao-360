@@ -4,6 +4,7 @@ import connection.class_room as room_connection
 from datetime import timedelta
 from utils.date_functions import convert_date_str
 import app
+from config import LABEL_FONT
 
 def default_event_handler(event, _):
     if event == 'return interface':
@@ -46,16 +47,16 @@ def sprint_configure_handler(room_id, sprint_total):
         layout = [
             [sg.Text('Sprint: ' + str(sprint_num))],
             [
-                sg.Text("Data Inicial: ", size=(12,1)), 
-                sg.InputText(initial_date, key='date1', disabled=True, size=(10, 1), text_color='black'), 
-                sg.CalendarButton("Escolher", format=date_format, target='date1', disabled=disable_initial_calendar)
+                sg.Text("Data Inicial: ", size=(10,1), font=LABEL_FONT), 
+                sg.InputText(initial_date, key='date1', disabled=True, size=(12, 1), text_color='black', font=LABEL_FONT), 
+                sg.CalendarButton("Escolher", format=date_format, target='date1', disabled=disable_initial_calendar, font=LABEL_FONT)
             ],
             [
-                sg.Text("Data Final: ", size=(12,1)), 
-                sg.InputText('', key='date2', disabled=True, size=(10, 1), text_color='black'), 
-                sg.CalendarButton("Escolher", format=date_format, target='date2')
+                sg.Text("Data Final: ", size=(10,1), font=LABEL_FONT), 
+                sg.InputText('', key='date2', disabled=True, size=(12, 1), text_color='black', font=LABEL_FONT), 
+                sg.CalendarButton("Escolher", format=date_format, target='date2', font=LABEL_FONT)
             ],
-            [sg.Button('Confirmar', key='confirm')]
+            [sg.Button('Confirmar', key='confirm', font=LABEL_FONT)]
         ]
         return sg.Window('Avaliação 360 - Controle de Sprint', layout, element_justification='c', finalize= True)
     
@@ -81,10 +82,12 @@ def room_select_interface():
 
         room_name_list = [room['name'] for room in room_list]
 
+        col1 = [[sg.Text("Selecione uma sala: ", font=LABEL_FONT)], [sg.Text("Total de sprints: ", font=LABEL_FONT)]]
+        col2 = [[sg.Combo(room_name_list, default_value=room_name_list[0], readonly=True, key='class_room', font=LABEL_FONT , size=(22, 1))], [sg.Input(key='sprint_total', font=LABEL_FONT, size=(22, 1))]]
+
         layout = [
-            [sg.Text("Selecione uma sala: "), sg.Combo(room_name_list, default_value=room_name_list[0], readonly=True, key='class_room')],
-            [sg.Text("Total de sprints: "), sg.Input(key='sprint_total')],
-            [sg.Button('Confirmar', key='confirm'), sg.Button('Voltar', key='return interface')]
+            [sg.Column(col1), sg.Column(col2)],
+            [sg.Button('Confirmar', key='confirm', font=LABEL_FONT), sg.Button('Voltar', key='return interface', font=LABEL_FONT)]
         ]
         return sg.Window('Avaliação 360 - Controle de Sprint', layout, element_justification='c', finalize= True)
 

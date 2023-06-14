@@ -4,16 +4,30 @@ import interface.student_general as interface_student_general
 import interface.adm as interface_adm
 import connection.login as connection_login
 import connection.student_dash as student
+from config import TITLE_FONT, LABEL_FONT
 
 def create_window():
-    layout = [[sg.Text('Login!')],
-       [sg.Text('Usuário: ', size = (6,0)), sg.InputText(size = (20,0), key='username')],
-        [sg.Text('Senha: ', size = (6,0)), sg.InputText(size = (20,0), key = 'password', password_char='*')],
+    col1 = [[sg.Text('Usuário: ', font=LABEL_FONT)], [sg.Text('Senha: ', font=LABEL_FONT)]]
+    col2 = [
+        [sg.InputText(size = (20,0), key='username')],
+        [sg.InputText(size = (20,0), key = 'password', password_char='*')]
+    ]
+    col_center = [
+        [sg.Text('Login!', font=TITLE_FONT)],
+        [sg.Column(col1), sg.Column(col2)],
         [sg.Text('\n')],
-        [sg.Button('Login'), sg.Button('Cancel')]
-        ]
-    
-    return sg.Window('Avaliação 360 - Login', layout, element_justification = 'c')
+        [sg.Button('Login', font=LABEL_FONT), sg.Button('Cancel',font=LABEL_FONT)]
+    ]
+
+    layout = [
+        [sg.VPush()],
+        [sg.Column(col_center, element_justification='c')],
+        [sg.VPush()]    
+    ]
+
+    window = sg.Window('Avaliação 360 - Login', layout,element_justification='c', finalize= True, auto_size_text=True)
+
+    return window
 
 def event_handler(event, values):
     username = values['username']

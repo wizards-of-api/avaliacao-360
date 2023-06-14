@@ -4,6 +4,7 @@ import connection.evaluation as connect_eval
 import connection.group as connect_group
 from utils.graph_generator import generate_table, generate_bar_graph, draw_figure
 import interface.student_specific as interface_student_specific
+from config import LABEL_FONT
 
 import PySimpleGUI as sg
 
@@ -21,7 +22,7 @@ def create_window(student_id, group_id, sprint):
     table_top_row = ['Competencia', 'nota', 'feedback']
     table_rows = []
 
-    combo = sg.Combo(sprint_list, key='sprint', readonly=True)
+    combo = sg.Combo(sprint_list, key='sprint', readonly=True, font=LABEL_FONT)
     if sprint > 0:
         combo.DefaultValue = sprint
 
@@ -57,10 +58,10 @@ def create_window(student_id, group_id, sprint):
     group = connect_group.get_group_by_id(group_id)
 
     layout = [
-        [sg.Text('Grupo: ' + group['name'])],
-        [sg.Text('Sprint: '), combo, sg.Button('Refresh', key='refresh')],
+        [sg.Text('Grupo: ' + group['name'], font=LABEL_FONT)],
+        [sg.Text('Sprint: ', font=LABEL_FONT), combo, sg.Button('Refresh', key='refresh', font=LABEL_FONT)],
         [feedback_table, sg.Canvas(key='canvas', size=(1000, 1000), background_color='gray')],
-        [sg.Button('Voltar', key='return')]
+        [sg.Button('Voltar', key='return', font=LABEL_FONT)]
     ]
 
     window = sg.Window('Avaliação 360 - Dashboard do aluno', layout, finalize=True)

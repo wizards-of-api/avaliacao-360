@@ -4,6 +4,7 @@ import connection.adm_dash as adm_dash
 import connection.class_room as connect_room
 from utils.graph_generator import generate_combine_bar_graph, draw_figure
 import interface.adm as interface_adm
+from config import LABEL_FONT
 
 import PySimpleGUI as sg
 
@@ -13,7 +14,7 @@ def create_window(room_id):
     default_value = ''
     if room_id != 0:
       default_value = [room_str for room_str in room_str_list if int(room_str.split(' | ')[0]) == room_id][0]
-    combo = sg.Combo(room_str_list, default_value, key='room', readonly=True)
+    combo = sg.Combo(room_str_list, default_value, key='room', readonly=True, font=LABEL_FONT)
 
     groups_average = {
        'group-list': [],
@@ -30,14 +31,14 @@ def create_window(room_id):
     graph1_fig = generate_combine_bar_graph('Média dos Grupos', 'Grupos', 'Médias', groups_average['data'], config.competence_list, groups_average['group-list'], (8, 4))
     graph2_fig = generate_combine_bar_graph('Média das Sprints', 'Sprint', 'Médias', sprint_average['data'], config.competence_list, sprint_average['sprint-list'], (8, 4))
 
-    canvas1 = sg.Canvas(key='canvas1', size=(5, 5), background_color='gray')
-    canvas2 = sg.Canvas(key='canvas2', size=(5, 5), background_color='gray')
+    canvas1 = sg.Canvas(key='canvas1', background_color='gray')
+    canvas2 = sg.Canvas(key='canvas2', background_color='gray')
 
     layout = [
-        [sg.Text('Sala: '), combo, sg.Button('Refresh', key='refresh')],
+        [sg.Text('Sala: ', font=LABEL_FONT), combo, sg.Button('Refresh', key='refresh', font=LABEL_FONT)],
         [canvas1],
         [canvas2],
-        [sg.Button('Voltar', key='return')]
+        [sg.Button('Voltar', key='return', font=LABEL_FONT)]
     ]
 
     window = sg.Window('Avaliação 360 - Dashboard das salas (ADM)', layout, finalize=True)

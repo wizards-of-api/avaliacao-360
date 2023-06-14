@@ -6,6 +6,7 @@ from utils.filters import filter_by_key
 import app
 import os
 import sys
+from config import LABEL_FONT
 
 from utils.filters import filter_by_key
 
@@ -25,13 +26,18 @@ def create_window():
             str(resolved_student['id']) + ' | ' +
             resolved_student['name'])
 
+    col1 = [[sg.Text('Aluno:', font=LABEL_FONT)], [sg.Text('Usuário:', font=LABEL_FONT)], [sg.Text('Senha:', font=LABEL_FONT)]]
+    col2 = [[sg.Combo(student_name_list, readonly=True, key = 'student_list',font=LABEL_FONT, size=(22, 1))], 
+            [sg.Input('', key='username', font=LABEL_FONT, size=(22, 1))],
+            [sg.Input('', key='password', password_char='*', font=LABEL_FONT, size=(22, 1))]
+            ]
+
     layout = [
-        [sg.Text('Aluno:', size=(6,1)), sg.Combo(student_name_list, readonly=True, key = 'student_list',size=(35,1))],
-        [sg.Text('Usuário:', size=(6,1)), sg.Input('', key='username', size=(35,1))],
-        [sg.Text('Senha:', size=(6,1)), sg.Input('', key='password', password_char='*', size=(35,1))],
+        [sg.Column(col1), sg.Column(col2)],
+        [sg.Button('Cadastrar', key='register', font=LABEL_FONT, size=(10,1)),
+         
         [sg.Text('', key='error', text_color='red')],
-        [sg.Button('Cadastrar', key='register', size=(10,1)),
-         sg.Button('Voltar', key='return', size=(10,1))]
+         sg.Button('Voltar', key='return', font=LABEL_FONT, size=(10,1))]
     ]
     return sg.Window('Cadastro de Aluno', layout, element_justification='c', finalize=True)
 

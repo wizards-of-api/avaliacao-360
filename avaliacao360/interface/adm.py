@@ -5,16 +5,17 @@ import interface.entity_manager as entity_manager
 import interface.sprint_control as request_evaluation
 import interface.dashboard_room_adm as dashboard_room_adm
 import interface.dashboard_group_adm as dashboard_group_adm
+from config import TITLE_FONT, LABEL_FONT
 
 def create_window():
   layout = [ 
-            [sg.Text('Administrador')], 
-            [sg.Button('Criar turma/grupo/aluno', key='create room', s=(18, 1) )],
-            [sg.Button('Resultados de Turmas', key='dash-room', s=(18, 1))],
-            [sg.Button('Resultados de Grupo', key='dash-group', s=(18, 1))],
-            [sg.Button('Controle de sprint', key='request evaluation', s=(18, 1))],
-            [sg.Button('Voltar', key='return interface', s=(18, 1))]
-              ]
+      [sg.Text('Administrador', font=TITLE_FONT)], 
+      [sg.Button('Criar turma/grupo/aluno', key='create room', font=LABEL_FONT, size=(22, 1))],
+      [sg.Button('Resultados de Turmas', key='dash-room', font=LABEL_FONT, size=(22, 1))],
+      [sg.Button('Resultados de Grupo', key='dash-group', font=LABEL_FONT, size=(22, 1))],
+      [sg.Button('Controle de sprint', key='request evaluation', font=LABEL_FONT, size=(22, 1))],
+      [sg.Button('Voltar', key='return interface', font=LABEL_FONT, size=(22, 1))]
+  ]
   return sg.Window('Avaliação 360 - Administrador', layout, element_justification='c', finalize=True)
   
 

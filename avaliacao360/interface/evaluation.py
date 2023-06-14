@@ -2,10 +2,15 @@ import app
 import PySimpleGUI as sg
 import interface.login as interface_login
 from connection.evaluation import answer_evaluation
+import connection.evaluation as connection_evaluation
 from connection.student import get_student_by_id
 from config import question_list
+import connection.group as connection_group
+from config import LABEL_FONT
 
-def create_evaluation(student_id, evaluation_id, student_list):
+def create_evaluation(student_id, evaluation_id):
+    group_id = connection_evaluation.get_evaluation_by_id(evaluation_id)[0]['group-id']
+    student_list = connection_group.get_group_student_list(group_id)
     evaluation = {}
     evaluated_index = 0
     
@@ -36,7 +41,7 @@ def create_evaluation(student_id, evaluation_id, student_list):
                         feedback = sg.popup_get_text(
                             question_list[int(group_id[-1])]+
                             "\nJustifique sua resposta: ",
-                            title='Justificativa'
+                            title='Justificativa', font=LABEL_FONT
                             )
                     result.append({'value':1, 'feedback':feedback})
 
@@ -49,7 +54,7 @@ def create_evaluation(student_id, evaluation_id, student_list):
                         feedback = sg.popup_get_text(
                             question_list[int(group_id[-1])]+
                             "\nJustifique sua resposta: ",
-                            title='Justificativa'
+                            title='Justificativa', font=LABEL_FONT
                             )
                     result.append({'value':2, 'feedback':feedback})
                     
@@ -89,20 +94,20 @@ def create_evaluation(student_id, evaluation_id, student_list):
             """Cria as perguntas e os botões de resposta usando o indice dinamico
             criado anteriormente."""
 
-            column_list.append([sg.Text(student_list[evaluated_index]['name'] +' '+ question)])
+            column_list.append([sg.Text(student_list[evaluated_index]['name'] +' '+ question, font=LABEL_FONT)])
             column_list.append(
-                [sg.Radio('Discordo totalmente', group_id, key = '1_' + str(group_id)),
-                sg.Radio('Discordo', group_id, key = '2_' + str(group_id)),
-                sg.Radio('Neutro', group_id, default = True, key = '3_' + str(group_id)),
-                sg.Radio('Concordo', group_id, key = '4_' + str(group_id)), 
-                sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id))]
+                [sg.Radio('Discordo totalmente', group_id, key = '1_' + str(group_id), font=LABEL_FONT),
+                sg.Radio('Discordo', group_id, key = '2_' + str(group_id), font=LABEL_FONT),
+                sg.Radio('Neutro', group_id, default = True, key = '3_' + str(group_id), font=LABEL_FONT),
+                sg.Radio('Concordo', group_id, key = '4_' + str(group_id), font=LABEL_FONT), 
+                sg.Radio('Concordo totalmente', group_id, key = '5_' + str(group_id), font=LABEL_FONT)]
             )
             
             column_list.append([sg.Text("")])
 
         run_trough_questions(callback)
 
-        column_list.append([sg.Button('Enviar', size = (6,0))])
+        column_list.append([sg.Button('Enviar', size = (6,0), font=LABEL_FONT)])
 
         return column_list
 
