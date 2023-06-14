@@ -9,6 +9,8 @@ def generate_average_group_data(room_id):
     group_list = connect_room.get_class_room_group_list(room_id)
     ret_dict['group-list'] = [group['name'] for group in group_list]
 
+    print(group_list)
+
     data = []
     
     for group in group_list:
@@ -16,6 +18,8 @@ def generate_average_group_data(room_id):
         group_data = [[] for _ in config.competence_list]
 
         for evaluation in eval_list:
+            if evaluation['status'] == 'todo':
+                continue
             for answer_dict in evaluation['answer-dict'].values():
                 for values_list in answer_dict.values():
                     i = 0
@@ -47,6 +51,8 @@ def generate_average_group_data_by_sprint(room_id):
         group_data = [[] for _ in config.competence_list]
 
         for evaluation in eval_list:
+            if evaluation['status'] == 'todo':
+                continue
             group = connect_group.get_group_by_id(evaluation['group-id'])
             if group['class-room-id'] != room_id: continue
             for answer_dict in evaluation['answer-dict'].values():
@@ -80,6 +86,8 @@ def generate_average_student_data(group_id):
         group_data = [[] for _ in config.competence_list]
 
         for evaluation in eval_list:
+            if evaluation['status'] == 'todo':
+                continue
             for answer_dict in evaluation['answer-dict'].values():
                 for eval_student_id, values_list in answer_dict.items():
                     if eval_student_id != str(student['id']): continue
@@ -112,6 +120,8 @@ def generate_average_student_data_by_sprint(group_id):
         group_data = [[] for _ in config.competence_list]
 
         for evaluation in eval_list:
+            if evaluation['status'] == 'todo':
+                continue
             if evaluation['group-id'] != group_id: continue
             for answer_dict in evaluation['answer-dict'].values():
                 for values_list in answer_dict.values():

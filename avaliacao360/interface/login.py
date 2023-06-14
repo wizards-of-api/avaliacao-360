@@ -9,8 +9,8 @@ from config import TITLE_FONT, LABEL_FONT
 def create_window():
     col1 = [[sg.Text('Usuário: ', font=LABEL_FONT)], [sg.Text('Senha: ', font=LABEL_FONT)]]
     col2 = [
-        [sg.InputText(size = (20,0), key='username')],
-        [sg.InputText(size = (20,0), key = 'password', password_char='*')]
+        [sg.InputText(size = (20,0), key='username',font=LABEL_FONT)],
+        [sg.InputText(size = (20,0), key = 'password', password_char='*', font=LABEL_FONT)]
     ]
     col_center = [
         [sg.Text('Login!', font=TITLE_FONT)],
