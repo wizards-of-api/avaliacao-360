@@ -64,7 +64,6 @@ def general_dash(id_student, group_id):
     for student in json_db['student-list']:
       if student['id'] == id_student_data:
         name_student = student['name']
-        print(name_student)
         group_id_list = student['group-id-list']
         for group in group_id_list:
           if group_id_data == group:
@@ -83,6 +82,7 @@ def general_dash(id_student, group_id):
     return generate_dict_student
     
 def media_list(list):
+  print(list)
   nota1 = 0
   nota2 = 0
   nota3 = 0
@@ -90,13 +90,15 @@ def media_list(list):
   nota5 = 0
   nota6 = 0
   for score in list:
+    if len(score) == 0:
+      continue
     nota1 += score[0]
     nota2 += score[1]
     nota3 += score[2]
     nota4 += score[3]
     nota5 += score[4]
     nota6 += score[5]
-  if len(list) > 0 :    
+  if len(list) > 0:
     list_avaluation_average =[ nota1//len(list),
     nota2//len(list), nota3//len(list), nota4//len(list),
     nota5//len(list), nota6//len(list)]

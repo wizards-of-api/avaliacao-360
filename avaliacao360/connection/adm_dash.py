@@ -9,8 +9,6 @@ def generate_average_group_data(room_id):
     group_list = connect_room.get_class_room_group_list(room_id)
     ret_dict['group-list'] = [group['name'] for group in group_list]
 
-    print(group_list)
-
     data = []
     
     for group in group_list:

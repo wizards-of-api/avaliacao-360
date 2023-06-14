@@ -45,7 +45,6 @@ def create_window():
 def event_handler(event, values):
 
     input_student = values['student_list']
-    print('Evento:', event)  # adicionando um print para verificar o evento
     if event == 'return':
         app.change_interface(entity_manager.create_window(),
                              entity_manager.event_handler)
