@@ -4,7 +4,7 @@ import connection.class_room as connection_class_room
 import interface.entity_manager as entity_manager
 import app
 from utils.filters import filter_by_key
-from config import TITLE_FONT, LABEL_FONT
+from config import LABEL_FONT
 
 def create_window():
     class_room_list = connection_class_room.get_class_room_list()

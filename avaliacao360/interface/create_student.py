@@ -7,12 +7,12 @@ from config import TITLE_FONT, LABEL_FONT
 
 def select_group_handler(student_name, room_id_list):
     room_list = [connection_room.get_class_room_by_id(room_id) for room_id in room_id_list]
-    i = 0
+    i = [0]
     group_id_list = []
 
     def create_window():
         nonlocal room_id_list
-        room = room_list[i]
+        room = room_list[i[0]]
         group_list = connection_room.get_class_room_group_list(room['id'])
         group_name_list = [str(group['id']) + ' | ' + group['name'] for group in group_list]
         layout = [
@@ -31,7 +31,7 @@ def select_group_handler(student_name, room_id_list):
                 return
             group_id = int(group_name.split(' | ')[0])
             group_id_list.append(group_id)
-            i =+ 1
+            i[0] = i[0] + 1
             if len(group_id_list) >= len(room_id_list):
                 connection_student.create_student({'name': student_name,'group-id-list': group_id_list})            
                 sg.popup(f'Aluno {student_name} criado com sucesso!', font=LABEL_FONT)
@@ -74,6 +74,7 @@ def event_handler(event, values):
         elif len(room_id_list) == 0:
             sg.popup('Por favor, selecione um grupo', font=LABEL_FONT)
         else:
+            print(room_id_list)
             select_group_handler(input_student, room_id_list)
             #connection_student.create_student({'name': input_student,'group-id': group_id})            
             #sg.popup(f'Aluno {input_student} criado com sucesso!')

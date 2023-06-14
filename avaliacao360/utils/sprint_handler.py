@@ -2,13 +2,17 @@ from datetime import timedelta
 from utils.date_functions import convert_date_str
 import connection.evaluation as evaluation_connection
 import connection.class_room as room_connection
+import connection.group as group_connection
 
-def close_evaluations(sprint):
+def close_evaluations(room_id, sprint):
     evaluation_list = evaluation_connection.get_evaluation_list()
     evaluation_list = [evaluation for evaluation in evaluation_list if evaluation['sprint'] == sprint]
     for evaluation in evaluation_list:
-        if evaluation['status'] == 'done':
+        group = group_connection.get_group_by_id(evaluation['group-id'])
+        if group['class-room-id'] != room_id:
             continue
+        if evaluation['status'] == 'done':
+          continue
         evaluation_connection.force_close_evaluation(evaluation)
 
 def init_evaluations(room, sprint):
@@ -25,12 +29,15 @@ def check_sprint(room, date_now):
         sprint_index = i + 1
         sprint_end_date = convert_date_str(sprint['end'])
         eval_end_date = sprint_end_date + timedelta(days=5)
+        
         if date_now <= sprint_end_date:
             continue
 
         init_evaluations(room, sprint_index)
         if date_now > eval_end_date:
-            close_evaluations(sprint_index)
+            #if room['id'] == 2:
+                #print(room, sprint_index)
+            close_evaluations(room['id'], sprint_index)
             continue
 
 
