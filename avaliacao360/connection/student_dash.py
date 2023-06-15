@@ -82,7 +82,6 @@ def general_dash(id_student, group_id):
     return generate_dict_student
     
 def media_list(list):
-  print(list)
   nota1 = 0
   nota2 = 0
   nota3 = 0

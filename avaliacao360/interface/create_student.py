@@ -74,7 +74,6 @@ def event_handler(event, values):
         elif len(room_id_list) == 0:
             sg.popup('Por favor, selecione um grupo', font=LABEL_FONT)
         else:
-            print(room_id_list)
             select_group_handler(input_student, room_id_list)
             #connection_student.create_student({'name': input_student,'group-id': group_id})            
             #sg.popup(f'Aluno {input_student} criado com sucesso!')

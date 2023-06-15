@@ -35,8 +35,6 @@ def check_sprint(room, date_now):
 
         init_evaluations(room, sprint_index)
         if date_now > eval_end_date:
-            #if room['id'] == 2:
-                #print(room, sprint_index)
             close_evaluations(room['id'], sprint_index)
             continue
 
